@@ -1,0 +1,382 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>我的客户</title>
+    <link rel="stylesheet" type="text/css" href="../../css/work.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/sale.css" />
+    <script src="../../js/jquery-2.1.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+			/*选项卡切换*/
+           $(".nav_add") .click(function(){
+			   $("#customer_top").css('display','none');
+			   $(".work_nav").hide();
+			   $(".cus_add").show();
+			});
+			/*表格背景色切换*/
+			$(".offer_up_table tr:gt(0)").hover(function(){
+				 $(this).attr("onclick","SelectTR(this)");
+			});
+			/*去年同期业绩弹出层*/
+			$(".results").mouseover(
+				function(e){
+					$(".same_results").css({display:'',top:e.pageY-10+'px',left:e.pageX+20+'px'})
+			});
+			$(".results").mouseout(
+				function(){
+					$(".same_results").css({display:'none'})
+			});
+        });
+    </script>
+</head>
+
+<body>
+	<div class="container" >
+    	<h4>销售管理&gt;&gt;我的客户</h4>
+    <!--目录开始-->
+        <ul id="nav" class="work_nav">
+        	<li><button class="nav_add">新增</button></li>
+            <li><button class="nav_modify" onclick="window.location.href='customer_modify.html'">修改</button></li>
+            <li><button class="nav_del">删除</button></li>
+            <li><button class="nav_order">订单</button></li>
+            <li><button class="nav_offer">报价</button></li>
+            <li><button class="nav_refresh">刷新</button></li>
+        </ul>
+    <!--目录结束-->
+    <!--主体开始-->
+        <form name="" id="customer_top">
+            <table class="customer_top">
+                <tr>
+                    <td>
+                        <select name="">
+                            <option>客户代码</option>
+                        </select>
+                        <input name="" type="text" />
+                    </td>
+                    <td>
+                    	客户类型：
+                        <select name="">
+                            <option></option>
+                        </select>
+                    </td>
+                    <td>
+                    	客户阶段：
+                        <select name="">
+                            <option></option>
+                        </select>
+                    </td>
+                    <td>
+                    	关系等级：
+                        <select name="">
+                            <option></option>
+                        </select>
+                    </td>
+                    <td>
+                    	<input name="" type="checkbox"/>
+                        黑名单客户
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    	业务员：
+                        <select name="">
+                            <option></option>
+                        </select>
+                    </td>
+                    <td>
+                    	航线：
+                        <select name="">
+                            <option></option>
+                        </select>
+                    </td>
+                    <td>
+                    	贸易方式：
+                        <select name="">
+                            <option></option>
+                        </select>
+                    </td>
+                    <td>
+                    	创建时间：
+                        <input id="J-xl" name="" type="text" />
+                    </td>
+                    <td>
+                    	<input id="J-x2" name="" type="text" />
+                    </td>
+                    <td>
+                    	<button>查询</button>
+                        <button>重置</button>
+                    </td>
+                </tr>
+            </table>
+            <div class="list_main" >
+                <div class="offer_up" style="height:400px" >
+                    <table class="offer_up_table" cellpadding="0" cellspacing="0">
+                        <tr class="table_th">
+                            <td style="width:30px"><input name="sel" type="checkbox" onclick="select1();" /></td>
+                            <td>客户代码</td>
+                            <td>客户简称</td>
+                            <td>中文全称</td>
+                            <td>英文全称</td>
+                            <td>销售代表</td>
+                            <td>航线</td>
+                            <td>联系人</td>
+                            <td>电话</td>
+                            <td>传真</td>
+                            <td>客户阶段</td>
+                            <td>信用状态</td>
+                            <td>黑名单客户</td>
+                            <td>关系等级</td>
+                            <td>客户性质</td>
+                            <td>公司规模</td>
+                            <td>下第一票单时间</td>
+                            <td>最近订单</td>
+                            <td>去年同期业绩</td>
+                            <td>公司</td>
+                            <td>客户属性</td>
+                            <td>跟进状态</td>
+                            <td>有效</td>
+                            <td>录入人</td>
+                            <td>录入时间</td>
+                            <td>修改人</td>
+                            <td>修改时间</td>
+                        </tr>
+                        <tr>
+                            <td><input name="check" type="checkbox" /></td>
+                            <td>客户代码</td>
+                            <td>客户简称</td>
+                            <td>中文全称</td>
+                            <td>英文全称</td>
+                            <td>销售代表</td>
+                            <td>航线</td>
+                            <td>联系人</td>
+                            <td>电话</td>
+                            <td>传真</td>
+                            <td>客户阶段</td>
+                            <td>信用状态</td>
+                            <td><input name="" type="checkbox" /></td>
+                            <td>关系等级</td>
+                            <td>客户性质</td>
+                            <td>公司规模</td>
+                            <td>下第一票单时间</td>
+                            <td>最近订单</td>
+                            <td class="results">0</td>
+                            <td>公司</td>
+                            <td>客户属性</td>
+                            <td>跟进状态</td>
+                            <td><input name="" type="checkbox" /></td>
+                            <td>录入人</td>
+                            <td>录入时间</td>
+                            <td>修改人</td>
+                            <td>修改时间</td>
+                        </tr>
+                        <tr>
+                            <td><input name="check" type="checkbox" /></td>
+                            <td>客户代码</td>
+                            <td>客户简称</td>
+                            <td>中文全称</td>
+                            <td>英文全称</td>
+                            <td>销售代表</td>
+                            <td>航线</td>
+                            <td>联系人</td>
+                            <td>电话</td>
+                            <td>传真</td>
+                            <td>客户阶段</td>
+                            <td>信用状态</td>
+                            <td><input name="" type="checkbox" /></td>
+                            <td>关系等级</td>
+                            <td>客户性质</td>
+                            <td>公司规模</td>
+                            <td>下第一票单时间</td>
+                            <td>最近订单</td>
+                            <td class="results">0</td>
+                            <td>公司</td>
+                            <td>客户属性</td>
+                            <td>跟进状态</td>
+                            <td><input name="" type="checkbox" /></td>
+                            <td>录入人</td>
+                            <td>录入时间</td>
+                            <td>修改人</td>
+                            <td>修改时间</td>
+                        </tr>
+                    </table>
+                    <div class="same_results" style="display:none">
+                    	<h5>去年同期业绩（TEU）：</h5>
+                        <p>2015-07-01~2015-07-13:0</p>
+                        <p>2015-01-01~2015-07-13:0</p>
+                        <p>去年同期季度：0</p>
+                        <h5>今年业绩（TEU）：</h5>
+                        <p>2016-07-01~2016-07-13:0</p>
+                        <p>2016-01-01~2015-07-13:0</p>
+                        <p>本季度：0</p>
+                    </div>
+                </div>
+            </div>
+            <div class="change_footer" style="top:30px;border-top:1px solid #999;width:90%">
+                <span id="spanFirst">&le;</span>
+                <span id="spanPre">&lt;</span>
+                <span id="spanNext">&gt;</span>
+                <span id="spanLast">&ge;</span>
+                第
+                <span id="spanPageNum"></span>
+                页/共
+                <span id="spanTotalPage"></span>
+                页
+            </div> 
+        </form>
+    <!--主体结束-->
+    <!--新增开始-->
+    	<form name="" >
+        	<div class="cus_add" style="display:none">
+            	<h5>我的客户&gt;&gt;新增</h5>
+            	<ul class="cus_nav">
+                	<li><button>保存</button></li>
+                    <li><button>刷新</button></li>
+                    <li><button>返回</button></li>
+                </ul>
+            <!--新增左侧-->
+                <div class="cus_left">
+                    <table>
+                    	<tr>
+                        	<td>客户简称：</td>
+                            <td>
+                            	<select>
+                                	<option></option>
+                                </select>
+                            </td>
+                            <td>客户阶段：</td>
+                            <td><input name="" type="text" value="潜在" /></td>
+                        </tr>
+                        <tr>
+                        	<td>客户代码：</td>
+                            <td><input name="" type="text" style="width:80px" /><button>生成</button></td>
+                            <td>状态：</td>
+                            <td><input type="radio" name="" checked="checked" />有效 <input type="radio" name="" />无效</td>
+                        </tr>
+                        <tr>
+                        	<td>中文全称：</td>
+                            <td colspan="3"><input name="" type="text" class="all_width"/></td>
+                        </tr>
+                        <tr>
+                        	<td>英文全称：</td>
+                            <td colspan="3"><input name="" type="text" class="all_width" /></td>
+                        </tr>
+                        <tr>
+                        	<td>销售代表：</td>
+                            <td>
+                            	<select>
+                                	<option>roger.tian</option>
+                                </select>
+                            </td>
+                            <td>航线：</td>
+                            <td>
+                            	<select>
+                                	<option></option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td>公司：</td>
+                            <td><input name="" type="text" /></td>
+                            <td>部门：</td>
+                            <td><input name="" type="text" /></td>
+                        </tr>
+                        <tr>
+                        	<td>主要联系人：</td>
+                            <td><input name="" type="text" /></td>
+                            <td>职位：</td>
+                            <td><input name="" type="text" /></td>
+                        </tr>
+                        <tr>
+                        	<td>办公室电话：</td>
+                            <td><input name="" type="text" /></td>
+                            <td>传真：</td>
+                            <td><input name="" type="text" /></td>
+                        </tr>
+                        <tr>
+                        	<td>电子邮箱：</td>
+                            <td><input name="" type="text" /></td>
+                            <td>手机号码：</td>
+                            <td><input name="" type="text" /></td>
+                        </tr>
+                         <tr>
+                        	<td>关系等级：</td>
+                            <td>
+                            	<select>
+                                	<option></option>
+                                </select>
+                            </td>
+                            <td>客户性质：</td>
+                            <td>
+                            	<select>
+                                	<option></option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td>邮政编码：</td>
+                            <td><input name="" type="text" /></td>
+                            <td><input type="checkbox" name="" style="margin-left:10px;" />黑名单客户</td>
+                            <td><input type="checkbox" name="" />关闭其他航线</td>
+                        </tr>
+                        <tr>
+                        	<td>通讯地址（中文）：</td>
+                            <td colspan="3"><input name="" type="text" /></td>
+                        </tr>
+                        <tr>
+                        	<td>通讯地址（英文）：</td>
+                            <td colspan="3"><textarea name=""></textarea></td>
+                        </tr>
+                        <tr>
+                        	<td>客户简介：</td>
+                            <td colspan="3"><textarea name=""></textarea></td>
+                        </tr>
+                        <tr>
+                        	<td>操作注意事项：</td>
+                            <td colspan="3"><textarea name=""></textarea></td>
+                        </tr>
+                    </table>
+                    <p style="height:40px;"></p>
+                </div>
+            <!--新增中间-->
+                <div class="cus_mid">
+                	<fieldset>
+                    	<legend>贸易方式：</legend>
+                        <p><input name="" type="checkbox" /> CIF客户</p>
+                        <p><input name="" type="checkbox" /> FOB客户</p>
+                    </fieldset>
+                </div>
+            <!--新增右侧-->
+                <div class="cus_right">
+                	<fieldset>
+                    	<legend>客户类型：</legend>
+                        <p><input name="" type="checkbox" /> 整柜客户</p>
+                        <p><input name="" type="checkbox" /> 散货客户</p>
+                        <p><input name="" type="checkbox" /> 订舱管理</p>
+                        <p><input name="" type="checkbox" /> 报关客户</p>
+                        <p><input name="" type="checkbox" /> 目的港代理</p>
+                        <p><input name="" type="checkbox" /> 航空代理</p>
+                        <p><input name="" type="checkbox" /> 展会客户</p>
+                        <p><input name="" type="checkbox" /> 中转客户</p>
+                        <p><input name="" type="checkbox" /> 海运客户</p>
+                        <p><input name="" type="checkbox" /> 仓储客户</p>
+                        <p><input name="" type="checkbox" /> 火车运输客户</p>
+                    </fieldset>
+                </div>
+            </div>
+        </form>
+    
+    <!--新增结束-->
+    </div>
+    <script src="../../js/table.js"></script>
+    <script type="text/javascript" src="../../js/laydate-master/laydate.dev.js"></script>
+    <script type="text/javascript">
+        laydate({
+            elem: '#J-xl'
+        });
+		laydate({
+            elem: '#J-x2'
+        });
+    </script>
+</body>
+</html>

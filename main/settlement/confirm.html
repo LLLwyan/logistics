@@ -1,0 +1,279 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>费用确认</title>
+<link rel="stylesheet" href="../../css/fare.css"/>
+<link rel="stylesheet" href="../../css/settlement.css"/>
+<script src="../../js/jquery-2.1.1.min.js"></script>
+<script src="../../js/jquery.contextmenu.r2.js"></script>
+<script>
+	$(document).ready(function() {
+       /*点击变色*/
+		$("#myTable tr").first().nextAll().click(function(){
+			$(this).children().toggleClass("bgcolor");
+			if($(this).children().css("background-color") != $(document.body).css("background-color")){
+				$(this).children().first().children().prop("checked", true);
+				event.stopPropagation();
+			}else {
+				$(this).children().first().children().prop("checked", false);
+				event.stopPropagation();
+			}
+		});
+		/*右击菜单*/
+		$('.wrap').contextMenu('myMenu1',{
+			menuStyle:{
+				border: '1px solid #98c0e2',
+				fontSize:'12px'
+			},
+			itemStyle :{
+				backgroundColor: '#fff',
+				color: '#666',
+				border: 'none',
+				padding: '1px'
+			},
+			itemHoverStyle: {
+				color: '#fff',
+				backgroundColor: '#98c0e2',
+				border: 'none'
+			}
+		});
+		$("#item_5").hover(function(){
+			$(this).children().show();
+		},function(){
+			$(this).children().hide();
+		});
+		$("#item_6").hover(function(){
+			$(this).children().show();
+		},function(){
+			$(this).children().hide();
+		});
+		/*设置弹出框*/
+		$("#item_12").click(function(){
+			$(".model2").show();
+		});
+		$(".close2").click(function(){
+			$(".model2").hide();
+		});
+    });
+</script>
+</head>
+
+<body>
+    <div class="container">
+    	<!--主页面开始-->
+        <div class="client">
+            <div class="top_button">
+            	<button type="button" class="button_save">保存</button>
+                <button type="button" class="button_refresh">刷新</button>
+            </div>
+            <div class="titles">
+                <p>结算管理-&gt;费用确认</p>
+            </div>
+            <p style="margin:5px 0;">
+            	<select>
+                	<option>工作单日期</option>
+                </select>
+                <input type="text" id="J-xl" />
+                <input type="text" id="J-x2" />
+                完成状态：<select></select>
+                折合币制：<select></select>
+                <input type="checkbox" />增减费用
+                <button type="button">查询</button>
+                <button type="button">重置</button>
+            </p>
+            <!--主体开始-->
+            <div class="requset">
+            	<div class="wrap" style="height:190px;">
+                    <table cellspacing="0" style="width:2800px;" id="myTable">
+                        <tr class="table_th">
+                        	<td><input type="checkbox" /></td>
+                            <td>业务员</td>
+                            <td>工作号</td>
+                            <td>日期</td>
+                            <td>应收</td>
+                            <td>应付</td>
+                            <td>发票</td>
+                            <td>完成</td>
+                            <td>费用确认</td>
+                            <td>费用确认人</td>
+                            <td>费用确认日期</td>
+                            <td>增减费用确认</td>
+                            <td>增减费用确认人</td>
+                            <td>增减费用确认日期</td>
+                            <td>应收完成</td>
+                            <td>应收完成时间</td>
+                            <td>应付完成</td>
+                            <td>应付完成时间</td>
+                            <td>订舱号</td>
+                            <td>箱号</td>
+                            <td>HBL</td>
+                            <td>MBL</td>
+                            <td>HAWB</td>
+                            <td>MAWB</td>
+                            <td>Truck No.</td>
+                            <td>海运</td>
+                            <td>空运</td>
+                            <td>车运</td>
+                            <td>报关</td>
+                            <td>ETD</td>
+                            <td>工作单完成日期</td>
+                            <td>ETA</td>
+                            <td>收款状态</td>
+                            <td>付款状态</td>
+                            <td>审核</td>
+                            <td>录入人</td>
+                            <td>审核时间</td>
+                            <td>公司</td>
+                            <td>部门</td>
+                        </tr>
+                        <tr>
+                        	<td><input type="checkbox" /></td>
+                            <td>数据1</td>
+                            <td>数据1</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>数据1</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>数据1</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>数据1</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>数据1</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>数据1</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="change_footer" style="width:90%">
+                    <span id="spanFirst">&le;</span>
+                    <span id="spanPre">&lt;</span>
+                    <span id="spanNext">&gt;</span>
+                    <span id="spanLast">&ge;</span>
+                    第
+                    <span id="spanPageNum"></span>
+                    页/共
+                    <span id="spanTotalPage"></span>
+                    页
+                </div> 
+            </div>
+            <!--主体结束-->
+            <!--右击菜单开始-->
+            <div class="contextMenu" id="myMenu1">
+                <ul>
+                    <li id="item_1">复制</li>
+                    <li id="item_2">隐藏列</li>
+                    <li id="item_3">业务动态（报表）</li>
+                    <li id="item_4">业务动态（网页）</li>
+                    <li id="item_5" class="right_three">数据过滤
+                    	<ul class="nav2" style="display:none">
+                        	<li>过滤</li>
+                            <li>连续过滤</li>
+                            <li>排斥过滤</li>
+                            <li>连续排斥过滤</li>
+                            <li>取消过滤</li>
+                        </ul>
+                    </li>
+                    <li id="item_6" class="right_three">排序过滤
+                    	<ul class="nav3" style="display:none">
+                        	<li>升序</li>
+                            <li>连续升序</li>
+                            <li>降序</li>
+                            <li>连续降序</li>
+                            <li>取消排序</li>
+                        </ul>
+                    </li>
+                    <li id="item_7">编组与解除组</li>
+                    <li id="item_8">锁定与解锁列</li>
+                    <li id="item_9">显示与隐藏列</li>
+                    <li id="item_10">还原默认设置</li>
+                    <li id="item_11">费用确认</li>
+                    <li id="item_12">设置</li>
+                </ul>
+            </div>
+            <!--右击菜单结束-->
+        </div>
+        <!--主页面结束-->
+        <!--设置开始-->
+        <div class="model2" style="display:none;">
+            <div class="cover"></div>
+            <div class="import" style="height:270px;">
+                <h4>设置<img src="../../images/close.png" class="close2" /></h4>
+                <div class="wrap2">
+                	<p>费用确认后锁定</p>
+                    <table class="set">
+                        <tr>
+                            <td><input type="checkbox" /></td>
+                            <td>工作单日期</td>
+                            <td>限制值</td>
+                            <td><input type="text" /></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" /></td>
+                            <td>ETD（航班日期）</td>
+                            <td>限制值</td>
+                            <td><input type="text" /></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" /></td>
+                            <td>ETA</td>
+                            <td>限制值</td>
+                            <td><input type="text" /></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" /></td>
+                            <td>订舱日期</td>
+                            <td>限制值</td>
+                            <td><input type="text" /></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" /></td>
+                            <td>增减费用日期</td>
+                            <td>限制值</td>
+                            <td><input type="text" /></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" /></td>
+                            <td>收据日期</td>
+                            <td>限制值</td>
+                            <td><input type="text" /></td>
+                        </tr>
+                        <tr>
+                        	<td colspan="4">
+                            	限制值是防止费用确认后，用户篡改为确认的单或新单的相关日期到期限之前。
+                                同时，增减费用中费用条目的计费日期在工作单日期的限制值之前的会自动锁定。
+                                随着时间的变化请随时做出相应的调整。
+                            </td>
+                        </tr>
+                    </table>
+                    <button type="button">确定</button>
+                    <button type="button">取消</button>
+                </div>
+            </div>
+        </div>
+        <!--设置结束-->
+    </div>
+    <script src="../../js/table.js"></script>
+    <script type="text/javascript" src="../../js/laydate-master/laydate.dev.js"></script>
+    <script type="text/javascript">
+        laydate({
+            elem: '#J-xl'
+        });
+		laydate({
+            elem: '#J-x2'
+        });
+    </script>
+</body>
+</html>

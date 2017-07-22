@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>我的客户-修改</title>
+    <link rel="stylesheet" type="text/css" href="../../css/work.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/sale.css" />
+    <script src="../../js/jquery-2.1.1.min.js"></script>
+</head>
+
+<body>
+	<div class="container" >
+    	<h4>销售管理&gt;&gt;我的客户&gt;&gt;修改客户</h4>
+    	<div class="cus_main">
+            <!--客户拜访开始-->
+            <div class="visit">
+            	<ul class="cus_nav">
+                	<li><button type="submit">保存</button></li>
+                    <li><button type="button" onclick="window.location.href='customer.html'">新增</button></li>
+                    <li><button type="button">删除</button></li>
+                    <li><button type="button" onclick="window.location.reload();">刷新</button></li>
+                    <li><button onclick="window.location.href='customer.html'">返回</button></li>
+                </ul>
+                <p style="clear:both;font-size:14px;">
+                	拜访号：<input name="" type="text" />
+                    销售代表：<select><option></option></select>
+                    创建日期：<input id="J-xl"  name="" type="text" />—
+                    		<input id="J-x2" name="" type="text" />
+                    <button>查询</button>
+                    <button>重置</button>
+                </p>
+                <div class="com_top">
+                	<table cellspacing="0" style="width:2000px;">
+                    	<tr class="table_th">
+                        	<td><input name="" type="checkbox" /></td>
+                            <td>拜访号</td>
+                            <td>销售代表</td>
+                            <td>客户代码</td>
+                            <td>公司代码</td>
+                            <td>跟进时间</td>
+                            <td>跟进方式</td>
+                            <td>联系内容记录</td>
+                            <td>联系人</td>
+                            <td>联系电话</td>
+                            <td>传真</td>
+                            <td>手机号码</td>
+                            <td>E-mail</td>
+                            <td>参与人员</td>
+                            <td>回访日期</td>
+                            <td>跟进结果</td>
+                            <td>跟进状态</td>
+                            <td>创建人</td>
+                            <td>创建时间</td>
+                            <td>修改人</td>
+                            <td>修改时间</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="change_footer" style="width:90%">
+                    <span id="spanFirst">&le;</span>
+                    <span id="spanPre">&lt;</span>
+                    <span id="spanNext">&gt;</span>
+                    <span id="spanLast">&ge;</span>
+                    第
+                    <span id="spanPageNum"></span>
+                    页/共
+                    <span id="spanTotalPage"></span>
+                    页
+                </div>
+                <h5>客户拜访->新增（3PL GLOBAL LIMITED）</h5>
+                <table cellspacing="0" style="text-align:right">
+                    <tr>
+                        <td>拜访号：</td>
+                        <td><input name="" type="text" /></td>
+                        <td>销售代表：</td>
+                        <td>
+                        	<select>
+                            	<option></option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>联系人：</td>
+                        <td>
+                        	<select>
+                            	<option></option>
+                            </select>
+                        </td>
+                        <td>跟进方式：</td>
+                        <td>
+                        	<select>
+                            	<option>电话</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>联系时间：</td>
+                        <td><input id="J-x3" name="" type="text" /></td>
+                        <td>联系结果：</td>
+                        <td>
+                        	<select>
+                            	<option>出货跟踪</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>电话：</td>
+                        <td><input name="" type="text" /></td>
+                        <td>传真：</td>
+                        <td><input name="" type="text" /></td>
+                    <tr>
+                        <td>手机：</td>
+                        <td><input name="" type="text" /></td>
+                        <td>E-mail：</td>
+                        <td><input name="" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>回访日期：</td>
+                        <td><input id="J-x4" name="" type="text" /></td>
+                        <td>跟进状态：</td>
+                        <td>
+                        	<select>
+                            	<option>关系跟踪</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>参与人员：</td>
+                        <td colspan="3"><input name="" type="text" style="width:100%"/></td>
+                    </tr>
+                    <tr>
+                        <td>联系内容记录：</td>
+                        <td colspan="3"><textarea></textarea></td>
+                    </tr>
+                </table>
+            </div>
+            <!--客户拜访结束-->
+        </div>
+    </div>
+    <script type="text/javascript" src="../../js/laydate-master/laydate.dev.js"></script>
+    <script type="text/javascript">
+        laydate({
+            elem: '#J-xl'
+        });
+		laydate({
+            elem: '#J-x2'
+        });
+		laydate({
+            elem: '#J-x3'
+        });
+		laydate({
+            elem: '#J-x4'
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

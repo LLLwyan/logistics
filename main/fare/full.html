@@ -1,0 +1,336 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>整箱</title>
+<link rel="stylesheet" href="../../css/fare.css"/>
+<script src="../../js/jquery-2.1.1.min.js"></script>
+<script>
+	$(document).ready(function() {
+		/*页面显示隐藏*/
+       $(".button_load").click(function(){
+		  $(".load_data").show().siblings().hide(); 
+	   });
+	   $(".button_upload").click(function(){
+		  $(".export").show().siblings().hide(); 
+	   });
+	   $(".button_publish").click(function(){
+		  $(".release_data").show().siblings().hide(); 
+	   });
+	   $(".close").click(function(){
+		   $(".client").show().siblings().hide(); 
+		});
+		/*按钮切换*/
+		$(".tab>button").click(function(){
+			$(this).addClass("select").siblings().removeClass("select");
+		})
+    });
+</script>
+</head>
+
+<body>
+    <div class="container">
+    	<!--主页面开始-->
+        <div class="client">
+            <div class="top_button">
+                <button type="button" class="button_add" onclick="window.location.href='full_add.html'">新增</button>
+                <button type="button" class="button_change">修改</button>
+                <button type="button" class="button_delate">删除</button>
+                <button type="button" class="button_load">导入</button>
+                <button type="button" class="button_upload">导出</button>
+                <button type="button" class="button_publish">发布</button>
+                <button type="button" class="button_noefficacy">失效</button>
+                <button type="button" class="button_save">保存</button>
+                <button type="button" class="button_refresh">刷新</button>
+            </div>
+            <div class="titles">
+                <p>运价管理-&gt;整箱</p>
+            </div>
+            <table class="table_one" cellspacing="0">
+                <tr>
+                    <td>起飞港：</td>
+                    <td>
+                        <select name="origin">
+                            <option value=""></option>
+                        </select> 
+                    </td>
+                    <td>航线：</td>
+                    <td>
+                        <select name="line">
+                            <option value=""></option>
+                        </select>
+                    </td>
+                    <td>合约号：</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>目的港：</td>
+                    <td>
+                        <select name="destination">
+                            <option value=""></option>
+                        </select>
+                    </td>
+                    <td>船公司：</td>
+                    <td>
+                        <select name="airway">
+                            <option value=""></option>
+                        </select>
+                    </td>
+                    <td>拿价人：</td>
+                    <td>
+                        <select name="prices">
+                            <option value=""></option>
+                        </select>
+                    </td>
+                    <td style="text-align:center">
+                        <input type="checkbox">特价
+                    </td>
+                </tr>
+                <tr>
+                    <td>生效日期：</td>
+                    <td>
+                        <input id="J-xl" type="text">
+                    </td>
+                    <td>失效日期：</td>
+                    <td>
+                        <input id="J-x2" type="text">
+                    </td>
+                    <td>录入人：</td>
+                    <td>
+                        <select name="entering">
+                            <option value=""></option>
+                        </select>
+                    </td>
+                    <td>
+                        <button type="button">查询</button>
+                        <button type="reset">重置</button>
+                    </td>
+                </tr>
+                <tr>
+                	<td>
+                    	<select style="width:80px;" name="">
+                            <option>生效日期</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input id="J-x3" type="text">
+                    </td>
+                    <td><button type="button">批量修改</button></td>
+                    <td colspan="3" class="tab">
+                    	<button class="select" type="button">所有</button>
+                        <button type="button">有效</button>
+                        <button type="button">无效</button>
+                        <button type="button">已过期</button>
+                    </td>
+                    <td style="text-align:center"><input type="checkbox" checked="checked" />查看底价</td>
+                </tr>
+            </table>
+            <div class="client_main">
+                <table class="table_two" cellspacing="0" style="width:3000px;">
+                    <tr class="table_th">
+                        <td></td>
+                        <td><input type="checkbox"></td>
+                        <td>Routing</td>
+                        <td>起运港</td>
+                        <td>目的港</td>
+                        <td>币制</td>
+                        <td>20`GP</td>
+                        <td>40`GP</td>
+                        <td>40`HQ</td>
+                        <td>45`HQ</td>
+                        <td>45`RF</td>
+                        <td>其他箱型</td>
+                        <td>价格</td>
+                        <td>生效日期</td>
+                        <td>失效日期</td>
+                        <td>船公司</td>
+                        <td>航线</td>
+                        <td>订舱代理</td>
+                        <td>国家</td>
+                        <td>区域</td>
+                        <td>航程（天）</td>
+                        <td>发布</td>
+                        <td>附加费详情</td>
+                        <td>有效</td>
+                        <td>特价</td>
+                        <td>建议运价</td>
+                        <td>合约号</td>
+                        <td>拿价人</td>
+                        <td>公司</td>
+                        <td>运输条款</td>
+                        <td>运费条款</td>
+                        <td>开船日</td>
+                        <td>截关日</td>
+                        <td>运价说明</td>
+                        <td>服务说明</td>
+                        <td>录入人</td>
+                        <td>录入时间</td>
+                        <td>修改人</td>
+                        <td>修改时间</td>
+                        <td>备注1</td>
+                        <td>备注2</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><input type="checkbox"></td>
+                        <td>WEURO</td>
+                        <td>HKG</td>
+                        <td>MAN</td>
+                        <td>HKG-Sin-MAN</td>
+                        <td>SQ</td>
+                        <td>EU</td>
+                        <td>HKD</td>
+                        <td>KG</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>14.50</td>
+                        <td>14.50</td>
+                        <td>14.50</td>
+                        <td>14.50</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>2.000</td>
+                        <td>2.000</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="foot">
+                <img src="../../images/toleft.png" title="toleft">
+                <img src="../../images/left_three.png" title="left_three">
+                <input type="text">共2页
+                <img src="../../images/right_three.png" title="righr_three">
+                <img src="../../images/toright.png" title="torighr">
+                <select name="number_everypage">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+                <font>1-20 共33条</font>
+            </div>
+        </div>
+        <!--主页面结束-->
+        <!--导入数据页面开始-->
+        <div class="load_data" style="display:none">
+        	<div class="top_loadfile">
+            	<font>导入Excel文件</font>
+                <button type="button"  class="close"><img src="../../images/exit.png"></button>
+            </div>
+            <div class="choose_button">
+            	<button type="button" class="button_load">导入</button>
+                <button type="button" class="button_delate close">关闭</button>
+            </div>
+            <br><br>
+            <div class="rule"><hr></div>
+            <div class="choose_file">
+            	<font color="#FF0000">*</font>1、选择文件
+                <select name="choose_file">
+                	<option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+                <input type="text">
+                <input type="file">
+            </div>
+            <div class="rule"><hr></div>
+            <div class=tips>
+            	<p><font>*</font>2、模版中，如果某列的表头标记为红色，代表该列不能为空</p>
+                <div class="rule"><hr></div>
+                <p><font>*</font>3、价格、费用等信息只能包含一个负号、一个小数点或多位数字</p>
+                <div class="rule"><hr></div>
+                <p><font>*</font>4、日期格式为yyyy/mm/dd</p>
+                <div class="rule"><hr></div>
+                <p><font>*</font>5、下载模版A</p>
+            </div>
+        </div>
+        <!--导入数据页面结束-->
+        <!--运价导出页面开始-->
+        <div class="export" style="display:none">
+        	<div class="top_export">
+            	<font>运价导出</font>
+                <button type="button" class="close"><img src="../../images/exit.png" ></button>
+            </div>
+            <div class="choose_line">
+            	<button type="button" class="button_company">选择公司</button>
+                <button type="button" class="button_company">区域航线</button>
+                <button type="button" class="button_company">选择港口</button>
+                <select name="mode">
+                	<option value=""></option>
+                </select>
+                <button type="button" class="button_ensure">确定</button>
+                <button type="button" class="button_delate fixed close">关闭</button>
+            </div>
+            <div class="left">
+                        <font>运价导出-&gt;选择公司</font>
+                        <div>
+                            查询：<input type="text">
+                            <button type="button">查询</button>
+                            <button type="reset">重置</button>
+                        </div>
+                    <table class="choose_company">
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>公司代码</td>
+                        <td>公司名称（英文）</td>
+                        <td>公司名称（中文）</td>
+                    </tr>
+                     <tr>
+                        <td><input type="checkbox"></td>
+                        <td>PROAIR</td>
+                        <td>Proair international</td>
+                        <td>柏阳国际物流集团....</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="right">
+                        <font>运价导出-&gt;选择航空公司</font>
+                        <div>
+                            查询：<input type="text">
+                            <button type="button">查询</button>
+                            <button type="reset">重置</button>
+                        </div>
+                    <table class="choose_company">
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>航空公司简称</td>
+                        <td>航空公司名称（英文）</td>
+                        <td>航空公司名称（中文）</td>
+                    </tr>
+                     <tr>
+                        <td><input type="checkbox"></td>
+                        <td>AA</td>
+                        <td>AMERICAN AIRLINES</td>
+                        <td>美国航空</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!--运价导出页面结束-->
+        <!--发布页面开始-->
+        <div class="release_data" style="display:none">
+        	<div class="top_loadfile">
+            	<font>导入Excel文件</font>
+                <button type="button"  class="close"><img src="../../images/exit.png"></button>
+            </div>
+            <div class="choose_button">
+            	<button type="button" class="button_load">发布</button>
+                <button type="button" class="button_delate close">关闭</button>
+            </div>
+            <p class="fa"><input name="" type="checkbox" checked="checked" />批量发布</p>
+        </div>
+        <!--发布页面结束-->
+    </div>
+    <script src="../../js/table.js"></script>
+    <script type="text/javascript" src="../../js/laydate-master/laydate.dev.js"></script>
+    <script type="text/javascript">
+        laydate({
+            elem: '#J-xl'
+        });
+		laydate({
+            elem: '#J-x2'
+        });
+    </script>
+</body>
+</html>

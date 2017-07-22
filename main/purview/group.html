@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>组管理</title>
+    <link rel="stylesheet" href="../../css/purview.css" />
+</head>
+
+<body>
+	<div class="container">
+    <!--目录开始-->
+        <ul class="pur_nav">
+        	<li><button class="nav_add" onclick="window.location.href='group_add.html'">新增</button></li>
+            <li><button class="nav_modify" onclick="window.location.href='group_modify.html'">修改</button></li>
+            <li><button class="nav_del">删除</button></li>
+            <li><button class="nav_finish">复制</button></li>
+            <li><button class="nav_finish">授权</button></li>
+            <li><button class="nav_finish" style="width:80px;">成员管理</button></li>
+            <li><button class="nav_refresh" onclick="window.location.reload();">刷新</button></li>
+        </ul>
+    <!--目录结束-->
+    	<h4>权限&gt;&gt;组管理</h4>
+    <!--筛选开始-->
+    	<form name="">
+        	<p>
+            	公司：<select><option>PROAIR</option></select>
+                组类型：<select><option></option></select>
+                关键字：<input name="" type="text" />
+                <button>查询</button>&nbsp;&nbsp;&nbsp;
+                <button type="reset">重置</button>
+            </p>
+        </form>
+    <!--筛选结束-->
+    <!--主体开始-->
+    	<div class="pur_main">
+            <table cellspacing="0" style="width:1000px;">
+                <tr class="table_th">
+                    <td><input name="" type="checkbox" /></td>
+                    <td>代码</td>
+                    <td>组名</td>
+                    <td>类型</td>
+                    <td>公司</td>
+                    <td>录入人</td>
+                    <td>录入时间</td>
+                    <td>修改人</td>
+                    <td>修改时间</td>
+                </tr>
+                <tr>
+                	<td><input name="" type="checkbox" /></td>
+                    <td>数据</td>
+                    <td>数据</td>
+                    <td>数据</td>
+                    <td>数据</td>
+                    <td>数据</td>
+                    <td>数据</td>
+                    <td>数据</td>
+                </tr>
+            </table>
+        </div>
+        <div class="change_footer" style="width:90%">
+            <span id="spanFirst">&le;</span>
+            <span id="spanPre">&lt;</span>
+            <span id="spanNext">&gt;</span>
+            <span id="spanLast">&ge;</span>
+            第
+            <span id="spanPageNum"></span>
+            页/共
+            <span id="spanTotalPage"></span>
+            页
+        </div> 
+        
+    <!--主体结束-->
+    </div>
+</body>
+</html>

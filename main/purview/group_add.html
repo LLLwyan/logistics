@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>组管理-新增</title>
+    <link rel="stylesheet" href="../../css/purview.css" />
+</head>
+
+<body>
+	<div class="container">
+    	<!--目录开始-->
+        <ul class="pur_nav">
+        	<li><button class="nav_save" type="button">保存</button></li>
+            <li><button class="nav_refresh" onclick="window.location.reload();">刷新</button></li>
+            <li><button class="nav_return" onclick="window.location.href='group.html'">返回</button></li>
+        </ul>
+    	<!--目录结束-->
+    	<h4>组管理&gt;&gt;新增</h4>
+		<!--组管理新增开始-->
+        <div class="depar_add">
+            <form>
+                <table>
+                    <tr>
+                        <td>组代码：</td>
+                        <td colspan="2"><input name="" type="text" style="width:90px;"/><input name="" type="text" value=".SZX" style="width:40px;margin-left:5px;"/></td>
+                    </tr>
+                    <tr>
+                        <td>组名称：</td>
+                        <td colspan="2"><input name="" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>组类型：</td>
+                        <td colspan="2">
+                        	<input name="group" type="radio" checked="checked" />权限组
+                            <input name="group" type="radio" />关联用户组
+                            <input name="group" type="radio" />关联公司组
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>组排序：</td>
+                        <td colspan="2"><input name="" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>公司：</td>
+                        <td colspan="2"><select><option>PROAIR</option></select></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>排序：</td>
+                        <td colspan="2"><button type="button">选择</button></td>
+                    </tr>
+                    <tr>
+                        <td>备注信息：</td>
+                        <td colspan="2"><textarea style="width:100%"></textarea></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <!--组管理新增结束-->
+    </div>
+</body>
+</html>

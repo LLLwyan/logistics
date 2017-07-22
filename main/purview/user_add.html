@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>用户管理-新增</title>
+    <link rel="stylesheet" href="../../css/purview.css" />
+    <link rel="stylesheet" href="tree/zTreeStyle/zTreeStyle.css" />
+</head>
+
+<body>
+	<div class="container">
+    <!--目录开始-->
+        <ul class="pur_nav">
+            <li><button class="nav_save" type="submit">保存</button></li>
+            <li><button class="nav_refresh" onclick="window.location.reload();">刷新</button></li>
+            <li><button class="nav_return" onclick="window.location.href='user.html'">返回</button></li>
+        </ul>
+    <!--目录结束-->
+    	<h4>用户管理&gt;&gt;修改</h4>
+    <!--主体开始-->
+    	<form name="" class="pur_table">
+        <!--左侧部分开始-->
+        	<table class="pur_modi">
+            	<tr>
+                	<td>用户代码：</td>
+                    <td><input name="" type="text" /></td>
+                    <td>用户名：</td>
+                    <td><input name="" type="text" /></td>
+                </tr>
+                <tr>
+                	<td>真实姓名：</td>
+                    <td><input name="" type="text" /></td>
+                    <td>性别：</td>
+                    <td>
+                    	<input name="sex" type="radio" checked="checked"/>女
+                        <input name="sex" type="radio" />男
+                    </td>
+                </tr>
+                <tr>
+                	<td>公司：</td>
+                    <td><input name="" type="text" /></td>
+                    <td>部门：</td>
+                    <td><input name="" type="text" /></td>
+                </tr>
+                <tr>
+                	<td>用户属性：</td>
+                    <td colspan="3" style="text-align:left">
+                    	<span class="attribute">
+                        	业务员
+                        	<img src="../work/images/btn_close.png" class="close"/>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                	<td>办公电话1：</td>
+                    <td><input name="" type="text" /></td>
+                    <td>办公电话2：</td>
+                    <td><input name="" type="text" /></td>
+                </tr>
+                <tr>
+                	<td>手机：</td>
+                    <td><input name="" type="text" /></td>
+                    <td>传真：</td>
+                    <td><input name="" type="text" /></td>
+                </tr>
+                <tr>
+                	<td>家庭电话：</td>
+                    <td><input name="" type="text" /></td>
+                    <td>生日：</td>
+                    <td>
+                    	<select style="width:50px;">
+                        	<option>1</option>
+                        </select>月
+                        <select style="width:50px;">
+                        	<option>1</option>
+                        </select>日
+                    </td>
+                </tr>
+                <tr>
+                	<td>邮箱：</td>
+                    <td><input name="" type="text" /></td>
+                    <td>密码有效期：</td>
+                    <td>
+                    	<input name="" type="text" style="width:50px"/>天
+                    	<input name="" type="text" style="width:80px" id="J-xl"/>
+                    </td>
+                </tr>
+                <tr>
+                	<td>家庭地址：</td>
+                    <td colspan="3"><input name="" type="text" style="width:100%"/></td>
+                </tr>
+                <tr>
+                	<td>备注：</td>
+                    <td colspan="3"><textarea style="width:100%"></textarea></td>
+                </tr>
+            </table>
+        <!--左侧部分结束-->
+        </form>
+    <!--主体结束-->
+    </div>
+    <script src="../../js/table.js"></script>
+    <script type="text/javascript" src="../../js/laydate-master/laydate.dev.js"></script>
+    <script type="text/javascript">
+        laydate({
+            elem: '#J-xl'
+        });
+		laydate({
+            elem: '#J-x2'
+        });
+    </script>
+</body>
+</html>

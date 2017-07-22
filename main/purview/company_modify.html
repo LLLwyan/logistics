@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>公司管理</title>
+    <link rel="stylesheet" href="../../css/purview.css" />
+    <script src="../../js/jquery-2.1.1.min.js"></script>
+    <script>
+		$(document).ready(function() {
+            $(".com_nav > li").click(function(){
+				$(this).addClass("active").siblings().removeClass("active");
+				var index=$(".com_nav>li").index(this);
+				$(".wrap > div").eq(index).show().siblings().hide();
+			})
+        });
+	</script>
+</head>
+
+<body>
+	<div class="container">
+    <!--目录开始-->
+        <form>
+            <ul class="com_nav">
+                <li class="active">基本信息</li>
+                <li>业务规则</li>
+                <li>系统预警</li>
+            </ul>
+            <ul class="pur_nav" style="clear:both;">
+                <li><button type="button" class="nav_save">保存</button></li>
+                <li><button type="button" class="nav_refresh" onclick="window.location.reload();">刷新</button></li>
+                <li><button type="button" class="nav_return" onclick="window.location.href='company.html'">返回</button></li>
+            </ul>
+        <!--目录结束-->
+            <h4>公司管理&gt;&gt;修改</h4>
+        <!--主体开始-->
+            <div class="wrap">
+            <!--基本信息开始-->
+                <div >
+                    <table cellspacing="0">
+                        <tr>
+                           <td>公司代码：</td> 
+                           <td><input name="" type="text" /></td>
+                           <td>公司后缀：</td> 
+                           <td><input name="" type="text" /></td>
+                        </tr>
+                        <tr>
+                           <td>公司简称：</td> 
+                           <td colspan="3"><input name="" type="text" style="width:100%"/></td>
+                        </tr>
+                        <tr>
+                           <td>公司中文名称：</td> 
+                           <td colspan="3"><input name="" type="text" style="width:100%"/></td>
+                        </tr>
+                        <tr>
+                           <td>公司英文名称：</td> 
+                           <td colspan="3"><input name="" type="text" style="width:100%"/></td>
+                        </tr>
+                        <tr>
+                           <td>公司中文地址：</td> 
+                           <td colspan="3"><textarea style="width:100%"></textarea></td>
+                        </tr>
+                        <tr>
+                           <td>公司英文地址：</td> 
+                           <td colspan="3"><textarea style="width:100%;margin-top:5px;"></textarea></td>
+                        </tr>
+                        <tr>
+                           <td>电话（1）：</td> 
+                           <td><input name="" type="text" /></td>
+                           <td>电话（2）：</td> 
+                           <td><input name="" type="text" /></td>
+                        </tr>
+                        <tr>
+                           <td>传真（1）：</td> 
+                           <td><input name="" type="text" /></td>
+                           <td>传真（2）：</td> 
+                           <td><input name="" type="text" /></td>
+                        </tr>
+                        <tr>
+                           <td>E-mail（1）：</td> 
+                           <td><input name="" type="text" /></td>
+                           <td>E-mail（2）：</td> 
+                           <td><input name="" type="text" /></td>
+                        </tr>
+                        <tr>
+                           <td>联系人（1）：</td> 
+                           <td><input name="" type="text" /></td>
+                           <td>联系人（2）：</td> 
+                           <td><input name="" type="text" /></td>
+                        </tr>
+                        <tr>
+                           <td>公司网址：</td> 
+                           <td colspan="3"><input name="" type="text" style="width:100%"/></td>
+                        </tr>
+                        <tr>
+                           <td>邮编：</td> 
+                           <td><input name="" type="text" /></td>
+                           <td>组织机构代码证：</td> 
+                           <td><input name="" type="text" /></td>
+                        </tr>
+                        <tr>
+                           <td>工商登记号：</td> 
+                           <td><input name="" type="text" /></td>
+                           <td>税务登记号：</td> 
+                           <td><input name="" type="text" /></td>
+                        </tr>
+                        <tr>
+                           <td>License：</td> 
+                           <td colspan="3"><input name="" type="text" style="width:100%"/></td>
+                        </tr>
+                        <tr>
+                           <td>IP地址：</td> 
+                           <td><input name="" type="text" /></td>
+                           <td>端口：</td> 
+                           <td><input name="" type="text" /></td>
+                        </tr>
+                        <tr>
+                           <td>所属区域：</td> 
+                           <td><select><option></option></select></td>
+                           <td>税务登记号：</td> 
+                           <td style="text-align:left;"><input name="" type="checkbox" /></td>
+                        </tr>
+                        <tr>
+                           <td>城市中文名称：</td> 
+                           <td><select><option></option></select></td>
+                           <td>城市英文名称：</td> 
+                           <td><select><option></option></select></td>
+                        </tr>
+                    </table>
+                </div>
+            <!--基本信息结束-->
+            <!--业务规则开始-->
+                <div class="busi" style="display:none;">
+                    <div class="busi_left">
+                        <fieldset>
+                            <legend>我的订单</legend>
+                            <table>
+                                <tr>
+                                    <td><input name="" type="checkbox" />下单时选择客服</td>
+                                </tr>
+                                <tr>
+                                    <td>订单默认业务类型</td>
+                                    <td><select><option></option></select></td>
+                                </tr>
+                                <tr>
+                                    <td>订单预览默认折合币制</td>
+                                    <td><select><option></option></select></td>
+                                </tr>
+                                <tr>
+                                    <td>受理公司订单默认业务员</td>
+                                    <td><select><option></option></select></td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                        <fieldset>
+                            <legend>海运订舱</legend>
+                            <table>
+                                <tr>
+                                    <td colspan="2"><input name="" type="checkbox" />FCL工作SO变更提醒</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        订舱日期<input name="" type="checkbox" />当前月份
+                                        <input name="" type="checkbox" />一个月内
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>出单地</td>
+                                    <td><select><option></option></select></td>
+                                </tr>
+                                <tr>
+                                    <td>PP付款地</td>
+                                    <td><select><option></option></select></td>
+                                </tr>
+                                <tr>
+                                    <td>CC付款地</td>
+                                    <td><select><option></option></select></td>
+                                </tr>
+                                <tr>
+                                    <td>发货人</td>
+                                    <td><select><option></option></select></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><textarea style="width:100%"></textarea></td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                        <fieldset>
+                            <legend>HBL</legend>
+                            <table>
+                                <tr>
+                                    <td>出单地</td>
+                                    <td><select><option></option></select></td>
+                                </tr>
+                                <tr>
+                                    <td>PP付款地</td>
+                                    <td><select><option></option></select></td>
+                                </tr>
+                                <tr>
+                                    <td>CC付款地</td>
+                                    <td><select><option></option></select></td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                    </div>
+                    <div class="busi_right">
+                        <fieldset>
+                            <legend>客户</legend>
+                            <input name="" type="checkbox" />全拼大写<br />
+                            <input name="" type="checkbox" />首字母大写并以<input name="" type="text" style="width:30px;"/>分隔<br />
+                            <input name="" type="checkbox" />客户手机号码必填<br />
+                            <input name="" type="checkbox" />客户中文通讯地址必填<br />
+                            <input name="" type="checkbox" />客户英文通讯地址必填<br />
+                            <input name="" type="checkbox" />业务员客户列表中不能出现公司客户<br />
+                            <input name="" type="checkbox" />欠债客户下单需要审核<br />
+                            <input name="" type="checkbox" />客户电话、传真、手机限制格式<br />
+                            <input name="" type="checkbox" />票结客户下单需要提示<br />
+                            客户业务类型分类 <button type="button">设置</button><br />
+                            新增客户档案时默认阶段<select><option>正式</option></select><br />
+                            新增我的客户时默认阶段<select><option>潜在</option></select><br />
+                        </fieldset>
+                        <fieldset>
+                            <legend>运价设置</legend>
+                            <fieldset>
+                                <legend>模式</legend>
+                                <input name="patt" type="radio" />整个集团使用一套运价设置
+                                <input name="patt" type="radio" />分公司使用独立的运价设置
+                            </fieldset>
+                            <fieldset>
+                                <legend>价格设置</legend>
+                                <input name="price" type="radio" />低价模式
+                                <input name="price" type="radio" />利润模式
+                            </fieldset>
+                        </fieldset>
+                    </div>
+                </div>
+            <!--业务规则结束-->
+            <!--系统预警开始-->
+                <div class="system" style="display:none">
+                     <p>开船后<input name="" type="text" value="1"/>天提醒,到港前<input name="" type="text" value="2"/>天提醒</p>
+                     <p>补科前<input name="" type="text" value="2"/>天提醒,出Cargo前<input name="" type="text" value="2"/>天提醒</p>
+                     <p>截关日前<input name="" type="text" value="0"/>天订舱提醒</p>
+                     <p>截关日前<input name="" type="text" value="0"/>天放S/O提醒</p>
+                     <p>离港日后<input name="" type="text" value="30"/>天未退回报关单则预警</p>
+                     <p>交海关日后<input name="" type="text" value="30"/>天未退回报关单提醒</p>
+                     <p>ETD后<input name="" type="text" value="17"/>天报香港未完成提醒</p>
+                     <p>货物进仓<input name="" type="text" value="18"/>天后，库存件数未清零提醒</p>
+                </div>
+            <!--系统预警结束-->
+            </div> 
+        <!--主体结束-->
+        </form>
+    </div>
+</body>
+</html>

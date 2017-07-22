@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>工作单</title>
+<link rel="stylesheet" href="../../css/fare.css"/>
+<link rel="stylesheet" href="../../css/operation.css"/>
+
+</head>
+
+<body>
+    <div class="container">
+    	<!--主页面开始-->
+        <div class="client">
+            <div class="top_button">
+            	<button type="button" class="button_change" onclick="window.location.href='work_modify.html'">修改</button>
+				<button type="button" class="button_delate">删除</button>
+                <button type="button" class="button_company">提单合单</button>
+                <button type="button" class="button_refresh">刷新</button>
+                <button type="button" class="nav_preview" style="padding-left:20px;">货物查询</button>
+            </div>
+            <div class="titles">
+                <p>操作管理-&gt;工作单</p>
+            </div>
+            <table class="table_one " cellspacing="0">
+                <tr>
+                    <td>
+                    	<select>
+                        	<option>HBL(HAWB)</option>
+                            <option>MBL(MAWB)</option>
+                            <option>工作号</option>
+                            <option>订单号</option>
+                        </select>
+                    </td>
+                    <td><input name="" type="text" /></td>
+                    <td>收款状态：</td>
+                    <td><select></select></td>
+                    <td>付款状态：</td>
+                    <td><select></select></td>
+                    <td>
+                    	<button type="button">查询</button>
+                        <button type="button">重置</button>
+                    </td>
+                </tr>
+                <tr>
+                	<td colspan="4" class="tab plan_tab" style="text-align:left">
+                    	<button class="select" type="button">新单</button>
+                        <button type="button">进行中</button>
+                        <button type="button">已完成</button>
+                        <button type="button">全部</button>
+                    </td>
+                </tr>
+            </table>
+            <!--表格开始-->
+            <div class="paln_main" style="height:300px;">
+                <table cellspacing="0" style="width:4000px;">
+                    <tr class="table_th">
+                        <td></td>
+                        <td><input type="checkbox"></td>
+                        <td>收款状态</td>
+                        <td>付款状态</td>
+                        <td>工作号</td>
+                        <td>订单号</td>
+                        <td>配载号</td>
+                        <td>指派时间</td>
+                        <td>业务类型</td>
+                        <td>参考线</td>
+                        <td>HBL(HAWB)</td>
+                        <td>MBL(MAWB)</td>
+                        <td>客户代码</td>
+                        <td>客户简称</td>
+                        <td>信用状态</td>
+                        <td>业务员</td>
+                        <td>部门名称</td>
+                        <td>进度</td>
+                        <td>订单日期</td>
+                        <td>船公司</td>
+                        <td>起运港</td>
+                        <td>目的港</td>
+                        <td>截补料时间</td>
+                        <td>ETD</td>
+                        <td>截关日</td>
+                        <td>文件制作</td>
+                        <td>文件制作状态</td>
+                        <td>发货人</td>
+                        <td>收货人</td>
+                        <td>通知人</td>
+                        <td>目的港代理</td>
+                        <td>进出口</td>
+                        <td>揽货</td>
+                        <td>发货人（订舱）</td>
+                        <td>收货人（订舱）</td>
+                        <td>通知人（订舱）</td>
+                        <td>前程运输</td>
+                        <td>收货地址</td>
+                        <td>订舱号</td>
+                        <td>订舱时间</td>
+                        <td>海运</td>
+                        <td>空运</td>
+                        <td>车运</td>
+                        <td>报关</td>
+                        <td>费用审核</td>
+                        <td>费用确认</td>
+                        <td>异常</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><input type="checkbox"></td>
+                        <td>WEURO</td>
+                        <td>HKG</td>
+                        <td>MAN</td>
+                        <td>HKG-Sin-MAN</td>
+                        <td>SQ</td>
+                        <td>EU</td>
+                        <td>HKD</td>
+                        <td>KG</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>14.50</td>
+                        <td>14.50</td>
+                        <td>14.50</td>
+                        <td>14.50</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>2.000</td>
+                        <td>2.000</td>
+                    </tr>
+                </table>
+            </div>
+            <!--表格结束-->
+            <div class="change_footer" style="width:90%">
+                <span id="spanFirst">&le;</span>
+                <span id="spanPre">&lt;</span>
+                <span id="spanNext">&gt;</span>
+                <span id="spanLast">&ge;</span>
+                第
+                <span id="spanPageNum"></span>
+                页/共
+                <span id="spanTotalPage"></span>
+                页
+            </div> 
+            <!--底部开始-->
+            <div class="book_bottom ">
+            	<table class="tracking">
+                    <tr>
+                        <td><span class="circle"></span></td>
+                        <td><img src="../sale/images/arrow.png" /></td>  
+                        <td><span class="circle"></span></td>
+                        <td><img src="../sale/images/arrow.png" /></td>
+                        <td><span class="circle"></span></td>
+                        <td><img src="../sale/images/arrow.png" /></td>
+                        <td><span class="circle"></span></td>
+                        <td><img src="../sale/images/arrow.png" /></td>
+                        <td><span class="circle"></span></td>
+                        <td><img src="../sale/images/arrow.png" /></td>
+                        <td><span class="circle"></span></td>
+                        <td><img src="../sale/images/arrow.png" /></td>  
+                        <td><span class="circle"></span></td>
+                        <td><img src="../sale/images/arrow.png" /></td>
+                        <td><span class="circle"></span></td>
+                        <td><img src="../sale/images/arrow.png" /></td>
+                        <td><span class="circle"></span></td>
+                        <td><img src="../sale/images/arrow.png" /></td>
+                        <td><span class="circle"></span></td>
+                        <td><img src="../sale/images/arrow.png" /></td>
+                    </tr>
+                    <tr class="tracking_name">
+                        <td>提交</td>
+                        <td></td>
+                        <td>签单</td>
+                        <td></td>
+                        <td>审核</td>
+                        <td></td>
+                        <td>接收</td>
+                        <td></td>
+                        <td>订单</td>
+                        <td></td>
+                        <td>已放S/O</td>
+                        <td></td>
+                        <td>拖车</td>
+                        <td></td>
+                        <td>到达工厂</td>
+                        <td></td>
+                        <td>收到文件</td>
+                        <td></td>
+                        <td>离开工厂</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+            <!--底部结束-->
+        </div>
+        <!--主页面结束-->
+    </div>
+    <script src="../../js/table.js"></script>
+    <script type="text/javascript" src="../../js/laydate-master/laydate.dev.js"></script>
+    <script type="text/javascript">
+        laydate({
+            elem: '#J-xl'
+        });
+		laydate({
+            elem: '#J-x2'
+        });
+    </script>
+</body>
+</html>

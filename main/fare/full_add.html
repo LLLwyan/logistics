@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>整箱-新增</title>
+<link rel="stylesheet" href="../../css/fare.css"/>
+<script src="../../js/jquery-2.1.1.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+    	<!--主页面开始-->
+        <div class="client_add">
+            <div class="top_button">
+                <button type="button" class="button_save">保存</button>
+                <button type="button" class="button_refresh" onclick="window.location.reload();">刷新</button>
+                <button type="button" class="button_return" onclick="window.location.href='full.html'">返回</button>
+            </div>
+            <h5>整箱-&gt;新增</h5>
+            <form name="">
+            	<!--上部分开始-->
+                <div class="full_top">
+                    <table>
+                        <tr>
+                            <td>船公司：</td>
+                            <td><select></select></td>
+                            <td><input type="text" /></td>
+                            <td>起运港：</td>
+                            <td><select></select></td>
+                            <td><input type="text" /></td>
+                        </tr>
+                         <tr>
+                            <td>订舱代理：</td>
+                            <td><select></select></td>
+                            <td><input type="text" /></td>
+                            <td>中转港：</td>
+                            <td><select></select></td>
+                            <td><input type="text" /></td>
+                        </tr>
+                         <tr>
+                            <td>区域：</td>
+                            <td><select></select></td>
+                            <td><input type="text" /></td>
+                            <td>目的港：</td>
+                            <td><select></select></td>
+                            <td><input type="text" /></td>
+                        </tr>
+                         <tr>
+                            <td>国家：</td>
+                            <td><select></select></td>
+                            <td><input type="text" /></td>
+                            <td>航线：</td>
+                            <td><select></select></td>
+                            <td><input type="text" /></td>
+                        </tr>
+                         <tr>
+                            <td>运费条款：</td>
+                            <td style="text-align:left;"><select style="width:60px;"></select></td>
+                            <td>航程（天）：<input type="text" style="width:60px;"/></td>
+                            <td style="color:red;">发布运价：</td>
+                            <td style="text-align:left;"><input type="checkbox" checked="checked"/></td>
+                        </tr>
+                        <tr>
+                            <td>生效日期：</td>
+                            <td><input id="J-xl" type="text" /></td>
+                            <td></td>
+                            <td>特价：</td>
+                            <td style="text-align:left;"><input type="checkbox" checked="checked"/></td>
+                        </tr>
+                        <tr>
+                            <td>失效日期：</td>
+                            <td><input id="J-x2" type="text" /></td>
+                            <td></td>
+                            <td>驳船日：</td>
+                            <td><input type="text" /></td>
+                        </tr>
+                        <tr>
+                            <td>公司：</td>
+                            <td><select></select></td>
+                            <td></td>
+                            <td>截关日：</td>
+                            <td><input type="text" /></td>
+                        </tr>
+                        <tr>
+                            <td>拿价人：</td>
+                            <td><input type="text" /></td>
+                            <td></td>
+                            <td>开船日：</td>
+                            <td><input type="text" /></td>
+                        </tr>
+                        <tr>
+                            <td>来源：</td>
+                            <td><input type="text" /></td>
+                            <td></td>
+                            <td>合约号：</td>
+                            <td><input type="text" /></td>
+                        </tr>
+                        <tr>
+                            <td>运输条款：</td>
+                            <td><input type="text" /></td>
+                            <td></td>
+                            <td>建议运价：</td>
+                            <td><input type="text" /></td>
+                        </tr>
+                    </table>
+                    <table class="add_down">
+                        <tr>
+                            <td>运价说明：</td>
+                            <td><textarea></textarea></td>
+                            <td><button type="button" class="btn1">选</button><button type="button" class="btn2">存</button></td>
+                        </tr>
+                        <tr>
+                            <td>服务说明：</td>
+                            <td><textarea></textarea></td>
+                            <td><button type="button" class="btn1">选</button><button type="button" class="btn2">存</button></td>
+                        </tr>
+                        <tr>
+                            <td>备注1：</td>
+                            <td><textarea></textarea></td>
+                            <td><button type="button" class="btn1">选</button><button type="button" class="btn2">存</button></td>
+                        </tr>
+                        <tr>
+                            <td>备注2：</td>
+                            <td><textarea></textarea></td>
+                            <td><button type="button" class="btn1">选</button><button type="button" class="btn2">存</button></td>
+                        </tr>
+                    </table>
+                </div>
+                <!--上部分结束-->
+                <!--下部分开始-->
+                <div class="full_bottom">
+                    <ul>
+                        <li><button type="button">新增</button></li>
+                        <li><button type="button">删除</button></li>
+                        <li><button type="button">全选</button></li>
+                        <li><button type="button">刷新</button></li>
+                    </ul>
+                    <table cellspacing="0" class="full_bottom_table">
+                    	<tr class="table_th">
+                        	<td></td>
+                            <td>批处理</td>
+                            <td>费用</td>
+                            <td>费用描述</td>
+                            <td>费用类别</td>
+                            <td>币制</td>
+                            <td>20`GP</td>
+                            <td>40`GP</td>
+                            <td>40`HQ</td>
+                            <td>45`HQ</td>
+                            <td>40`RF</td>
+                            <td><select style="width:60px;"></select></td>
+                            <td>备注</td>
+                        </tr>
+                        <tr>
+                        	<td>1</td>
+                            <td>批处理</td>
+                            <td><input type="checkbox" /></td>
+                            <td>海运运价</td>
+                        </tr>
+                    </table>
+                </div>
+                <!--下部分结束-->
+            </form>
+		</div>
+    </div>
+    <script src="../../js/table.js"></script>
+    <script type="text/javascript" src="../../js/laydate-master/laydate.dev.js"></script>
+    <script type="text/javascript">
+        laydate({
+            elem: '#J-xl'
+        });
+		laydate({
+            elem: '#J-x2'
+        });
+		laydate({
+            elem: '#J-x3'
+        });
+    </script>
+</body>
+</html>

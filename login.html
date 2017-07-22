@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+    <title>柏阳-登录中心</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/skin.css" />
+    <script type="text/javascript"> 
+		var browser=navigator.appName 
+		var b_version=navigator.appVersion 
+		var version=b_version.split(";"); 
+		var trim_Version=version[1].replace(/[ ]/g,""); 
+		if(browser=="Microsoft Internet Explorer" && trim_Version=="MSIE6.0") 
+		{ 
+			alert("您的IE浏览器版本过低，请升级为IE9及以上版本或更换浏览器"); 
+		} 
+		else if(browser=="Microsoft Internet Explorer" && trim_Version=="MSIE7.0") 
+		{ 
+			alert("您的IE浏览器版本过低，请升级为IE9及以上版本或更换浏览器"); 
+		}
+		else if(browser=="Microsoft Internet Explorer" && trim_Version=="MSIE8.0") 
+		{ 
+			alert("您的IE浏览器版本过低，请升级为IE9及以上版本或更换浏览器"); 
+		} 
+	</script>
+</head>
+    <body style="background:url(images/login.png) no-repeat;background-size:100% 100%">
+        <table class="login_table">
+            <!-- 主体部分 -->
+            <tr>
+                <td id="right_cont">
+                    <table height="50%">
+                        <tr>
+                            <td width="15%" rowspan="5">&nbsp;</td>
+                            <td valign="top" id="form">
+                                <form action="" method="">
+                                    <table valign="top" width="50%">
+                                        <tr><td colspan="2"><h2 class="login_title">柏阳 系统登录</h2></td></tr>
+                                        <tr><td>管理员：</td><td><input type="text" name="" value="" /></td></tr>
+                                        <tr><td>密&nbsp;&nbsp;&nbsp;&nbsp;码：</td><td><input type="password" name="" value="" /></td></tr>
+                                        <tr><td>验证码：</td><td><input type="text" name="" value="" style="width:80px;"/></td></tr>
+                                    </table>
+                                </form>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+            	<td class="login_btn"><input type="submit" value="登陆" onclick="location.href='index.html'"/><input type="reset" value="重填" /></td>
+            </tr>
+        </table>
+    </body>
+</html>

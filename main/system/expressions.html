@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="../../css/system.css" rel="stylesheet" type="text/css">
+<script src="../../js/jquery-2.1.1.min.js"></script>
+<script>
+	$(document).ready(function() {
+        $(".list>p").click(function(){
+			$(this).addClass("hand").siblings().removeClass("hand");	
+			var index=$(".list>p").index(this);
+			$(".po1>p").eq(index).show().siblings().hide();
+		});
+    });
+</script>
+</head>
+
+<body>
+	<div class="container">
+        <div class="list">
+            <p class="hand">报价主题</p>
+            <p>报价开头语</p><br>
+            <p>报价结语</p><br>
+            <p>报价描述</p><br>
+            <p>装货地址</p><br>
+            <p>邮件主题</p><br>
+            <p>邮件内容</p><br>
+            <p>整箱运价说明</p><br>
+            <p>整箱服务说明</p><br>
+            <p>整箱备注</p><br>
+            <p>散货运价说明</p><br>
+            <p>散货服务说明</p><br>
+            <p>散货备注</p><br>
+            <p>空运运价说明</p><br>
+            <p>空运服务说明</p><br>
+            <p>空运备注</p><br>
+            <p>发送邮件签名</p><br>
+            <p>拖车特约事项</p><br>
+            <p>报关特约事项</p><br> 
+            <p>发送邮件开头语</p><br>
+            <p>香港收货地址</p><br>
+            <p>"RETURN_ADDRESS"</p><br>
+            <p>"SEA_BOOKING_REMARK"</p>
+        </div>
+        <div>
+            <div class="add headbg">
+                <input type="button" value="新增" class="fbgm1">
+                <input type="button" value="修改" class="fbgm2">
+                <input type="button" value="删除" class="fbgm3">
+                <input type="button" value="刷新" class="fbgm4">
+            </div>
+            <div class="po1"><p>常用语-&gt;报价主题</p>
+                <p class="hide">常用语-&gt;报价开头语</p>
+                <p class="hide">常用语-&gt;报价结束语</p>
+                <p class="hide">常用语-&gt;报价描述</p>
+                <p class="hide">常用语-&gt;报价地址</p>
+                <p class="hide">常用语-&gt;邮件主题</p>
+                <p class="hide">常用语-&gt;邮件内容</p>
+                <p class="hide">常用语-&gt;整箱运价说明</p>
+                <p class="hide">常用语-&gt;整箱服务说明</p>
+                <p class="hide">常用语-&gt;整箱备注</p>
+                <p class="hide">常用语-&gt;散货运价说明</p>
+                <p class="hide">常用语-&gt;散货服务说明</p>
+                <p class="hide">常用语-&gt;散货备注</p>
+                <p class="hide">常用语-&gt;空运运价说明</p>
+                <p class="hide">常用语-&gt;空运服务说明</p>
+                <p class="hide">常用语-&gt;空运备注</p>
+                <p class="hide">常用语-&gt;发送邮件签名</p>
+                <p class="hide">常用语-&gt;特约拖车事项</p>
+                <p class="hide">常用语-&gt;报关特约事项</p>
+                <p class="hide">常用语-&gt;发送邮件开头语</p>
+                <p class="hide">常用语-&gt;香港收货地址</p>
+                <p class="hide">常用语-&gt;"RETURN_ADDRESS"</p>
+                <p class="hide">常用语-&gt;"SEA_BOOKING_REMARK"</p>
+            </div>
+            <table cellspacing="0" class="tbel">
+            	<tr>
+                	<td class="ttd1"><input type="checkbox"></td>
+                    <td class="ttd2">内容</td>
+                    <td class="ttd3">录入人</td>
+                    <td class="ttd4">录入时间</td>
+                    <td class="ttd5">修改人</td>
+                    <td class="ttd6">修改时间</td>
+                    <td class="ttd7">备注</td>
+                </tr>
+            </table>
+        </div>
+    <div>
+</html>

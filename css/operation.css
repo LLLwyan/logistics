@@ -1,0 +1,374 @@
+@charset "utf-8";
+/* CSS Document */
+button{
+	width:60px;
+	text-align:center;
+	border:1px solid #98c0e2;
+}
+button:hover{
+	background-color:#98c0e2;
+}
+table tr{
+	cursor:pointer;
+	text-align:center;
+}
+textarea{
+	width:100%;
+	border:1px solid #ccc;
+}
+ul li{
+	list-style:none;
+}
+textarea{
+	font-size:12px;
+}
+/*工作计划开始*/
+.button_cancel,.button_recovery,.button_back,.button_see{
+	text-align:center;
+	padding-left:20px;
+}
+.button_cancel{
+	background:url(../images/cancel.png) 15px no-repeat;
+}
+.button_recovery{
+	background:url(../images/recovery.png) 15px no-repeat;
+}
+.button_back{
+	background:url(../images/back.png) 15px no-repeat;
+}
+.button_see{
+	background:url(../images/see.png) 15px no-repeat;
+}
+.save{
+	background:url(../images/save.png) 12px no-repeat;
+}
+.nav_preview{
+	background:url(../main/sale/images/preview.png) 5px no-repeat;
+}
+.plan_table td select{
+	width:70px;
+}
+.paln_main{
+	width:1000px;
+	height:200px;
+	padding:10px;
+	overflow:auto;
+}
+.plan_bottom{
+	width:90%;
+	padding-left:10px;
+	padding-bottom:20px;
+}
+.receive{
+	display:inline-block;
+	width:100px;
+	height:15px;
+	border:1px solid #999;
+}
+.baoguan1{
+	position:absolute;
+	right:106px;
+	z-index:3;
+}
+.baoguan2{
+	position:absolute;
+	right:4px;
+	z-index:3;
+}
+/*工作计划结束*/
+
+/*订舱开始*/
+.book_table td select,.book_table td input[type='text']{
+	width:90px;
+}
+.book_bottom{
+	width:1000px;
+	height:100px;
+	overflow:auto;
+}
+.tracking{
+	border:1px solid #98c0e2;
+	padding:10px;
+	margin:5px 0;
+}
+.tracking_title{
+	background-color:#98c0e2;
+	font-size:16px;
+	color:#fff;
+	padding:3px;
+}
+.tracking td{
+	text-align:center;
+	font-size:12px;
+}
+.circle{
+	display:inline-block;
+	width:10px;
+	height:10px;
+	border-radius:5px;
+	background-color:#999;
+	margin:0 25px;
+}
+.sea_main{
+	width:1000px;
+	height:400px;
+	overflow:auto;
+}
+.sea_main table tr{
+	height:25px;
+}
+.sea_main table td{
+	text-align:right;
+	padding:3px;
+	border-bottom:1px solid #98c0e2;
+	border-right:1px solid #98c0e2;
+}
+.sea_main table td input[type="text"]{
+	width:130px;
+}
+.sea_main table select{
+	width:132px;
+}
+.sea_main table tr:first-child td{
+	border-top:1px solid #98c0e2;
+}
+.sea_bottom{
+	width:1100px;
+	height:200px;
+	overflow:auto;
+	position:relative;
+}
+.sea_bottom ul{
+	position:absolute;
+}
+.sea_bottom table{
+	margin-left:60px;
+}
+.sea_bottom table td input[type="text"]{
+	background-color:transparent;
+	border:0;
+}
+.bgcolor{
+	background-color:#ffff00;
+}
+.hang table td select{
+	width:50px;
+}
+.titles span{
+	font-size:14px;
+	margin-left:20px;
+}
+
+/*订舱结束*/
+/*工作单开始*/
+.air{
+	padding-left:20px;
+}
+.work_nav{
+	margin:5px 0;
+}
+.extend2 tr{
+	height:28px;	
+}
+.work_nav li{
+	background:url(../images/book.png) no-repeat 5px 2px;
+	float:left;
+	width:60px;
+	font-size:14px;
+	border:1px solid #ccc;
+	padding-left:27px;
+	margin-right:5px;
+	color:red;
+	cursor:pointer;
+}
+.work_nav .active{
+	color:#666;
+}
+.nav2{
+	clear:both;
+	width:90%;
+	border:1px solid #98c0e2;
+	background-color:#98c0e2;
+	display:inline-block;
+	float:left;
+	margin:5px 0;
+}
+.nav2 li{
+	float:left;
+	width:70px;
+	font-size:14px;
+	color:red;
+	text-align:center;
+	cursor:pointer;
+}
+.nav2 .active2{
+	background-color:#fff;
+}
+.tex td{
+	text-align:center !important;
+}
+.tex td textarea,.tex td input{
+	border:0;
+}
+.extend td{
+	text-align:right;
+}
+.extend td select{
+	width:70px;
+}
+.shrink{
+	display:inline-block;
+	text-decoration:underline;
+	margin-left:300px !important;
+	cursor:pointer;
+}
+.rand td select{
+	width:80px;
+}
+.rand td input[type="text"]{
+	width:300px !important;
+}
+.cost_bottom{
+	width:980px;
+	height:290px;
+	overflow:auto;
+}
+.cost_bottom table{
+	width:3000px;
+}
+.invoice_bottom{
+	width:1000px;
+	height:200px;
+	overflow:auto;
+}
+.invoice_top{
+	height:200px;
+	overflow:auto;
+}
+.invoice2 tr td{
+	text-align:center;
+}
+.invoice2 tr td textarea{
+	height:70px;
+}
+.model,.model2,.model3{
+	position:absolute;
+	top:0;
+	left:0;
+}
+.cover{
+	width:1200px;
+	height:650px;
+	background-color:#999;
+	opacity:0.6;
+}
+.import,.import2{
+	width:700px;
+	height:470px;
+	position:absolute;
+	top:100px;
+	left:180px;
+	background-color:#fff;
+	z-index:2;
+}
+.import2{
+	width:500px;
+	height:380px;
+	top:110px;
+	left:250px;
+}
+.wrap{
+	width:690px;
+	height:390px;
+	overflow:auto;
+	margin:5px;
+}
+.import h4, .import2 h4{
+	border-bottom:1px solid #98c0e2;
+	padding:5px;
+}
+.import h4 img,.import2 h4 img{
+	float:right;
+	margin-right:10px;
+}
+.import table{
+	width:2000px;
+}
+.wrap2{
+	margin:5px;
+	border:1px solid #98c0e2;
+}
+.wrap2 p{
+	font-size:12px;
+	height:30px;
+	line-height:30px;
+	padding-left:10px;
+	border-bottom:1px solid #98c0e2;
+}
+.nav{
+	display:inline-block;
+	font-size:14px;
+	margin:5px;
+}
+.nav li{
+	float:left;
+	margin-left:10px;
+	padding-left:25px;
+	border:1px solid #98c0e2;
+	width:60px;
+	background:url(../images/book.png) no-repeat 5px 2px;
+	cursor:pointer;
+}
+.nav_act{
+	border-bottom:none !important;
+	color:red;
+}
+.ope_tab{
+	width:100%;
+	height:130px;
+}
+.btn{
+	text-align:center;
+	margin-top:5px;
+	border-bottom:0 !important;
+}
+.btn button{
+	margin-left:10px;
+}
+.air_bottom{
+	width:1000px;
+	overflow:auto;
+	position:absolute;
+	bottom:0;
+	background-color:#fff;
+}
+.order p{
+	border:0;
+}
+.order textarea{
+	width:98%;
+}
+#myTable1 td{
+	text-align:center;
+}
+#myTable1 td input[type="text"],#myTable1 td select{
+	width:50px;
+	background-color:transparent;
+}
+
+
+/*工作单结束*/
+.trailer table td{
+	text-align:right;
+}
+.invoice>button{
+	padding-left:30px;
+	width:80px;
+	margin-top:10px;
+}
+.declare{
+	height:350px;
+	overflow:auto;
+}
+
+

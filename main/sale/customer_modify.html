@@ -1,0 +1,1262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>我的客户-修改</title>
+    <link rel="stylesheet" type="text/css" href="../../css/work.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/sale.css" />
+    <script src="../../js/jquery-2.1.1.min.js"></script>
+    <script>
+		$(document).ready(function() {
+            $(".container ul>li").click(function(){
+				$(this).addClass("cust_active").siblings().removeClass("cust_active");
+				var index=$(".container ul>li").index(this);
+				$(".cus_main>div").eq(index).show().siblings().hide();
+			});
+			$(".send ul>a").click(function(){
+				$(this).addClass("send_a").siblings().removeClass("send_a");
+				var index=$(".send ul>a").index(this);
+				$(".send_main>h5").eq(index).show().siblings().hide();
+			});
+        });
+	</script>
+</head>
+
+<body>
+	<div class="container" >
+    	<h4>销售管理&gt;&gt;我的客户&gt;&gt;修改客户</h4>
+    <!--表格切换开始-->
+        <ul class="cust_nav">
+        	<li class="cust_active">基本信息</li>
+            <li>联系人</li>
+            <li>财务信息</li>
+            <li>仓库地址</li>
+        </ul>
+    <!--表格切换结束-->
+    	<div class="cus_main">
+        	<!--基本信息开始-->
+            <div class="cus_add" style="display:">
+            	<ul class="cus_nav">
+                	<li><button type="submit">保存</button></li>
+                    <li><button onclick="window.location.reload();">刷新</button></li>
+                    <li><button onclick="window.location.href='customer.html'">返回</button></li>
+                </ul>
+            <!--新增左侧-->
+                <div class="cus_left">
+                    <table>
+                    	<tr>
+                        	<td>客户简称：</td>
+                            <td>
+                            	<select>
+                                	<option></option>
+                                </select>
+                            </td>
+                            <td>客户阶段：</td>
+                            <td><input name="" type="text" value="潜在" /></td>
+                        </tr>
+                        <tr>
+                        	<td>客户代码：</td>
+                            <td><input name="" type="text" style="width:80px" /><button>生成</button></td>
+                            <td>状态：</td>
+                            <td><input type="radio" name="" checked="checked" />有效 <input type="radio" name="" />无效</td>
+                        </tr>
+                        <tr>
+                        	<td>中文全称：</td>
+                            <td colspan="3"><input name="" type="text" class="all_width" style="width:100%"/></td>
+                        </tr>
+                        <tr>
+                        	<td>英文全称：</td>
+                            <td colspan="3"><input name="" type="text" class="all_width" / style="width:100%"></td>
+                        </tr>
+                        <tr>
+                        	<td>销售代表：</td>
+                            <td>
+                            	<select>
+                                	<option>roger.tian</option>
+                                </select>
+                            </td>
+                            <td>航线：</td>
+                            <td>
+                            	<select>
+                                	<option></option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>部门：</td>
+                            <td><input name="" type="text" /></td>
+                        </tr>
+                        <tr>
+                        	<td>主要联系人：</td>
+                            <td><input name="" type="text" /></td>
+                            <td>职位：</td>
+                            <td><input name="" type="text" /></td>
+                        </tr>
+                        <tr>
+                        	<td>办公室电话：</td>
+                            <td><input name="" type="text" /></td>
+                            <td>传真：</td>
+                            <td><input name="" type="text" /></td>
+                        </tr>
+                        <tr>
+                        	<td>电子邮箱：</td>
+                            <td><input name="" type="text" /></td>
+                            <td>手机号码：</td>
+                            <td><input name="" type="text" /></td>
+                        </tr>
+                         <tr>
+                        	<td>关系等级：</td>
+                            <td>
+                            	<select>
+                                	<option></option>
+                                </select>
+                            </td>
+                            <td>客户性质：</td>
+                            <td>
+                            	<select>
+                                	<option></option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td>邮政编码：</td>
+                            <td><input name="" type="text" /></td>
+                            <td><input type="checkbox" name="" style="margin-left:10px;" />黑名单客户</td>
+                            <td><input type="checkbox" name="" />关闭其他航线</td>
+                        </tr>
+                        <tr>
+                        	<td>通讯地址（中文）：</td>
+                            <td colspan="3"><input name="" type="text" /></td>
+                        </tr>
+                        <tr>
+                        	<td>通讯地址（英文）：</td>
+                            <td colspan="3"><textarea name=""></textarea></td>
+                        </tr>
+                        <tr>
+                        	<td>客户备注：</td>
+                            <td colspan="3"><textarea name=""></textarea></td>
+                        </tr>
+                    </table>
+                    <p style="height:40px;"></p>
+                </div>
+            <!--新增中间-->
+                <div class="cus_mid">
+                	<fieldset>
+                    	<legend>贸易方式：</legend>
+                        <p><input name="" type="checkbox" /> CIF客户</p>
+                        <p><input name="" type="checkbox" /> FOB客户</p>
+                    </fieldset>
+                </div>
+            <!--新增右侧-->
+                <div class="cus_right">
+                	<fieldset>
+                    	<legend>客户类型：</legend>
+                        <p><input name="" type="checkbox" /> 整柜客户</p>
+                        <p><input name="" type="checkbox" /> 散货客户</p>
+                        <p><input name="" type="checkbox" /> 订舱管理</p>
+                        <p><input name="" type="checkbox" /> 报关客户</p>
+                        <p><input name="" type="checkbox" /> 目的港代理</p>
+                        <p><input name="" type="checkbox" /> 航空代理</p>
+                        <p><input name="" type="checkbox" /> 展会客户</p>
+                        <p><input name="" type="checkbox" /> 中转客户</p>
+                        <p><input name="" type="checkbox" /> 海运客户</p>
+                        <p><input name="" type="checkbox" /> 仓储客户</p>
+                        <p><input name="" type="checkbox" /> 火车运输客户</p>
+                    </fieldset>
+                </div>
+            </div>
+            <!--基本信息结束-->
+            <!--联系人开始-->
+            <div class="contact" style="display:none">
+            	<ul class="cus_nav">
+                	<li><button type="submit">保存</button></li>
+                    <li><button type="button">新增</button></li>
+                    <li><button type="button">删除</button></li>
+                    <li><button onclick="window.location.reload();">刷新</button></li>
+                    <li><button onclick="window.location.href='custorm.html'">返回</button></li>
+                </ul>
+                <div class="contact_top">
+                    <table cellspacing="0" class="cus_table">
+                        <tr class="table_th">
+                            <td><input name="" type="checkbox" /></td>
+                            <td>中文名</td>
+                            <td>英文名</td>
+                            <td>部门</td>
+                            <td>联系电话</td>
+                            <td>手机号码</td>
+                            <td>传真</td>
+                            <td>E-mail1</td>
+                            <td>E-mail2</td>
+                            <td>QQ</td>
+                            <td>MSN</td>
+                            <td>Skype</td>
+                            <td>销售代表</td>
+                            <td>职位</td>
+                            <td>主要联系人</td>
+                            <td>备注</td>
+                        </tr>
+                        <tr>
+                            <td><input name="" type="checkbox" /></td>
+                            <td>AHMED</td>
+                            <td></td>
+                            <td>销售2部</td>
+                            <td>联系电话</td>
+                            <td>手机号码</td>
+                            <td>传真</td>
+                            <td>E-mail1</td>
+                            <td>E-mail2</td>
+                            <td>QQ</td>
+                            <td>MSN</td>
+                            <td>Skype</td>
+                            <td>销售代表</td>
+                            <td>职位</td>
+                            <td><input name="" type="checkbox" /></td>
+                            <td>备注</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="change_footer" style="margin-top:-5px;width:90%;">
+                    <span id="spanFirst">&le;</span>
+                    <span id="spanPre">&lt;</span>
+                    <span id="spanNext">&gt;</span>
+                    <span id="spanLast">&ge;</span>
+                    第
+                    <span id="spanPageNum"></span>
+                    页/共
+                    <span id="spanTotalPage"></span>
+                    页
+                </div>
+                <div class="contact_bottom">
+                	<h5>联系人->修改（3PL GLOBAL LIMITED）</h5>
+                    <table class="cust_table" cellpadding="0" cellspacing="0">
+                    	<tr>
+                        	<td>销售代表：</td>
+                            <td colspan="4">
+                            	<select>
+                                	<option>linda.zhang</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td>中文名称：</td>
+                            <td><input name="" type="text" /></td>
+                            <td>英文名称：</td>
+                            <td><input name="" type="text" /></td>
+                            <td rowspan="8">暂未上传签名照！</td>
+                        </tr>
+                        <tr>
+                        	<td>性别：</td>
+                            <td>
+                            	<input name="sex" type="radio" value="男" />男
+                                <input name="sex" type="radio" value="女" />女
+                            </td>
+                            <td>年龄：</td>
+                            <td><input name="" type="text" /></td>
+                        </tr>
+                        <tr>
+                        	<td>办公室电话：</td>
+                            <td><input name="" type="text" /></td>
+                            <td>手机号码：</td>
+                            <td><input name="" type="text" /></td>
+                        </tr>
+                        <tr>
+                        	<td>E-mail1：</td>
+                            <td><input name="" type="text" /></td>
+                            <td>E-mail2：</td>
+                            <td><input name="" type="text" /></td>
+                        </tr>
+                        <tr>
+                        	<td>QQ：</td>
+                            <td><input name="" type="text" /></td>
+                            <td>MSN：</td>
+                            <td><input name="" type="text" /></td>
+                        </tr>
+                        <tr>
+                        	<td>Skype：</td>
+                            <td><input name="" type="text" /></td>
+                            <td>传真：</td>
+                            <td><input name="" type="text" /></td>
+                        </tr>
+                        <tr>
+                        	<td>部门：</td>
+                            <td><input name="" type="text" /></td>
+                            <td>职位：</td>
+                            <td><input name="" type="text" /></td>
+                        </tr>
+                        <tr>
+                        	<td>服务类型：</td>
+                            <td>
+                            	<input name="" type="checkbox" value="普货" />普货
+                                <input name="" type="checkbox" value="展会" />展会
+                                <input name="" type="checkbox" value="中转" />中转
+                            </td>
+                            <td>上传卡片：</td>
+                            <td><input name="" type="file" value="浏览"/></td>
+                        </tr>
+                        <tr>
+                        	<td>业务类型：</td>
+                            <td colspan="4">
+                            	<input name="" type="checkbox" value="海运（FCL）" />海运（FCL）
+                                <input name="" type="checkbox" value="海运（LCL）" />海运（LCL）
+                                <input name="" type="checkbox" value="空运（AIR）" />空运（AIR）
+                                <input name="" type="checkbox" value="其他" />其他
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td>备注：</td>
+                            <td colspan="4"><textarea></textarea></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <!--联系人结束-->
+            <!--财务信息开始-->
+            <div class="info" style="display:none;">
+            	<h5>我的客户-财务信息（3PL GLOBAL LIMITED）</h5>
+                <fieldset>
+                	<legend>信誉状态</legend>
+                    <table>
+                    	<tr>
+                        	<td>收款方式：</td>
+                            <td>
+                            	<select>
+                                	<option></option>
+                                </select>
+                            </td>
+                            <td>对账截止日：</td>
+                            <td><input id="J-xl" name="" type="text" /></td>
+                        </tr>
+                        <tr>
+                        	<td>月结日：</td>
+                            <td style="text-align:left">
+                            	<select style="width:50px;">
+                                	<option></option>
+                                </select>日
+                            </td>
+                            <td>欠款期限：</td>
+                            <td style="text-align:left"><input name="" type="text" style="width:50px;"/>天</td>
+                        </tr>
+                        <tr>
+                        	<td>授信额度：</td>
+                            <td>
+                            	<input name="" type="text" style="width:50px;"/>
+                            	<select style="width:50px;">
+                                	<option>USD</option>
+                                </select>
+                            </td>
+                            <td>欠款后可否接单：</td>
+                            <td style="text-align:left">
+                            	<input name="yesno" type="radio" checked="checked"/>是
+                                <input name="yesno" type="radio"/>否
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td>拖欠：</td>
+                            <td colspan="2"><input name="" type="text" value="无" style="width:100%;"/></td>
+                            <td>
+                            	<input name="" type="checkbox" />扣货
+                                <input name="" type="checkbox" />放货
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td>财务注意事项：</td>
+                            <td colspan="3"><textarea></textarea></td>
+                        </tr>
+                    </table>
+                </fieldset>
+                <fieldset>
+                	<legend>发票抬头</legend>
+                    <table>
+                    	<tr>
+                        	<td>抬头内容：</td>
+                            <td colspan="4"><input name="" type="text" style="width:100%"/></td>
+                        </tr>
+                        <tr>
+                        	<td>公司名称：</td>
+                            <td colspan="4"><input name="" type="text" style="width:100%"/></td>
+                        </tr>
+                        <tr>
+                        	<td>公司地址：</td>
+                            <td colspan="4"><input name="" type="text" style="width:100%"/></td>
+                        </tr>
+                        <tr>
+                        	<td>公司电话：</td>
+                            <td><input name="" type="text"/></td>
+                            <td>公司传真：</td>
+                            <td><input name="" type="text"/></td>
+                        </tr>
+                        <tr>
+                        	<td>开户银行名称：</td>
+                            <td colspan="4"><input name="" type="text" style="width:100%"/></td>
+                        </tr>
+                        <tr>
+                        	<td>开户银行账号：</td>
+                            <td colspan="4"><input name="" type="text" style="width:100%"/></td>
+                        </tr>
+                        <tr>
+                        	<td>国税税务登记号：</td>
+                            <td><input name="" type="text"/></td>
+                            <td>纳税人性质：</td>
+                            <td>
+                            	<select>
+                                	<option></option>
+                                </select>
+                            </td>
+                            <td>默认：<input name="" type="checkbox" /></td>
+                        </tr>
+                        <tr>
+                        	<td>备注：</td>
+                            <td colspan="4"><textarea></textarea></td>
+                        </tr>
+                    </table>
+                </fieldset>
+                <div class="info_down">
+                	<ul>
+                    	<li><button>新增</button></li>
+                        <li><button>删除</button></li>
+                        <li><button onclick="window.location.reload();">刷新</button></li>
+                    </ul>
+                    <table cellspacing="0">
+                    	<tr class="table_th">
+                        	<td><input name="" type="checkbox" /></td>
+                            <td>抬头内容</td>
+                            <td>公司名称</td>
+                            <td>公司地址</td>
+                            <td>公司电话</td>
+                            <td>公司传真</td>
+                            <td>开户银行名称</td>
+                            <td>开户银行账号</td>
+                            <td>国税税务登记号</td>
+                            <td>纳税人性质</td>
+                            <td>默认</td>
+                            <td>备注</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <!--财务信息结束-->
+            <!--仓库地址开始-->
+            <div class="ware" style="display:none">
+            	<ul class="cus_nav">
+                	<li><button type="submit">保存</button></li>
+                    <li><button>新增</button></li>
+                    <li><button>删除</button></li>
+                    <li><button>刷新</button></li>
+                    <li><button onclick="window.location.href='customer.html'">返回</button></li>
+                </ul>
+                <div class="com_top">
+                	<table cellspacing="0" style="width:1000px;">
+                    	<tr class="table_th">
+                        	<td><input name="" type="checkbox" /></td>
+                            <td>联系人</td>
+                            <td>联系电话</td>
+                            <td>手机号码</td>
+                            <td>城市</td>
+                            <td>报关</td>
+                            <td>不报关</td>
+                            <td>默认</td>
+                            <td>仓库地址</td>
+                            <td>备注</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="change_footer" style="width:90%">
+                    <span id="spanFirst">&le;</span>
+                    <span id="spanPre">&lt;</span>
+                    <span id="spanNext">&gt;</span>
+                    <span id="spanLast">&ge;</span>
+                    第
+                    <span id="spanPageNum"></span>
+                    页/共
+                    <span id="spanTotalPage"></span>
+                    页
+                </div>
+                <h5>仓库地址->新增（3PL GLOBAL LIMITED）</h5>
+                <table cellspacing="0" style="text-align:right;">
+                    <tr>
+                        <td>联系人：</td>
+                        <td><input name="" type="text" /></td>
+                        <td>联系电话：</td>
+                        <td><input name="" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>手机号码：</td>
+                        <td><input name="" type="text" /></td>
+                        <td>所在城市：</td>
+                        <td>
+                        	<select>
+                            	<option></option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td>报关：</td>
+                        <td style="text-align:left"><input name="" type="checkbox" /></td>
+                        <td>默认：</td>
+                        <td style="text-align:left"><input name="" type="checkbox" /></td>
+                    </tr>
+                    <tr>
+                    	<td>不报关：</td>
+                        <td colspan="3" style="text-align:left"><input name="" type="checkbox" /></td>
+                    </tr>
+                    <tr>
+                        <td>仓库地址：</td>
+                        <td colspan="3"><textarea></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>备注：</td>
+                        <td colspan="3"><textarea></textarea></td>
+                    </tr>
+                    <tr>
+                    	<td>寄文件地址：</td>
+                        <td colspan="3"><input name="" type="text" style="width:100%;"/></td>
+                    </tr>
+                    <tr>
+                        <td>联系人1：</td>
+                        <td><input name="" type="text" /></td>
+                        <td>联系人2：</td>
+                        <td><input name="" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>电话1：</td>
+                        <td><input name="" type="text" /></td>
+                        <td>电话2：</td>
+                        <td><input name="" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>手机1：</td>
+                        <td><input name="" type="text" /></td>
+                        <td>手机2：</td>
+                        <td><input name="" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>传真1：</td>
+                        <td><input name="" type="text" /></td>
+                        <td>传真2：</td>
+                        <td><input name="" type="text" /></td>
+                    </tr>
+                </table>
+            </div>
+            <!--仓库地址结束-->
+            <!--公司概况开始-->
+            <div class="profile" style="display:none">
+                	<ul class="cus_nav">
+                        <li><button type="submit">保存</button></li>
+                        <li><button onclick="window.location.reload();">刷新</button></li>
+                        <li><button onclick="window.location.href='custorm.html'">返回</button></li>
+                    </ul>
+                    <h5>我的客户->公司概况（3PL GLOBAL LIMITED）</h5>
+                    <fieldset class="profile_left">
+                    	<legend>基本信息</legend>
+                        <table>
+                        	<tr>
+                            	<td>区域：</td>
+                                <td>
+                                	<select>
+                                    	<option></option>
+                                    </select>
+                                </td>
+                                <td>国家：</td>
+                                <td>
+                                	<select>
+                                    	<option></option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                            	<td>省州：</td>
+                                <td>
+                                	<select>
+                                    	<option></option>
+                                    </select>
+                                </td>
+                                <td>城市：</td>
+                                <td>
+                                	<select>
+                                    	<option></option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                            	<td>公司类型：</td>
+                                <td>
+                                	<select>
+                                    	<option></option>
+                                    </select>
+                                </td>
+                                <td>公司规模：</td>
+                                <td>
+                                	<select>
+                                    	<option></option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                            	<td>信誉级别：</td>
+                                <td>
+                                	<select>
+                                    	<option></option>
+                                    </select>
+                                </td>
+                                <td>年度贸额：</td>
+                                <td><input name="" type="text" /></td>
+                            </tr>
+                            <tr>
+                            	<td>年产值：</td>
+                                <td><input name="" type="text" /></td>
+                                <td>年运总量：</td>
+                                <td><input name="" type="text" /></td>
+                            </tr>
+                            <tr>
+                            	<td>年进口额：</td>
+                                <td><input name="" type="text" /></td>
+                                <td>年出口额：</td>
+                                <td><input name="" type="text" /></td>
+                            </tr>
+                            <tr style="text-align:left">
+                            	<td>主要出口国家：</td>
+                                <td colspan="3"><input name="" type="text" style="width:100%"/></td>
+                            </tr>
+                            <tr>
+                            	<td>装货港：</td>
+                                <td colspan="3"><input name="" type="text" style="width:100%"/></td>
+                            </tr>
+                            <tr>
+                            	<td>卸货港：</td>
+                                <td colspan="3"><input name="" type="text" style="width:100%"/></td>
+                            </tr>
+                            <tr>
+                            	<td>口岸编码：</td>
+                                <td><input name="" type="text" /></td>
+                                <td>IATA Code：</td>
+                                <td><input name="" type="text" /></td>
+                            </tr>
+                            <tr>
+                            	<td>辅助代码：</td>
+                                <td><input name="" type="text" /></td>
+                                <td>EDI地址：</td>
+                                <td><input name="" type="text" /></td>
+                            </tr>
+                            <tr>
+                            	<td>商业登记号：</td>
+                                <td><input name="" type="text" /></td>
+                                <td>KC Code：</td>
+                                <td><input name="" type="text" /></td>
+                            </tr>
+                            <tr>
+                            	<td>航线经理：</td>
+                                <td><input name="" type="text" /></td>
+                                <td>主要业务负责人：</td>
+                                <td><input name="" type="text" /></td>
+                            </tr>
+                            <tr>
+                            	<td>公司主页：</td>
+                                <td><input name="" type="text" /></td>
+                                <td>运单前缀：</td>
+                                <td><input name="" type="text" /></td>
+                            </tr>
+                            <tr>
+                            	<td>备注：</td>
+                                <td colspan="3"><textarea></textarea></td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                    <div class="profile_right">
+                    	<fieldset>
+                        	<legend>总经理信息</legend>
+                            <table>
+                            	<tr>
+                                	<td>中文名称：</td>
+                                    <td><input name="" type="text" /></td>
+                                </tr>
+                                <tr>
+                                	<td>英文名称：</td>
+                                    <td><input name="" type="text" /></td>
+                                </tr>
+                                <tr>
+                                	<td>性别：</td>
+                                    <td style="text-align:left">
+                                    	<input name="sex" type="radio" />男
+                                    	<input name="sex" type="radio" />女
+                                    </td>
+                                </tr>
+                                <tr>
+                                	<td>年龄：</td>
+                                    <td><input name="" type="text" /></td>
+                                </tr>
+                                <tr>
+                                	<td>电话：</td>
+                                    <td><input name="" type="text" /></td>
+                                </tr>
+                                <tr>
+                                	<td>传真：</td>
+                                    <td><input name="" type="text" /></td>
+                                </tr>
+                                <tr>
+                                	<td>E-mail：</td>
+                                    <td><input name="" type="text" /></td>
+                                </tr>
+                                <tr>
+                                	<td>爱好：</td>
+                                    <td><input name="" type="text" /></td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                        <fieldset>
+                        	<legend>负责人信息</legend>
+                            <table>
+                            	<tr>
+                                	<td>中文名称：</td>
+                                    <td><input name="" type="text" /></td>
+                                </tr>
+                                <tr>
+                                	<td>英文名称：</td>
+                                    <td><input name="" type="text" /></td>
+                                </tr>
+                                <tr>
+                                	<td>性别：</td>
+                                    <td style="text-align:left">
+                                    	<input name="sex" type="radio" />男
+                                    	<input name="sex" type="radio" />女
+                                    </td>
+                                </tr>
+                                <tr>
+                                	<td>年龄：</td>
+                                    <td><input name="" type="text" /></td>
+                                </tr>
+                                <tr>
+                                	<td>电话：</td>
+                                    <td><input name="" type="text" /></td>
+                                </tr>
+                                <tr>
+                                	<td>传真：</td>
+                                    <td><input name="" type="text" /></td>
+                                </tr>
+                                <tr>
+                                	<td>E-mail：</td>
+                                    <td><input name="" type="text" /></td>
+                                </tr>
+                                <tr>
+                                	<td>爱好：</td>
+                                    <td><input name="" type="text" /></td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                    </div>
+                </div>
+            <!--公司概况结束-->
+            <!--客户投诉开始-->
+            <div class="complain" style="display:none">
+            	<ul class="cus_nav">
+                	<li><button type="submit">保存</button></li>
+                    <li><button>新增</button></li>
+                    <li><button>删除</button></li>
+                    <li><button>文件</button></li>
+                    <li><button>刷新</button></li>
+                    <li><button onclick="window.location.href='customer.html'">返回</button></li>
+                </ul>
+                <div class="com_top">
+                	<table cellspacing="0">
+                    	<tr class="table_th">
+                        	<td><input name="" type="checkbox" /></td>
+                            <td>状态</td>
+                            <td>赔款</td>
+                            <td>赔款金额</td>
+                            <td>投诉编号</td>
+                            <td>相关订单</td>
+                            <td>投诉时间</td>
+                            <td>投诉人</td>
+                            <td>销售人</td>
+                            <td>销售部门</td>
+                            <td>销售经理</td>
+                            <td>投诉等级</td>
+                            <td>投诉类型</td>
+                            <td>投诉内容</td>
+                            <td>应诉人</td>
+                            <td>应诉情况</td>
+                            <td>备注</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="change_footer" style="width:90%">
+                    <span id="spanFirst">&le;</span>
+                    <span id="spanPre">&lt;</span>
+                    <span id="spanNext">&gt;</span>
+                    <span id="spanLast">&ge;</span>
+                    第
+                    <span id="spanPageNum"></span>
+                    页/共
+                    <span id="spanTotalPage"></span>
+                    页
+                </div>
+                <h5>客户投诉->新增（3PL GLOBAL LIMITED）</h5>
+                <div class="com_left">
+                    <fieldset>
+                        <legend>投诉</legend>
+                        <table cellspacing="0">
+                            <tr>
+                                <td>投诉人：</td>
+                                <td>
+                                    <select>
+                                        <option></option>
+                                    </select>
+                                </td>
+                                <td>投诉编码：</td>
+                                <td><input name="" type="text" /></td>
+                            </tr>
+                            <tr>
+                                <td>投诉时间：</td>
+                                <td><input id="J-x2" name="" type="text" /></td>
+                                <td>相关订单：</td>
+                                <td><input name="" type="text" /></td>
+                            </tr>
+                            <tr>
+                                <td>销售人：</td>
+                                <td><input name="" type="text" /></td>
+                                <td>销售部门：</td>
+                                <td><input name="" type="text" /></td>
+                            </tr>
+                            <tr>
+                                <td>销售经理：</td>
+                                <td colspan="3" style="text-align:left">
+                                    <select>
+                                        <option></option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>等级：</td>
+                                <td>
+                                    <select>
+                                        <option>普通</option>
+                                    </select>
+                                </td>
+                                <td>类型：</td>
+                                <td>
+                                    <select>
+                                        <option>服务不好</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>投诉内容：</td>
+                                <td colspan="3"><textarea></textarea></td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                    <fieldset>
+                        <legend>应诉</legend>
+                        <table cellspacing="0">
+                            <tr>
+                                <td>应诉人：</td>
+                                <td>
+                                    <select>
+                                        <option></option>
+                                    </select>
+                                </td>
+                                <td>状态：</td>
+                                <td>
+                                    <select>
+                                        <option>未处理</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>赔款：</td>
+                                <td style="text-align:left"><input name="" type="checkbox" /></td>
+                                <td>赔款金额：</td>
+                                <td><input name="" type="text" /></td>
+                            </tr>
+                            <tr>
+                                <td>应诉情况：</td>
+                                <td colspan="3"><textarea></textarea></td>
+                            </tr>
+                            <tr>
+                                <td>备注：</td>
+                                <td colspan="3"><textarea></textarea></td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                    <p style="height:30px;"></p>
+                </div>
+                <div class="com_right">
+                	<fieldset>
+                    	<legend>投诉对象</legend>
+                        <input name="" type="checkbox" />业务员<br />
+                        <input name="" type="checkbox" />客服<br />
+                        <input name="" type="checkbox" />订舱<br />
+                        <input name="" type="checkbox" />文件<br />
+                        <input name="" type="checkbox" />拖车<br />
+                        <input name="" type="checkbox" />报关<br />
+                        <input name="" type="checkbox" />仓储<br />
+                        <input name="" type="checkbox" />订仓<br />
+                    </fieldset>
+                </div>
+            </div>
+            <!--客户投诉结束-->
+            <!--收发通开始-->
+            <div class="send" style="display:none">
+            	<ul class="cus_nav">
+                	<li><button type="submit">保存</button></li>
+                    <li><button>新增</button></li>
+                    <li><button>删除</button></li>
+                    <li><button>文件</button></li>
+                    <li><button>刷新</button></li>
+                    <li><button onclick="window.location.href='customer.html'">返回</button></li>
+                    <a href="#" class="send_a">Shipper</a>
+                    <a href="#">Consignee</a>
+                    <a href="#">Notify</a>
+                </ul>
+                <div class="com_top">
+                	<table cellspacing="0" style="width:1000px;">
+                    	<tr class="table_th">
+                        	<td><input name="" type="checkbox" /></td>
+                            <td>公司中文名</td>
+                            <td>公司英文名</td>
+                            <td>电话</td>
+                            <td>邮箱</td>
+                            <td>传真</td>
+                            <td>通讯地址（中文）</td>
+                            <td>通讯地址（英文）</td>
+                            <td>备注</td>
+                            <td>默认</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="change_footer" style="width:90%">
+                    <span id="spanFirst">&le;</span>
+                    <span id="spanPre">&lt;</span>
+                    <span id="spanNext">&gt;</span>
+                    <span id="spanLast">&ge;</span>
+                    第
+                    <span id="spanPageNum"></span>
+                    页/共
+                    <span id="spanTotalPage"></span>
+                    页
+                </div>
+                <div class="send_main">
+                    <h5>Shipper->新增（3PL GLOBAL LIMITED）</h5>
+                    <h5 style="display:none">Consignee->新增（3PL GLOBAL LIMITED）</h5>
+                    <h5 style="display:none">Notify->新增（3PL GLOBAL LIMITED）</h5>
+                </div>
+                <table cellspacing="0" style="text-align:right">
+                    <tr>
+                        <td>公司中文名：</td>
+                        <td><input name="" type="text" /></td>
+                        <td>公司英文名：</td>
+                        <td><input name="" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>电话：</td>
+                        <td><input name="" type="text" /></td>
+                        <td>邮箱：</td>
+                        <td><input name="" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>传真：</td>
+                        <td><input name="" type="text" /></td>
+                        <td>默认：</td>
+                        <td style="text-align:right"><input name="" type="checkbox" /></td>
+                    </tr>
+                    <tr>
+                        <td>通讯地址（中文）：</td>
+                        <td colspan="3"><input name="" type="text" style="width:100%"/></td>
+                    </tr>
+                    <tr>
+                        <td>通讯地址（英文）：</td>
+                        <td colspan="3"><input name="" type="text" style="width:100%"/></td>
+                    </tr>
+                    <tr>
+                        <td>备注：</td>
+                        <td colspan="3"><textarea></textarea></td>
+                    </tr>
+                </table>
+            </div>
+            <!--收发通结束-->
+            <!--装货地址开始-->
+            <div class="shipment" style="display:none">
+            	<ul class="cus_nav">
+                	<li><button type="submit">保存</button></li>
+                    <li><button>新增</button></li>
+                    <li><button>删除</button></li>
+                    <li><button>刷新</button></li>
+                    <li><button onclick="window.location.href='customer.html'">返回</button></li>
+                </ul>
+                <div class="com_top">
+                	<table cellspacing="0" style="width:1000px;">
+                    	<tr class="table_th">
+                        	<td><input name="" type="checkbox" /></td>
+                            <td>联系人</td>
+                            <td>联系电话</td>
+                            <td>手机号码</td>
+                            <td>传真</td>
+                            <td>默认</td>
+                            <td>装货地址</td>
+                            <td>备注</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="change_footer" style="width:90%">
+                    <span id="spanFirst">&le;</span>
+                    <span id="spanPre">&lt;</span>
+                    <span id="spanNext">&gt;</span>
+                    <span id="spanLast">&ge;</span>
+                    第
+                    <span id="spanPageNum"></span>
+                    页/共
+                    <span id="spanTotalPage"></span>
+                    页
+                </div>
+                <h5>装货地址->新增（3PL GLOBAL LIMITED）</h5>
+                <table cellspacing="0" style="text-align:right">
+                    <tr>
+                        <td>联系人：</td>
+                        <td><input name="" type="text" /></td>
+                        <td>联系电话：</td>
+                        <td><input name="" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>手机号码：</td>
+                        <td><input name="" type="text" /></td>
+                        <td>传真：</td>
+                        <td><input name="" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>默认：</td>
+                        <td colspan="3" style="text-align:left"><input name="" type="checkbox" /></td>
+                    </tr>
+                    <tr>
+                        <td>装货地址：</td>
+                        <td colspan="3"><textarea></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>备注：</td>
+                        <td colspan="3"><textarea></textarea></td>
+                    </tr>
+                </table>
+            </div>
+            <!--装货地址结束-->
+            <!--订单记录开始-->
+            <div class="record" style="display:none">
+            	<ul class="cus_nav">
+                    <li><button>预览</button></li>
+                    <li><button>刷新</button></li>
+                    <li><button onclick="window.location.href='customer.html'">返回</button></li>
+                </ul>
+                <p style="clear:both">
+                	<select>
+                    	<option>订单号</option>
+                    </select>
+                    <input name="" type="text" />
+                    <button>查询</button>
+                    <button>重置</button>
+                </p>
+                <div class="com_top" style="height:460px;">
+                	<table cellspacing="0" style="width:2000px;">
+                    	<tr class="table_th">
+                        	<td><input name="" type="checkbox" /></td>
+                            <td>订单号</td>
+                            <td>工作号</td>
+                            <td>日期</td>
+                            <td>销售代表</td>
+                            <td>客户代码</td>
+                            <td>船公司</td>
+                            <td>航空公司</td>
+                            <td>起运港</td>
+                            <td>目的港</td>
+                            <td>TEU</td>
+                            <td>毛重（KGS）</td>
+                            <td>件数</td>
+                            <td>体积（CMB）</td>
+                            <td>AR计费重</td>
+                            <td>AP计费重</td>
+                            <td>截关日</td>
+                            <td>海运（FCL）</td>
+                            <td>海运（LCL）</td>
+                            <td>空运（AIR）</td>
+                            <td>订单状态</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="change_footer" style="width:90%">
+                    <span id="spanFirst">&le;</span>
+                    <span id="spanPre">&lt;</span>
+                    <span id="spanNext">&gt;</span>
+                    <span id="spanLast">&ge;</span>
+                    第
+                    <span id="spanPageNum"></span>
+                    页/共
+                    <span id="spanTotalPage"></span>
+                    页
+                </div>
+            </div>
+            <!--订单记录结束-->
+            <!--报价历史开始-->
+            <div class="history" style="display:none">
+            	<ul class="cus_nav">
+                    <li><button>预览</button></li>
+                    <li><button>删除</button></li>
+                    <li><button>刷新</button></li>
+                    <li><button onclick="window.location.href='customer.html'">返回</button></li>
+                </ul>
+                <p style="clear:both">
+                	报价单号：<input name="" type="text" />
+                    录入人：<select>
+                    	<option></option>
+                    </select>
+                    <button>查询</button>
+                    <button>重置</button>
+                </p>
+                <div class="com_top">
+                	<table cellspacing="0" style="width:2000px;">
+                    	<tr class="table_th">
+                        	<td><input name="" type="checkbox" /></td>
+                            <td>报价单号</td>
+                            <td>报价类型</td>
+                            <td>客户代码</td>
+                            <td>联系人</td>
+                            <td>销售代表</td>
+                            <td>报价日期</td>
+                            <td>件数</td>
+                            <td>毛重</td>
+                            <td>体积</td>
+                            <td>体积重</td>
+                            <td>已发邮件</td>
+                            <td>主题</td>
+                            <td>备注</td>
+                            <td>录入人</td>
+                            <td>录入时间</td>
+                            <td>修改人</td>
+                            <td>修改时间</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="change_footer" style="width:90%">
+                    <span id="spanFirst">&le;</span>
+                    <span id="spanPre">&lt;</span>
+                    <span id="spanNext">&gt;</span>
+                    <span id="spanLast">&ge;</span>
+                    第
+                    <span id="spanPageNum"></span>
+                    页/共
+                    <span id="spanTotalPage"></span>
+                    页
+                </div>
+                <div class="com_top" style="height:260px;">
+                    <table cellspacing="0" style="width:2000px;">
+                        <tr class="table_th">
+                            <td><input name="" type="checkbox" /></td>
+                            <td>费用代码</td>
+                            <td>费用名称</td>
+                            <td>起飞港</td>
+                            <td>目的港</td>
+                            <td>Routing</td>
+                            <td>币别</td>
+                            <td>Min</td>
+                            <td>N</td>
+                            <td>+45k</td>
+                            <td>+100k</td>
+                            <td>+500k</td>
+                            <td>+1000k</td>
+                            <td>计价单位</td>
+                            <td>航空公司</td>
+                            <td>航班</td>
+                            <td>航程/天</td>
+                            <td>生效日期</td>
+                            <td>失效日期</td>
+                            <td>备注</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <!--报价历史结束-->
+            <!--相关文件开始-->
+            <div class="record" style="display:none">
+            	<ul class="cus_nav" style="clear:both">
+                	<li><button>保存</button></li>
+                    <li><button>上传</button></li>
+                    <li><button>下载</button></li>
+                    <li><button>打包</button></li>
+                    <li><button>预览</button></li>
+                    <li><button>删除</button></li>
+                    <li><button>刷新</button></li>
+                    <li><button onclick="window.location.href='customer.html'">返回</button></li>
+                </ul>
+                <p style="clear:both;margin:5px;font-size:14px">
+                	文件名：<input name="" type="text" />
+                    上传人：
+                    <select>
+                    	<option>订单号</option>
+                    </select>
+                    上传日期：<input id="J-x3" name="" type="text" />
+                    		<input id="J-x4" name="" type="text" />
+                    <button>查询</button>
+                    <button>重置</button>
+                </p>
+                <div class="com_top" style="height:460px;">
+                	<table cellspacing="0" style="width:1000px;">
+                    	<tr class="table_th">
+                        	<td><input name="" type="checkbox" /></td>
+                            <td>文件名</td>
+                            <td>后缀</td>
+                            <td>上传人</td>
+                            <td>上传时间</td>
+                            <td>修改人</td>
+                            <td>修改时间</td>
+                            <td>备注</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="change_footer" style="width:90%">
+                    <span id="spanFirst">&le;</span>
+                    <span id="spanPre">&lt;</span>
+                    <span id="spanNext">&gt;</span>
+                    <span id="spanLast">&ge;</span>
+                    第
+                    <span id="spanPageNum"></span>
+                    页/共
+                    <span id="spanTotalPage"></span>
+                    页
+                </div>
+            </div>
+            <!--相关文件结束-->
+        </div>
+    </div>
+    <script type="text/javascript" src="../../js/laydate-master/laydate.dev.js"></script>
+    <script type="text/javascript">
+        laydate({
+            elem: '#J-xl'
+        });
+		laydate({
+            elem: '#J-x2'
+        });
+		laydate({
+            elem: '#J-x3'
+        });
+		laydate({
+            elem: '#J-x4'
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

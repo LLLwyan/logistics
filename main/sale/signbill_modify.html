@@ -1,0 +1,341 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>签单</title>
+    <link rel="stylesheet" type="text/css" href="../../css/work.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/sale.css" />
+    <script src="../../js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript"> 
+	$(function(){ 
+		/*新增行*/
+		$("#newBtn").bind("click",function(){
+			$("#myTable").append("<tr><td><input id=\"sd\" type=\"checkbox\" /></td><td><input type=\"text\" value='123'/></td><td><input type=\"text\" /><td><input type=\"text\" /><td><input type=\"text\" /><td><input type=\"text\" /><td><input type=\"text\" /><td><input type=\"text\" /><td><input type=\"text\" /><td><input type=\"text\" /><td><input type=\"text\" /><td><input type=\"text\" /><td><input type=\"text\" /><td><input type=\"text\" /><td><input type=\"text\" /><td><input type=\"text\" /><td><input type=\"text\" /><td><input type=\"text\" /><td><input type=\"text\" /><td><input type=\"text\" /><td><input type=\"text\" /><td><input type=\"text\" /><td><input type=\"text\" /><td><input type=\"text\" /><td><input type=\"text\" /><td><input type=\"text\" /><td><input type=\"text\" /><td><input type=\"text\" /></tr>");
+			/*点击变色*/
+			$("#myTable tr").first().nextAll().click(function(){
+				$(this).children().toggleClass("bgcolor");
+				if($(this).children().css("background-color") != $(document.body).css("background-color")){
+					$(this).children().first().children().prop("checked", true);
+					event.stopPropagation();
+				}else {
+					$(this).children().first().children().prop("checked", false);
+					event.stopPropagation();
+				}
+			});
+		});
+		/*删除行*/
+		$("#delBtn").bind("click",function(){
+			if($("#myTable tr:eq(0) input:checked").length>0){
+				alert("不能删除表头");
+			}else if($("#myTable input:checked").length>0){
+				$("#myTable input:checked").parent().parent().remove();
+			}else{
+				alert("请选择需要删除的行");
+			}
+		});
+	}); 
+
+</script>
+</head>
+
+<body>
+	<div class="container" >
+    <!--目录开始-->
+        <ul id="nav" class="work_nav">
+        	<li><button type="button" class="nav_save">保存</button></li>
+            <li><button type="button" class="nav_preview">预览</button></li>
+            <li><button type="button" class="nav_return">返回</button></li>
+            <li><button type="button" class="nav_refresh" onclick="window.location.reload();">刷新</button></li>
+        </ul>
+    <!--目录结束-->
+    <!--主体开始-->
+    <form name="" class="sign">
+    	<div class="sign_top">
+            <div class="sign_left">
+                <table cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>拿价人：<input type="text" /></td>
+                        <td>订单号：<input type="text" /></td>
+                        <td>货源：<input type="text" /></td>
+                        <td>B/L：<input type="text" /></td>
+                        <td>日期：<input type="text" class="laydate-icon" onClick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" style="width:150px;"/></td>
+                    </tr>
+                </table>
+                <table cellpadding="0" cellspacing="0">
+                    <!--客户资料开始-->
+                    <tr>
+                        <td rowspan="6" style="width:50px;text-align:center;">客户资料</td>
+                        <td colspan="2">托运公司：<input type="text" /></td>
+                        <td>联系人：<input type="text" /></td>
+                        <td>运输条款：<input type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>电话：<input type="text" /></td>
+                        <td>传真：<input type="text" /></td>
+                        <td>Email：<input type="text" /></td>
+                        <td>运输方式：<input type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td style="color:red">品名：<input type="text" /></td>
+                        <td>件数：<input type="text" /></td>
+                        <td style="color:red">毛重：<input type="text" /></td>
+                        <td>AR计费重：<input type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td style="color:red">起飞港：<input type="text" /></td>
+                        <td>中转港：<input type="text" /></td>
+                        <td style="color:red">目的港：<input type="text" /></td>
+                        <td>体积：<input type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>航线：<input type="text" /></td>
+                        <td>国家：<input type="text" /></td>
+                        <td>AR分泡方式：<input type="text" /></td>
+                        <td>AR体积重：<input type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">AR计重方式：<input type="text" /></td>
+                    </tr>
+                    <!--客户资料结束-->
+                    <!--代理开始-->
+                    <tr>
+                        <td style=" text-align:center;">代理</td>
+                        <td colspan="4" style="color:red;">代理：<select></select></td>
+                    </tr>
+                    <!--代理结束-->
+                </table>
+                <table cellpadding="0" cellspacing="0">
+                    <!--交货仓库开始-->
+                    <tr>
+                        <td rowspan="3" style="width:50px;text-align:center;">交货仓库</td>
+                        <td style="color:red">仓库：<select></select></td>
+                        <td>入仓号：<input type="text" /></td>
+                        <td style="color:red">联系人：<input type="text" /></td>
+                        <td style="color:red">电话：<input type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td style="color:red">所在城市：<input type="text" /></td>
+                        <td colspan="3" style="color:red">仓库地址：<input type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">交货日期：<input type="text" /></td>
+                    </tr>
+                    <!--交货仓库结束-->
+                    <!--航空资料开始-->
+                    <tr>
+                        <td rowspan="4">航空资料</td>
+                        <td style="color:red" colspan="2">航空公司：<select></select></td>
+                        <td style="color:red">订舱代理：<select></select></td>
+                        <td style="color:red">MAWB付款方式：<input type="text"/></td>
+                    </tr>
+                    <tr>
+                        <td>联系人：<input type="text" /></td>
+                        <td>电话：<input type="text" /></td>
+                        <td>传真：<input type="text" /></td>
+                        <td>HAWB付款方式：<input type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>Closing：<input type="text" /></td>
+                        <td>ETD：<input type="text" /></td>
+                        <td>ETA：<input type="text" /></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td style="color:red">AP计重方式：<select></select></td>
+                        <td style="color:red">AP体积重：<input type="text" /></td>
+                        <td style="color:red">AP分泡方式：<select></select></td>
+                        <td style="color:red">AP计费重：<input type="text" /></td>
+                    </tr>
+                    <!--航空资料结束-->
+                    <tr>
+                        <td colspan="5"></td>
+                    </tr>
+                    <!--拖车开始-->
+                    <tr>
+                        <td rowspan="4" style="text-align:center">拖车</td>
+                        <td>由我司拖车</td>
+                        <td style="color:red">拖车行：<select></select></td>
+                        <td>联系人：<input type="text" /></td>
+                        <td>电话：<input type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">装货地址1：<input type="text" style="width:70%;"/></td>
+                        <td>装货日期1：<input type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">装货联系人1：<input type="text" /></td>
+                        <td>电话1：<input type="text" /></td>
+                        <td>手机1：<input type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">进仓编号：<input type="text" /></td>
+                        <td>柜号：<input type="text" /></td>
+                        <td>封号：<input type="text" /></td>
+                    </tr>
+                    <!--拖车结束-->
+                    <!--报关开始-->
+                    <tr>
+                        <td rowspan="2" style="text-align:center">报关</td>
+                        <td>我司代报：<input type="text" /></td>
+                        <td style="color:red">报关行：<select></select></td>
+                        <td>联系人：<input type="text" /></td>
+                        <td>电话：<input type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">核销单号：<input type="text" /></td>
+                        <td>退税：<input type="text" /></td>
+                        <td>放行：<input type="text" /></td>
+                    </tr>
+                    <!--报关结束-->
+                    <tr>
+                        <td colspan="5"></td>
+                    </tr>
+                    <!--随机文件开始-->
+                    <tr>
+                        <td>随机文件 货物尺寸</td>
+                        <td colspan="4"><textarea style="width:100%;"></textarea></td>
+                    </tr>
+                    <!--随机文件结束-->
+                    <tr>
+                        <td colspan="5"></td>
+                    </tr>
+                    <!--订舱注意事项开始-->
+                    <tr>
+                        <td style="text-align:center;color:red;">订舱注意事项</td>
+                        <td colspan="4"><textarea style="width:100%;height:90px;"></textarea></td>
+                    </tr>
+                    <!--订舱注意事项结束-->
+                </table>
+            </div>
+            <div class="sign_right">
+            	<table cellpadding="0" cellspacing="0">
+                	<!--客服开始-->
+                	<tr>
+                    	<td>客服</td>
+                        <td><select></select></td>
+                    </tr>
+                    <tr>
+                    	<td><input type="checkbox" />提交</td>
+                        <td><input type="text" class="laydate-icon" onClick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})"/></td>
+                    </tr>
+                    <tr>
+                    	<td>提交人</td>
+                        <td><input type="text" /></td>
+                    </tr>
+                    <tr>
+                    	<td><input type="checkbox" />签单</td>
+                        <td><input type="text" class="laydate-icon" onClick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})"/></td>
+                    </tr>
+                    <tr>
+                    	<td>签单人</td>
+                        <td><input type="text" /></td>
+                    </tr>
+                    <tr>
+                    	<td><input type="checkbox" />审核</td>
+                        <td><input type="text" class="laydate-icon" onClick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})"/></td>
+                    </tr>
+                    <tr>
+                    	<td>审核人</td>
+                        <td><input type="text" /></td>
+                    </tr>
+                    <!--客服结束-->
+               		<tr><td colspan="2"></td></tr>
+                    <!--含税利润开始-->
+                	<tr>
+                    	<td colspan="2"><input type="checkbox" />含税利润</td>
+                    </tr>
+                    <tr>
+                    	<td>折合币制</td>
+                        <td><select></select></td>
+                    </tr>
+                    <tr style="color:green;">
+                    	<td>应收：</td>
+                        <td><input type="text" style="color:green;" value="RMB 218575" /></td>
+                    </tr>
+                    <tr style="color:red;">
+                    	<td rowspan="2">应付：</td>
+                        <td><input type="text" style="color:red;" value="RMB 285.00" /></td>
+                    </tr>
+                    <tr>
+                    	 <td><input type="text" style="color:red;" value="HKD 285.00" /></td>
+                    </tr>
+                    <tr style="color:#0000ff;">
+                    	<td rowspan="2">本单<br />原币<br />利润：</td>
+                        <td><input type="text" style="color:#0000ff;" value="RMB 285.00" /></td>
+                    </tr>
+                    <tr>
+                    	 <td><input type="text" style="color:#0000ff;" value="HKD 285.00" /></td>
+                    </tr>
+                    <tr style="color:#0000ff;">
+                    	<td rowspan="2">本单<br />折合<br />利润：</td>
+                        <td><input type="text" style="color:#0000ff;" value="RMB 285.00" /></td>
+                    </tr>
+                    <!--含税利润结束-->
+                </table>
+            </div>
+        </div>
+        <div class="sign_bottom">
+        	<ul>
+            	<li><button type="button" id="newBtn">新增</button></li>
+                <li><button type="button" id="delBtn">删除</button></li>
+                <li><button type="button" onclick="window.location.reload();">刷新</button></li>
+                <li><button type="button">保存</button></li>
+            </ul>
+            <table cellpadding="0" cellspacing="0" class="sign_table" id="myTable">
+            	<tr class="table_th">
+                	<td><input type="checkbox" /></td>
+                    <td>类别</td>
+                    <td>结算客户</td>
+                    <td>客户简称</td>
+                    <td>费用代码</td>
+                    <td>费用名称</td>
+                    <td>方式</td>
+                    <td>币制</td>
+                    <td>计价单位</td>
+                    <td>单价</td>
+                    <td>数量</td>
+                    <td>金额</td>
+                    <td>金额含税</td>
+                    <td>开发票</td>
+                    <td>税率</td>
+                    <td>税金</td>
+                    <td>未含税金额</td>
+                    <td>核算金额</td>
+                    <td>折算符</td>
+                    <td>兑换率</td>
+                    <td>未含税折合金额</td>
+                    <td>税金折合金额</td>
+                    <td>折合总额</td>
+                    <td>备注</td>
+                    <td>录入人</td>
+                    <td>录入时间</td>
+                    <td>修改人</td>
+                    <td>修改时间</td>
+                </tr>
+            </table>
+        </div>
+    </form>
+    <!--主体结束-->
+    </div>
+     <script type="text/javascript" src="../../js/timer/laydate.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

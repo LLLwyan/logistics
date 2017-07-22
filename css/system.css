@@ -1,0 +1,380 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	margin:0;
+	padding:0;
+}
+a{
+	color:#000;
+	text-decoration:none;
+}
+table{
+	font-size:14px;
+}
+ input[type='text'],select,textarea{
+	border:1px solid #999;
+	width:100px;
+}
+.container{
+	width:94%;
+	min-height:530px;
+	margin:10px;
+	padding:10px;
+	border:2px solid #375a78;
+	-moz-box-shadow:3px 3px 5px #375a78 inset;
+	-webkit-box-shadow:3px 3px 5px #375a78 inset;
+	box-shadow:3px 3px 5px #375a78 inset;
+	overflow:scroll;
+	position:relative;
+}
+.save{                       /*个人设置开始*/
+	padding:5px;
+	margin:0 20px 0 0;
+	color:#333;
+	width:60px;
+	height:15px;
+	border: #06F solid 1px;
+	text-align:right;
+    float:left;
+	}
+.po{
+	position:absolute;
+	top:50px;
+	left:20;}
+.w1{
+	width:460px;
+	padding:20px;
+	border-color: #CCC;
+	border-style: solid;
+	position: absolute;
+	margin:20px 20px 0 20px;
+	left: 0px;
+	top:70px;
+}
+.w1 table{
+	text-align:right;
+}
+.w1 table tr{
+	height:30px;
+}
+.w2{
+	width: 400px;
+	text-align: center;
+	border-color: #CCC;
+	border-style: solid;
+	height: auto;
+	float: left;
+	margin: 20px 20px 0 20px;
+	position: relative;
+	left: 564px;
+	top: 13px;
+	right: 20px;
+	bottom: 20px;
+}
+.w2 table tr{
+	height:30px;
+}
+.w3{
+	width: 540px;
+	text-align: center;
+	border-color: #CCC;
+	border-style: solid;
+	height: auto;
+	float: left;
+	position: absolute;
+	left:20px;
+	top:590px;
+}
+.bgc3{
+	background-color:#fff;
+	border: #e9f1f6 1px solid;
+	width: 175px;
+	height:40px;
+}
+.border3{
+	border:#e9f1f6 1px solid;
+	width:180px;
+	height:40px;
+}
+.w4{
+	width: 400px;
+	text-align: center;
+	border-color: #CCC;
+	border-style: solid;
+	height: auto;
+	float: left;
+	position: absolute;
+	left:573px;
+	margin:20px 0 20px 20px;
+	top:410px;
+}
+.bgc4{
+	background-color:#fff;
+	border:#e9f1f6 1px solid;
+	width: 100px;
+	height:40px;
+}
+.border41{
+	border:#e9f1f6 1px solid;
+	width:200px;
+	height:40px;
+}
+.border42{
+	border:#e9f1f6 1px solid;
+	width:100px;
+	height:40px;
+}                      /*个人设置页面结束*/
+.d{                    /*修改密码页面开始*/
+	position:absolute;
+	left:10px;
+	top:70px;
+	right:0;
+	}
+.c td input[type="text"]{
+	width:280px;
+	height:30px;
+	background-color:#f0fcff;
+	border:#CCC 1px solid;
+	border-radius:3px;}
+.t1{
+	text-align: right;
+	background-color: #f3f9f1;
+	border:1px solid #98c0e3;
+	width: 400px;
+	height: 60px;
+	font-size: 16px;
+}
+.t2{
+	border:#98c0e3 1px solid;
+	width:840px;
+	height60px;}/*修改密码页面结束*/
+
+
+
+.manage{/*提醒管理页面开始*/
+	float:left;
+	width:300px;
+	height:20px;
+	position:absolute;
+	margin-top:10px;
+	left:10px;}
+.w5{
+	width: 1260px;
+	height:32px;
+	text-align: center;
+	border-color: #CCC;
+	border-style: solid;
+	height: auto;
+	float: left;
+	position: absolute;
+	margin:20px 20px 0 15px;
+	left: 0px;
+}
+.borders1{
+	border: #ffF 1px solid;
+	width:250px;
+	height:40px;
+	}
+.borders2{
+	border: #ffF 1px solid;
+	width:1010px;
+	height:40px;
+	text-align:left;
+	}
+.wg{
+	width:70px;
+	height:30px;
+	float:left;
+	margin:auto 20px auto 25px;
+	}
+	.choose{
+	border:1px solid #FFF;
+	width:40px;
+	height:40px;}
+.cl{
+	border: #ffF 1px solid;
+	width: 60px;
+	height: 40px;
+}
+.col{
+	border:#CCC 1px solid;
+	background-color:#FF0;
+	width:15px;
+	display:inline-block;
+	height:15px;}
+.state{
+	border: #ffF 1px solid;
+	width:60px;
+	height:40px;}
+.sdp{
+	border: #ffF 1px solid;
+	width:90px;
+	height:40px;}
+.titles{
+	border: #ffF 1px solid;
+	width:110px;
+	height:40px;}
+.mag{
+	border: #ffF 1px solid;
+	width:120px;
+	height:40px;}
+.operation{
+	border: #ffF 1px solid;
+	width:120px;
+	height:40px;}
+.sendt{
+	border: #ffF 1px solid;
+	width:150px;
+	height:40px;}
+.sdover{
+	border: #ffF 1px solid;
+	width:60px;
+	height:40px;}
+.enterp{
+	border: #ffF 1px solid;
+	width:80px;
+	height:40px;}
+.entert{
+	border: #ffF 1px solid;
+	width:160px;
+	height:40px;}
+.changep{
+	border: #ffF 1px solid;
+	width:60px;
+	height:40px;}
+.changet{
+	border: #ffF 1px solid;
+	width:150px;
+	height:40px;}/*提醒管理页面结束*/
+
+.list{/*常用语页面开始*/
+	width: 166px;
+	border: #0CF 1px solid;
+	float: left;
+	font-size: 13px;
+	color: #999;
+	font-weight:600;
+	}
+.list p{
+	padding-left:10px;
+	cursor:pointer;}
+.list .hand{
+	background-image: url(../main/system/image/hand.png);
+	background-color: #98c0e3;
+	color:#fff;
+	margin:3px 0;
+	height: 22px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	vertical-align: middle;
+	padding-left:50px;
+}
+.po1{
+	position:absolute;
+	top:50px;
+	left:190px;
+}
+.hide{
+	display:none;}
+
+.add{
+	padding:5px;
+	margin:0 10px 0 10px;
+	color:#333;
+	width:590px;
+	height:15px;
+	text-align:left;
+    float:left;
+	}
+.bgcol{
+	background-color:#e6e6fa;
+	height:29px;}
+.bgcol1{
+	padding:5px;
+	margin:0 20px 0 0;
+	color:#333;
+	width:60px;
+	height:15px;
+	border: #06F solid 1px;
+	text-align:right;
+    float:left;}
+
+.tbel{
+	border: #ffF solid 1px;
+	height:30px;
+	width:580px;
+	position:absolute;
+	left:190px;
+	top:80px;
+	text-align:center;}
+.ttd1{
+	border:#ffF solid 1px;
+	width:40px;
+	height:30px;
+	background-color:#98c0e3;;}
+.ttd2{
+	border: #ffF solid 1px;
+	width:130px;
+	height:30px;
+	background-color:#98c0e3;}
+.ttd3{
+	border:#ffF solid 1px;
+	width:70px;
+	height:30px;
+	background-color:#98c0e3;}
+.ttd4{
+	border: #ffF solid 1px;
+	width:100px;
+	height:30px;
+	background-color:#98c0e3;}
+.ttd5{
+	border:#ffF solid 1px;
+	width:70px;
+	height:30px;
+	background-color:#98c0e3;}
+.ttd6{
+	border:#ffF solid 1px;
+	width:100px;
+	height:30px;
+	background-color:#98c0e3;}
+.ttd7{
+	border:#ffF solid 1px;
+	width:70px;
+	height:30px;
+	background-color:#98c0e3;}/*常用语页面结束*/
+
+.headbg input[type="button"]{           /*个人设置、修改密码、提醒管理、常用语界面用到*/
+	width:70px;
+	height:30px;
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left:20px;	
+	background-color:#e1eaf1;
+	border:#CCC 1px solid;
+	border-radius:5px;
+}
+
+.fbgm1{/*提醒管理、常用语页面用到*/
+	background-image: url(../main/system/image/add.png);
+
+}
+.fbgm2{/*提醒管理页面、常用语用到*/
+	background-image:url(../main/system/image/change.png);
+}
+.fbgm3{/*提醒管理页面、常用语用到*/
+	background-image:url(../main/system/image/delete.png);
+	}
+.fbgm4{/*提醒管理页面、常用语用到*/
+	background-image:url(../main/system/image/refresh.png);
+	}
+.fbgm5{/*提醒管理页面用到*/
+	background-image:url(../main/system/image/see.png);
+	}
+.fbgm6{/*提醒管理页面用到*/
+	background-image:url(../main/system/image/send.png);
+	}
+.fbgm7{
+	background-image:url(../main/system/image/baicuntubiao.png);/*个人设置、修改密码用到*/
+	}
+.jb{
+	background: linear-gradient(to right, rgba(252,252,252,0), rgba(213,226,234,-3));}

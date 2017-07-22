@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>签单</title>
+    <link rel="stylesheet" type="text/css" href="../../css/work.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/sale.css" />
+    <script src="../../js/jquery-2.1.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+			$(".offer_up_table tr:gt(0)").hover(function(){
+				 $(this).attr("onclick","SelectTR(this)");
+			})
+        });
+    </script>
+</head>
+
+<body>
+	<div class="container" >
+    	<h4>销售管理&gt;&gt;我的订单</h4>
+    <!--目录开始-->
+        <ul id="nav" class="work_nav">
+            <li><button type="button" class="nav_modify" onclick="window.location.href='signbill_modify.html'">修改</button></li>
+            <li><button type="button" class="nav_preview">预览</button></li>
+            <li><button type="button" class="nav_refresh" onclick="window.location.reload();">刷新</button></li>
+        </ul>
+    <!--目录结束-->
+    <!--主体开始-->
+        <form name="" id="customer_top">
+            <table class="customer_top">
+                <tr>
+                    <td>
+                        <select name="">
+                            <option>订单号</option>
+                        </select>
+                        <input name="" type="text" />
+                    </td>
+                    <td>
+                    	&nbsp;&nbsp;&nbsp;客户：
+                        <select name="">
+                            <option></option>
+                        </select>
+                    </td>
+                    <td>订单状态：
+                        <select name="">
+                            <option></option>
+                        </select>
+                        <select name="">
+                            <option>签单人</option>
+                        </select>
+						<input name="" type="text" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    	起运港：
+                        <select name="">
+                            <option></option>
+                        </select>
+                    </td>
+                    <td>
+                    	目的港：
+                        <select name="">
+                            <option></option>
+                        </select>
+                    </td>
+                    <td>
+                        <select name="">
+                            <option>签单日期</option>
+                        </select>
+                    	<input name="" type="checkbox" />
+                        <input id="J-xl" name="" type="text" />
+                    	<input id="J-x2" name="" type="text" />
+                    	<button>查询</button>
+                        <button>重置</button>
+                    </td>
+                </tr>
+            </table>
+            <div class="list_main" >
+                <div class="offer_up" style="height:350px;" >
+                    <table class="offer_up_table" cellpadding="0" cellspacing="0" style="width:3000px;">
+                        <tr class="table_th">
+                            <td style="width:30px"><input name="sel" type="checkbox" onclick="select1();" /></td>
+                            <td>收款状态</td>
+                            <td>业务员</td>
+                            <td>提交时间</td>
+                            <td>客户代码</td>
+                            <td>客户名称</td>
+                            <td>船公司</td>
+                            <td>航空公司</td>
+                            <td>订单号</td>
+                            <td>日期</td>
+                            <td>工作号</td>
+                            <td>起运港</td>
+                            <td>目的港</td>
+                            <td>TEU</td>
+                            <td>毛重（KGS）</td>
+                            <td>件数</td>
+                            <td>体积（CMB）</td>
+                            <td>AR计费重</td>
+                            <td>AP计费重</td>
+                            <td>截关日</td>
+                            <td>柜号</td>
+                            <td>MAWB</td>
+                            <td>HAWB</td>
+                            <td>订舱号</td>
+                            <td>配载号</td>
+                            <td>参考号</td>
+                            <td>海运（FCL）</td>
+                            <td>海运（LCL）</td>
+                            <td>空运（AIR）</td>
+                            <td>快递（EXP）</td>
+                            <td>拖车</td>
+                            <td>报关</td>
+                            <td>报关模式</td>
+                            <td>报关单号</td>
+                            <td>报关类型</td>
+                            <td>网上订舱</td>
+                            <td>异常</td>
+                            <td>录入人</td>
+                            <td>录入时间</td>
+                            <td>修改人</td>
+                            <td>修改时间</td>
+                        </tr>
+                        <tr>
+                            <td><input name="check" type="checkbox" /></td>
+                            <td>数据16747</td>
+                            <td>数据55</td>
+                            <td>数据名称673737676111</td>
+                            <td>结束时间</td>
+                            <td>完成进度</td>
+                            <td>优先级</td>
+                            <td>持续时间</td>
+                            <td>发布人</td>
+                            <td>接收人</td>
+                            <td>全天事件</td>
+                            <td>独占任务</td>
+                            <td>录入人</td>
+                            <td>录入时间</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="change_footer" style="border-top:1px solid #999;width:90%">
+                <span id="spanFirst">&le;</span>
+                <span id="spanPre">&lt;</span>
+                <span id="spanNext">&gt;</span>
+                <span id="spanLast">&ge;</span>
+                第
+                <span id="spanPageNum"></span>
+                页/共
+                <span id="spanTotalPage"></span>
+                页
+            </div> 
+            <h3 class="tracking_title">订单跟踪</h3>
+            <div class="list_main" style="height:90px;"> 	
+                <div class="offer_down" style="height:90px;">
+                	<table class="tracking">
+                        <tr>
+                        	<td><span class="circle"></span></td>
+                            <td><img src="images/arrow.png" /></td>  
+                            <td><span class="circle"></span></td>
+                            <td><img src="images/arrow.png" /></td>
+                            <td><span class="circle"></span></td>
+                            <td><img src="images/arrow.png" /></td>
+                            <td><span class="circle"></span></td>
+                            <td><img src="images/arrow.png" /></td>
+                            <td><span class="circle"></span></td>
+                            <td><img src="images/arrow.png" /></td>
+                            <td><span class="circle"></span></td>
+                            <td><img src="images/arrow.png" /></td>  
+                            <td><span class="circle"></span></td>
+                            <td><img src="images/arrow.png" /></td>
+                            <td><span class="circle"></span></td>
+                            <td><img src="images/arrow.png" /></td>
+                            <td><span class="circle"></span></td>
+                            <td><img src="images/arrow.png" /></td>
+                            <td><span class="circle"></span></td>
+                            <td><img src="images/arrow.png" /></td>
+                        </tr>
+                        <tr class="tracking_name">
+                        	<td>提交</td>
+                            <td></td>
+                            <td>签单</td>
+                            <td></td>
+                            <td>审核</td>
+                            <td></td>
+                            <td>接收</td>
+                            <td></td>
+                            <td>订单</td>
+                            <td></td>
+                            <td>已放S/O</td>
+                            <td></td>
+                            <td>拖车</td>
+                            <td></td>
+                            <td>到达工厂</td>
+                            <td></td>
+                            <td>收到文件</td>
+                            <td></td>
+                            <td>离开工厂</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div> 
+            </div>
+        </form>
+    <!--主体结束-->
+    </div>
+    <script src="../../js/table.js"></script>
+</body>
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>空运-新增</title>
+<link rel="stylesheet" href="../../css/fare.css"/>
+<script src="../../js/jquery-2.1.1.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+    	<!--主页面开始-->
+        <div class="client_add">
+            <div class="top_button">
+                <button type="button" class="button_save">保存</button>
+                <button type="button" class="button_refresh" onclick="window.location.reload();">刷新</button>
+                <button type="button" class="button_return" onclick="window.location.href='client.html'">返回</button>
+            </div>
+            <h5>空运-&gt;新增</h5>
+            <form name="">
+            	<fieldset class="field_base">
+                	<legend>基本信息</legend>
+                    <table>
+                    	<tr>
+                        	<td>航空公司：</td>
+                            <td><select></select></td>
+                            <td>起飞港：</td>
+                            <td><select></select></td>
+                            <td>中转港1：</td>
+                            <td><select></select></td>
+                            <td><select></select></td>
+                        </tr>
+                        <tr>
+                        	<td>航空代理：</td>
+                            <td><select></select></td>
+                            <td>目的港：</td>
+                            <td><select></select></td>
+                            <td>中转港2：</td>
+                            <td><select></select></td>
+                            <td><select></select></td>
+                        </tr>
+                        <tr>
+                        	<td>区域：</td>
+                            <td><select></select></td>
+                            <td>国家：</td>
+                            <td><select></select></td>
+                            <td>中转港3：</td>
+                            <td><select></select></td>
+                            <td><select></select></td>
+                        </tr>
+                    </table>
+                </fieldset>
+                <!--主运价开始-->
+                <div class="add_left">
+                	<fieldset>
+                    	<legend>主运价</legend>
+                        <table>
+                        	<tr>
+                            	<td>币制</td>
+                                <td><select></select></td>
+                            </tr>
+                            <tr>
+                            	<td>计价单位</td>
+                                <td><select></select></td>
+                            </tr>
+                            <tr>
+                            	<td>Min</td>
+                                <td><input name="" type="text" /></td>
+                            </tr>
+                            <tr>
+                            	<td>N</td>
+                                <td><input name="" type="text" /></td>
+                            </tr>
+                            <tr>
+                            	<td>+45k</td>
+                                <td><input name="" type="text" /></td>
+                            </tr>
+                            <tr>
+                            	<td>+100k</td>
+                                <td><input name="" type="text" /></td>
+                            </tr>
+                            <tr>
+                            	<td>+300k</td>
+                                <td><input name="" type="text" /></td>
+                            </tr>
+                            <tr>
+                            	<td>+500k</td>
+                                <td><input name="" type="text" /></td>
+                            </tr>
+                            <tr>
+                            	<td>+1000k</td>
+                                <td><input name="" type="text" /></td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                    <fieldset>
+                    	<legend>中转费</legend>
+                        <table>
+                        	<tr>
+                            	<td>币制</td>
+                                <td><select></select></td>
+                            </tr>
+                            <tr>
+                            	<td>计价单位</td>
+                                <td><select></select></td>
+                            </tr>
+                            <tr>
+                            	<td>Min</td>
+                                <td><input name="" type="text" /></td>
+                            </tr>
+                            <tr>
+                            	<td>单价</td>
+                                <td><input name="" type="text" /></td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                </div>
+                <!--主运价结束-->
+                <!--附加费开始-->
+                <div class="add_mid">
+                	<fieldset>
+                    	<legend>附加费</legend>
+                        <table>
+                        	<tr>
+                            	<td>MYC</td>
+                                <td><select></select></td>
+                                <td><input name="" type="text" /></td>
+                                <td><select></select></td>
+                            </tr>
+                            <tr>
+                            	<td>TC</td>
+                                <td><select></select></td>
+                                <td><input name="" type="text" /></td>
+                                <td><select></select></td>
+                            </tr>
+                            <tr>
+                            	<td>SCC</td>
+                                <td><select></select></td>
+                                <td><input name="" type="text" /></td>
+                                <td><select></select></td>
+                            </tr>
+                            <tr>
+                            	<td>CTG(Min)</td>
+                                <td><select></select></td>
+                                <td><input name="" type="text" /></td>
+                                <td><select></select></td>
+                            </tr>
+                            <tr>
+                            	<td>CTG</td>
+                                <td><select></select></td>
+                                <td><input name="" type="text" /></td>
+                                <td><select></select></td>
+                            </tr>
+                            <tr>
+                            	<td>HC</td>
+                                <td><select></select></td>
+                                <td><input name="" type="text" /></td>
+                                <td><select></select></td>
+                            </tr>
+                            <tr>
+                            	<td>CFS(Min)</td>
+                                <td><select></select></td>
+                                <td><input name="" type="text" /></td>
+                                <td><select></select></td>
+                            </tr>
+                            <tr>
+                            	<td>X-RAY</td>
+                                <td><select></select></td>
+                                <td><input name="" type="text" /></td>
+                                <td><select></select></td>
+                            </tr>
+                            <tr>
+                            	<td>AWB</td>
+                                <td><select></select></td>
+                                <td><input name="" type="text" /></td>
+                                <td><select></select></td>
+                            </tr>
+                            <tr>
+                            	<td>CUSTOMS</td>
+                                <td><select></select></td>
+                                <td><input name="" type="text" /></td>
+                                <td><select></select></td>
+                            </tr>
+                            <tr>
+                            	<td>DOC</td>
+                                <td><select></select></td>
+                                <td><input name="" type="text" /></td>
+                                <td><select></select></td>
+                            </tr>
+                            <tr>
+                            	<td>GATE</td>
+                                <td><select></select></td>
+                                <td><input name="" type="text" /></td>
+                                <td><select></select></td>
+                            </tr>
+                            <tr>
+                            	<td>CCA</td>
+                                <td><select></select></td>
+                                <td><input name="" type="text" /></td>
+                                <td><select></select></td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                </div>
+                <!--附加费结束-->
+                <!--其他信息开始-->
+                <div class="add_right">
+                	<fieldset>
+                    	<legend>其他信息</legend>
+                        <table>
+                        	<tr>
+                            	<td>运费条款：</td>
+                                <td><select></select></td>
+                            </tr>
+                            <tr>
+                            	<td>运输条款：</td>
+                                <td><select></select></td>
+                            </tr>
+                            <tr>
+                            	<td>航线：</td>
+                                <td><select></select></td>
+                            </tr>
+                            <tr>
+                            	<td>航程（天）</td>
+                                <td><input name="" type="text" /></td>
+                            </tr>
+                            <tr>
+                            	<td>起飞日期：</td>
+                                <td><input id="J-xl" name="" type="text" /></td>
+                            </tr>
+                            <tr>
+                            	<td>生效日期：</td>
+                                <td><input id="J-x2" name="" type="text" /></td>
+                            </tr>
+                            <tr>
+                            	<td>失效日期：</td>
+                                <td><input id="J-x3" name="" type="text" /></td>
+                            </tr>
+                            <tr>
+                            	<td>公司：</td>
+                                <td><select></select></td>
+                            </tr>
+                            <tr>
+                            	<td>拿价人：</td>
+                                <td><select></select></td>
+                            </tr>
+                            <tr>
+                            	<td>来源：</td>
+                                <td><select></select></td>
+                            </tr>
+                            <tr>
+                            	<td style="color:red">发布运价：</td>
+                                <td style="text-align:left"><input name="" type="checkbox" /></td>
+                            </tr>
+                            <tr>
+                            	<td>特价：</td>
+                                <td style="text-align:left"><input name="" type="checkbox" /></td>
+                            </tr>
+                            <tr>
+                            	<td>建议运价：</td>
+                                <td><input name="" type="text" /></td>
+                            </tr>
+                            <tr>
+                            	<td>合约号：</td>
+                                <td><input name="" type="text" /></td>
+                            </tr>
+                            <tr>
+                            	<td>集装方式：</td>
+                                <td style="text-align:left">
+                                	<input name="mode" type="radio" />交散
+                                    <input name="mode" type="radio" />打板
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                </div>
+                <!--其他信息结束-->
+                <table  class="add_down">
+                	<tr>
+                    	<td>运价说明：</td>
+                        <td><textarea></textarea></td>
+                        <td><button type="button" class="btn1">选</button><button type="button" class="btn2">存</button></td>
+                    </tr>
+                    <tr>
+                    	<td>服务说明：</td>
+                        <td><textarea></textarea></td>
+                        <td><button type="button" class="btn1">选</button><button type="button" class="btn2">存</button></td>
+                    </tr>
+                    <tr>
+                    	<td>备注1：</td>
+                        <td><textarea></textarea></td>
+                        <td><button type="button" class="btn1">选</button><button type="button" class="btn2">存</button></td>
+                    </tr>
+                    <tr>
+                    	<td>备注2：</td>
+                        <td><textarea></textarea></td>
+                        <td><button type="button" class="btn1">选</button><button type="button" class="btn2">存</button></td>
+                    </tr>
+                </table>
+                <p style="height:50px;"></p>
+            </form>
+		</div>
+    </div>
+    <script src="../../js/table.js"></script>
+    <script type="text/javascript" src="../../js/laydate-master/laydate.dev.js"></script>
+    <script type="text/javascript">
+        laydate({
+            elem: '#J-xl'
+        });
+		laydate({
+            elem: '#J-x2'
+        });
+		laydate({
+            elem: '#J-x3'
+        });
+    </script>
+</body>
+</html>

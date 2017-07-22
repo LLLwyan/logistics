@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>付款申请</title>
+<link rel="stylesheet" href="../../css/fare.css"/>
+<link rel="stylesheet" href="../../css/settlement.css"/>
+
+</head>
+
+<body>
+    <div class="container">
+    	<!--主页面开始-->
+        <div class="client">
+            <div class="top_button">
+            	<button type="button" class="button_add" onclick="window.location.href='request_add.html'">新增</button>
+            	<button type="button" class="button_change" onclick="window.location.href=''">修改</button>
+				<button type="button" class="button_delate">删除</button>
+                <button type="button" class="button_see">预览</button>
+                <button type="button" class="button_refresh">刷新</button>
+            </div>
+            <div class="titles">
+                <p>结算管理-&gt;付款申请</p>
+            </div>
+            <p style="margin:5px 0;">
+            	<select>
+                	<option>申请号</option>
+                </select>
+                <input type="text" />
+                <button type="button">查询</button>
+                <button type="button">重置</button>
+            </p>
+            <!--主体开始-->
+            <div class="requset">
+            	<div class="wrap">
+                    <table cellspacing="0" style="width:1000px;">
+                        <tr class="table_th">
+                        	<td><input type="checkbox" /></td>
+                            <td>申请号</td>
+                            <td>申请日期</td>
+                            <td>客户代码</td>
+                            <td>客户名称</td>
+                            <td>摘要</td>
+                            <td>提交</td>
+                            <td>审核</td>
+                            <td>审核日期</td>
+                            <td>打印次数</td>
+                            <td>备注</td>
+                            <td>录入人</td>
+                            <td>修改人</td>
+                            <td>修改时间</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="change_footer" style="width:90%">
+                    <span id="spanFirst">&le;</span>
+                    <span id="spanPre">&lt;</span>
+                    <span id="spanNext">&gt;</span>
+                    <span id="spanLast">&ge;</span>
+                    第
+                    <span id="spanPageNum"></span>
+                    页/共
+                    <span id="spanTotalPage"></span>
+                    页
+                </div> 
+            </div>
+            <!--主体结束-->
+        </div>
+        <!--主页面结束-->
+    </div>
+</body>
+</html>

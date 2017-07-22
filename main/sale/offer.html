@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>我的报价</title>
+    <link rel="stylesheet" type="text/css" href="../../css/work.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/sale.css" />
+    <script src="../../js/jquery-2.1.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+			$(".offer_up_table tr:gt(0)").hover(function(){
+				 $(this).attr("onclick","SelectTR(this)");
+			});
+			$(".nav_add").click(function(){
+				$(".add_alert").css('display','')
+			})
+			$(".offer_close").click(function(){
+				$(".add_alert").css('display','none')
+			})
+        });
+    </script>
+</head>
+
+<body>
+	<div class="container" >
+    	<h4>销售管理&gt;&gt;我的报价</h4>
+    <!--目录开始-->
+        <ul id="nav" class="work_nav">
+        	<li><button class="nav_add">新增</button></li>
+            <li><button class="nav_modify">修改</button></li>
+            <li><button class="nav_preview">预览</button></li>
+            <li><button class="nav_del" >删除</button></li>
+            <li><button class="nav_refresh" onclick="window.location.reload();">刷新</button></li>
+        </ul>
+    <!--目录结束-->
+    <!--新增弹框开始-->
+    	<div class="add_alert" style="display:none;">
+        	<div class="add_alert_main">
+            	<h4>新增报价</h4>
+                <img class="offer_close" src="../../images/btn_close.png" />
+                <div class="alert_offer">
+                    <h5>报价类型</h5>
+                    <p>服务类型：
+                        <input name="serve" type="radio" checked="checked" value="普货" />普货
+                        <input name="serve" type="radio" value="展会" />展会
+                        <input name="serve" type="radio" value="中转" />中转
+                    </p>
+                    <p>报价类型：
+                        <input name="offer" type="radio" checked="checked" value="空运" />空运
+                        <input name="offer" type="radio" value="快递" />快递
+                        <input name="offer" type="radio" value="整箱" />整箱
+                        <input name="offer" type="radio" value="散货" />散货
+                    </p>
+                    <p>
+                        <button onclick="window.location.href='offer_add.html'">确定</button>
+                        <button class="offer_close">取消</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    <!--新增弹框结束-->
+    <!--主体开始-->
+        <form name="">
+            <table class="customer_top offer_top" >
+                <tr>
+                    <td>
+                        <select name="">
+                            <option>客户代码</option>
+                        </select>
+                        <input name="" type="text" />
+                    </td>
+                    <td>
+                    	&nbsp;&nbsp;&nbsp;录入人：
+                        <select name="">
+                            <option></option>
+                        </select>
+                    </td>
+                    <td>
+                    	报价日期：
+                        <input id="J-xl" name="" type="text" />
+                    	<input id="J-x2" name="" type="text" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>报价单号：<input name="" type="text" /></td>
+                    <td>
+                    	报价类型：
+                        <select name="">
+                            <option></option>
+                        </select>
+                    </td>
+                    <td>
+                    	<button>查询</button>
+                        <button>重置</button>
+                    </td>
+                </tr>
+            </table>
+            <div class="list_main">
+                <div class="offer_up" >
+                    <table class="offer_up_table"  cellspacing="0">
+                        <tr class="table_th">
+                            <td style="width:30px"><input name="sel" type="checkbox" onclick="select1();" /></td>
+                            <td>报价单号</td>
+                            <td>报价类型</td>
+                            <td>客户代码</td>
+                            <td>联系人</td>
+                            <td>销售代表</td>
+                            <td>报价日期</td>
+                            <td>包装</td>
+                            <td>件数</td>
+                            <td>毛重</td>
+                            <td>体积</td>
+                            <td>体积重</td>
+                            <td>已发邮件</td>
+                            <td>备注</td>
+                            <td>录入人</td>
+                            <td>录入时间</td>
+                            <td>修改人</td>
+                            <td>修改时间</td>
+                        </tr>
+                        <tr>
+                            <td><input name="check" type="checkbox" /></td>
+                            <td>数据16747</td>
+                            <td>数据55</td>
+                            <td>数据名称673737676111</td>
+                            <td>结束时间</td>
+                            <td>完成进度</td>
+                            <td>优先级</td>
+                            <td>持续时间</td>
+                            <td>发布人</td>
+                            <td>接收人</td>
+                            <td>全天事件</td>
+                            <td>独占任务</td>
+                            <td>录入人</td>
+                            <td>录入时间</td>
+                        </tr>
+                        <tr>
+                            <td><input name="check" type="checkbox" /></td>
+                            <td>数据16747</td>
+                            <td>数据55</td>
+                            <td>数据名称673737676111</td>
+                            <td>结束时间</td>
+                            <td>完成进度</td>
+                            <td>优先级</td>
+                            <td>持续时间</td>
+                            <td>发布人</td>
+                            <td>接收人</td>
+                            <td>全天事件</td>
+                            <td>独占任务</td>
+                            <td>录入人</td>
+                            <td>录入时间</td>
+                        </tr>
+                        <tr>
+                            <td><input name="check" type="checkbox" /></td>
+                            <td>数据16747</td>
+                            <td>数据55</td>
+                            <td>数据名称673737676111</td>
+                            <td>结束时间</td>
+                            <td>完成进度</td>
+                            <td>优先级</td>
+                            <td>持续时间</td>
+                            <td>发布人</td>
+                            <td>接收人</td>
+                            <td>全天事件</td>
+                            <td>独占任务</td>
+                            <td>录入人</td>
+                            <td>录入时间</td>
+                        </tr>
+                    </table>
+                </div> 
+            </div>
+            <div class="change_footer" style="top:5px;padding-top:0;padding-left:0;width:90%">
+                    <span id="spanFirst">&le;</span>
+                    <span id="spanPre">&lt;</span>
+                    <span id="spanNext">&gt;</span>
+                    <span id="spanLast">&ge;</span>
+                    第
+                    <span id="spanPageNum"></span>
+                    页/共
+                    <span id="spanTotalPage"></span>
+                    页
+                </div>
+            <div class="list_main">
+                <div class="offer_down" >
+                    <table class="offer_up_table" cellspacing="0">
+                        <tr class="table_th">
+                            <td style="width:30px"><input name="sel1" type="checkbox" onclick="select2();"/></td>
+                            <td>费用代码</td>
+                            <td>费用名称</td>
+                            <td style="width:70px">起飞港</td>
+                            <td>目的港</td>
+                            <td>Routing</td>
+                            <td>币别</td>
+                            <td>Min</td>
+                            <td>N</td>
+                            <td>+45k</td>
+                            <td>+100k</td>
+                            <td>+500k</td>
+                            <td>+1000k</td>
+                            <td>计价单位</td>
+                            <td>航空公司</td>
+                            <td>航班</td>
+                            <td>航程/天</td>
+                            <td>生效日期</td>
+                            <td>失效日期</td>
+                            <td>备注</td>
+                        </tr>
+                        <tr>
+                            <td><input name="check1" type="checkbox" /></td>
+                            <td>数据16747</td>
+                            <td>数据55</td>
+                            <td>数据名称673737676111</td>
+                            <td>结束时间</td>
+                            <td>完成进度</td>
+                            <td>优先级</td>
+                            <td>持续时间</td>
+                            <td>发布人</td>
+                            <td>接收人</td>
+                            <td>全天事件</td>
+                            <td>独占任务</td>
+                            <td>录入人</td>
+                            <td>录入时间</td>
+                        </tr>
+                    </table>
+                </div> 
+            </div>
+        </form>
+    <!--主体结束-->
+    </div>
+    <script src="../../js/table.js"></script>
+    <script type="text/javascript" src="../../js/laydate-master/laydate.dev.js"></script>
+    <script type="text/javascript">
+        laydate({
+            elem: '#J-xl'
+        });
+		laydate({
+            elem: '#J-x2'
+        });
+    </script>
+</body>
+</html>

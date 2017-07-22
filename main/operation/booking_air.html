@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>订舱</title>
+<link rel="stylesheet" href="../../css/fare.css"/>
+<link rel="stylesheet" href="../../css/operation.css"/>
+
+</head>
+
+<body>
+    <div class="container">
+    	<!--主页面开始-->
+        <div class="client">
+            <div class="top_button">
+            	<button type="button" class="button_change" onclick="window.location.href='booking_air_modify.html'">修改</button>
+				<button type="button" class="button_cancel">取消</button>
+                <button type="button" class="button_recovery">恢复</button>
+                <button type="button" class="button_see">预览</button>
+                <button type="button" class="button_refresh">刷新</button>
+            </div>
+            <div class="titles">
+                <p>操作管理-&gt;空运订舱</p>
+            </div>
+            <table class="table_one book_table " cellspacing="0">
+                <tr>
+                    <td>
+                    	<select>
+                        	<option>订单号</option>
+                        </select>
+                    </td>
+                    <td colspan="2"><input name="" type="text" style="width:80%" /></td>
+                    <td>
+                        <select>
+                            <option>航空公司</option>
+                        </select>
+                    </td>
+                    <td><input type="text"></td>
+                    <td>拿价人</td>
+                    <td><select></select></td>
+                </tr>
+                <tr>
+                    <td><select></select></td>
+                    <td><input id="J-xl" type="text"></td>
+                    <td><input id="J-x2" type="text"></td>
+                    <td>航线：</td>
+                    <td><select></select></td>
+                    <td>目的港：</td>
+                    <td><select></select></td>
+                    <td>
+                        <button type="button">查询</button></td>
+                      <td>  <button type="reset">重置</button>
+                    </td>
+                </tr>
+                <tr>
+                	<td><select></select></td>
+                	<td colspan="3" class="tab plan_tab" style="text-align:left">
+                    	<button class="select" type="button">新单</button>
+                        <button type="button">进行中</button>
+                        <button type="button">已完成</button>
+                        <button type="button">全部</button>
+                    </td>
+                </tr>
+            </table>
+            <!--表格开始-->
+            <div class="paln_main" style="height:300px;">
+                <table cellspacing="0" style="width:3000px;">
+                    <tr class="table_th">
+                        <td></td>
+                        <td><input type="checkbox"></td>
+                        <td>工作号</td>
+                        <td>订舱号</td>
+                        <td>订单号</td>
+                        <td>参考号</td>
+                        <td>指派时间</td>
+                        <td>业务类型</td>
+                        <td>客户名称</td>
+                        <td>业务员</td>
+                        <td>航线</td>
+                        <td>起飞港</td>
+                        <td>目的港代码</td>
+                        <td>目的港</td>
+                        <td>航空公司</td>
+                        <td>订舱代理</td>
+                        <td>入仓日期</td>
+                        <td>拿价人</td>
+                        <td>订舱日期</td>
+                        <td>SHIPPER公司名</td>
+                        <td>订舱人</td>
+                        <td>订舱状态</td>
+                        <td>异常</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><input type="checkbox"></td>
+                        <td>WEURO</td>
+                        <td>HKG</td>
+                        <td>MAN</td>
+                        <td>HKG-Sin-MAN</td>
+                        <td>SQ</td>
+                        <td>EU</td>
+                        <td>HKD</td>
+                        <td>KG</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>14.50</td>
+                        <td>14.50</td>
+                        <td>14.50</td>
+                        <td>14.50</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>2.000</td>
+                        <td>2.000</td>
+                    </tr>
+                </table>
+            </div>
+            <!--表格结束-->
+            <div class="change_footer" style="width:90%">
+                <span id="spanFirst">&le;</span>
+                <span id="spanPre">&lt;</span>
+                <span id="spanNext">&gt;</span>
+                <span id="spanLast">&ge;</span>
+                第
+                <span id="spanPageNum"></span>
+                页/共
+                <span id="spanTotalPage"></span>
+                页
+            </div> 
+            <!--底部开始-->
+            <div class="book_bottom ">
+            	<table class="tracking">
+                    <tr>
+                        <td><span class="circle"></span></td>
+                        <td><img src="../sale/images/arrow.png" /></td>  
+                        <td><span class="circle"></span></td>
+                        <td><img src="../sale/images/arrow.png" /></td>
+                        <td><span class="circle"></span></td>
+                        <td><img src="../sale/images/arrow.png" /></td>
+                        <td><span class="circle"></span></td>
+                        <td><img src="../sale/images/arrow.png" /></td>
+                        <td><span class="circle"></span></td>
+                        <td><img src="../sale/images/arrow.png" /></td>
+                        <td><span class="circle"></span></td>
+                        <td><img src="../sale/images/arrow.png" /></td>  
+                        <td><span class="circle"></span></td>
+                        <td><img src="../sale/images/arrow.png" /></td>
+                        <td><span class="circle"></span></td>
+                        <td><img src="../sale/images/arrow.png" /></td>
+                        <td><span class="circle"></span></td>
+                        <td><img src="../sale/images/arrow.png" /></td>
+                        <td><span class="circle"></span></td>
+                        <td><img src="../sale/images/arrow.png" /></td>
+                    </tr>
+                    <tr class="tracking_name">
+                        <td>提交</td>
+                        <td></td>
+                        <td>签单</td>
+                        <td></td>
+                        <td>审核</td>
+                        <td></td>
+                        <td>接收</td>
+                        <td></td>
+                        <td>订单</td>
+                        <td></td>
+                        <td>已放S/O</td>
+                        <td></td>
+                        <td>拖车</td>
+                        <td></td>
+                        <td>到达工厂</td>
+                        <td></td>
+                        <td>收到文件</td>
+                        <td></td>
+                        <td>离开工厂</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+            <!--底部结束-->
+        </div>
+        <!--主页面结束-->
+    </div>
+    <script src="../../js/table.js"></script>
+    <script type="text/javascript" src="../../js/laydate-master/laydate.dev.js"></script>
+    <script type="text/javascript">
+        laydate({
+            elem: '#J-xl'
+        });
+		laydate({
+            elem: '#J-x2'
+        });
+    </script>
+</body>
+</html>

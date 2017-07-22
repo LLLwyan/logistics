@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="../../css/work.css" />
+    <link rel="stylesheet" href="calendar/css/fullcalendar.css">
+    <link rel="stylesheet" href="calendar/css/fullcalendar.print.css" media='print'>
+    <!--[if !IE]> -->
+        <script src="js/jquery-2.1.1.min.js"></script>
+     <!-- <![endif]-->
+    
+     <!--[if IE]>
+     	<script src="js/jquery-1.8.3.min.js"></script>
+    <![endif]-->
+    <script>
+		$(document).ready(function() {
+			$(".note_add").css('display','none');
+            $("#nav>li").click(function(){
+				$("#wrap>div").eq($(this).index()).show().siblings().hide();
+			})
+			$(".close").click(function(){
+				$(".note_add").hide();
+				$(".content").show();
+			})
+        });
+	</script>
+</head>
+
+<body>
+    <div class="container">
+    	<h4>工作台&gt;&gt;行事历</h4>
+    <!--导航开始-->
+    	<ul id="nav" class="nav">
+        	<li><a href="#" class="calen">行事历</a></li>
+            <li><button>添加</button></li>
+            <li><button>切换</button></li>
+            <li><button onclick="javascript:window.location.href='work_list.html'">列表</button></li>
+        </ul>
+    <!--导航结束-->
+        <div id="wrap">
+        <!--日历开始-->
+            <div class="content">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <div class="box" >
+                            <div class="box-head">
+                                <h3></h3>
+                            </div>
+                            <div class="box-content box-nomargin">
+                                <div class="calendar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>	
+        <!--添加开始-->
+            <div class="note_add">
+                <h3>添加<a href="#" class="close"><img src="../../images/close.png" style="margin-top:-2px" /></a></h3>
+                <div class="activ">
+                    <button class="save">保存</button>
+                    <button class="close">关闭</button>
+                </div>
+                <fieldset class="field">
+                    <legend>行事历->新增</legend>
+                    <form class="note_form">
+                        <label>任务主题：</label><input name="theme" type="text" class="theme" />
+                        <p class="division"></p>
+                        <table class="note_add_time">
+                            <tr>
+                                <td><span>开始时间：</span><input id="J-xl" name="starttime" class="time_width" type="date" /></td>
+                                <td><span>持续时间：</span><input id="J-x2" name="stilltime" class="time_width" type="text" /></td>
+                            </tr>
+                            <tr>
+                                <td><span>结束时间：</span><input id="J-x3" name="endtime" class="time_width" type="datetime" /></td>
+                                <td>
+                                    <input type="checkbox" /><span>全天事件</span>
+                                    <input type="checkbox" /><span>独占任务</span>
+                                </td>
+                            </tr>
+                        </table>
+                         <p class="division"></p>
+                        <table class="note_add_choice">
+                            <tr>
+                                <td><span>优先级：</span></td>
+                                <td><span>完成进度：</span></td>
+                                <td><span>分类：</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <select name="priority">
+                                        <option>低</option>
+                                        <option>中</option>
+                                        <option>高</option>
+                                    </select>
+                                </td>
+                                <td>	
+                                    <select name="speed">
+                                        <option>低</option>
+                                        <option>中</option>
+                                        <option>高</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select name="class">
+                                        <option>低</option>
+                                        <option>中</option>
+                                        <option>高</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
+                        <p class="division"></p>
+                        <p>备忘：</p>
+                        <textarea name="memo" class="area"></textarea>
+                        <table class="note_add_bottom">
+                            <tr>
+                                <td><input name="remind" type="checkbox" checked="checked" />提醒</td>
+                                <td><input name="task" type="checkbox" />任务重复</td>
+                            </tr>
+                            <tr>
+                                <td><input name="tasktime" type="radio" />任务的时间</td>
+                                <td>
+                                `	<span>每
+                                        <select name="datechoice" style="width:50px;margin:0 5px">
+                                            <option>天</option>
+                                            <option>周</option>
+                                            <option>月</option>
+                                        </select>
+                                    重置</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="radio" />任务时间前
+                                    <input type="text" style="width:30px;margin:0 5px;" value="0"/>
+                                    <select name="timechoice">
+                                        <option>分钟</option>
+                                        <option>小时</option>
+                                        <option>天</option>
+                                    </select>
+                                </td>
+                                <td><input type="checkbox" /><span>到期</span></td>
+                            </tr>
+                        </table>
+                    </form>
+                </fieldset>
+            </div>
+        <!--切换开始-->
+            <div class="note_change" style="display:none">
+                <h3>切换<a href="#"><img src="../../images/close.png" style="margin-top:-2px" /></a></h3>
+                <div class="change_warp">
+                    <p>请选择切换用户</p>
+                    <form>
+                        <p class="c_find">
+                            <label>查询:</label>
+                            <input name="" type="text" />
+                            <button>查询</button><button>确定</button><button>取消</button>
+                        </p>
+                       <table class="tablebox">
+                            <tbody id="table2">
+                                <tr style="background-color:#98c0e2">
+                                    <td style="width:50px"><input name="" type="checkbox" /></td>
+                                    <td>用户代码</td>
+                                    <td>用户名称</td>
+                                    <td>所属部门</td>
+                                </tr>
+                                <tr>
+                                    <td><input name="" type="checkbox" /></td>
+                                    <td>数据122</td>
+                                    <td>数据55</td>
+                                    <td>数据111</td>
+                                </tr>
+                                <tr>
+                                    <td><input name="" type="checkbox" /></td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td><input name="" type="checkbox" /></td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+                <p style="height:50px;"></p>
+                <div class="change_footer">
+                    <span id="spanFirst">&le;</span>
+                    <span id="spanPre">&lt;</span>
+                    <span id="spanNext">&gt;</span>
+                    <span id="spanLast">&ge;</span>
+                    第
+                    <span id="spanPageNum"></span>
+                    页/共
+                    <span id="spanTotalPage"></span>
+                    页
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<script src="../../js/date.js"></script>
+<script src="../../js/script.js"></script>
+<script type="text/javascript" src="calendar/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="calendar/js/fullcalendar.min.js"></script>
+<script type="text/javascript" src="calendar/js/script.js"></script>
+<script type="text/javascript" src="../../js/laydate-master/laydate.dev.js"></script>
+    <script type="text/javascript">
+        laydate({
+            elem: '#J-xl'
+        });
+		laydate({
+            elem: '#J-x2'
+        });
+		laydate({
+            elem: '#J-x3'
+        });
+    </script>
+</body>
+</html>

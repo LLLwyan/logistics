@@ -1,0 +1,527 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>新增报价</title>
+    <link rel="stylesheet" type="text/css" href="../../css/work.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/sale.css" />
+    <script src="../../js/jquery-2.1.1.min.js"></script>
+    <script>
+		$(document).ready(function() {
+            $(".offer_nav>li").click(function(){
+				$(this).addClass("off_active").siblings().removeClass("off_active");
+				var index=$(".offer_nav>li").index(this);
+				$(".offer_main>div").eq(index).show().siblings().hide();
+			});
+			$(".manage_table tr:gt(0)").hover(function(){
+				 $(this).attr("onclick","SelectTR(this)");
+			});
+			$(".history_table tr:gt(0)").hover(function(){
+				 $(this).attr("onclick","SelectTR(this)");
+			})
+        });
+	</script>
+</head>
+
+<body>
+	<div class="container" >
+    	<h4>销售管理&gt;&gt;我的报价&gt;&gt;新增报价</h4>
+    <!--表格切换开始-->
+        <ul class="offer_nav">
+        	<li class="off_active">报价单</li>
+            <li>运价管理</li>
+            <li>报价历史</li>
+            <li>已发邮件</li>
+        </ul>
+    <!--表格切换结束-->
+    	<div class="offer_main">
+        <!--报价单开始-->
+            <div class="price" style="display:">
+            <!--目录开始-->
+                <ul class="work_nav add_nav">
+                    <li><button class="nav_save">保存</button></li>
+                    <li><button class="nav_add">复制</button></li>
+                    <li><button class="nav_email">中文版Email</button></li>
+                    <li><button class="nav_email">英文版Email</button></li>
+                    <li><button class="nav_preview">预览</button></li>
+                    <li><button class="nav_refresh">刷新</button></li>
+                    <li><button class="nav_return" onclick="window.location.href='offer.html'">返回</button></li>
+                </ul>
+                <h5>空运报价&gt;&gt;新增</h5>
+            <!--目录结束-->
+                <div class="price_left">
+                    <table>
+                        <tr>
+                            <td>To:</td>
+                            <td>
+                                <select>
+                                    <option></option>
+                                </select>
+                            </td>
+                            <td>From:</td>
+                            <td><input name="" type="text" value="柏阳深圳" /></td>
+                            <td>Contact:</td>
+                            <td><input name="" type="text" value="田石勇" /></td>
+                        </tr>
+                        <tr>
+                            <td>Attn:</td>
+                            <td><input name="" type="text" /></td>
+                            <td>Tel:</td>
+                            <td><input name="" type="text" /></td>
+                            <td>Mobile:</td>
+                            <td><input name="" type="text" /></td>
+                        </tr>
+                        <tr>
+                            <td>Tel:</td>
+                            <td><input name="" type="text" /></td>
+                            <td>Fax:</td>
+                            <td><input name="" type="text" /></td>
+                            <td>Quote No:</td>
+                            <td><input name="" type="text" /></td>
+                        </tr>
+                        <tr>
+                            <td>Fax:</td>
+                            <td><input name="" type="text" /></td>
+                            <td>Date:</td>
+                            <td><input id="J-xl" name="" type="text" /></td>
+                            <td>To:</td>
+                            <td><input name="" type="text" /></td>
+                        </tr>
+                        <tr>
+                            <td>Mobile:</td>
+                            <td><input name="" type="text" /></td>
+                            <td>DaSend By:</td>
+                            <td><input id="J-x2" name="" type="text" /></td>
+                            <td>CC:</td>
+                            <td><input name="" type="text" /></td>
+                        </tr>
+                        <tr>
+                            <td>Subject:</td>
+                            <td colspan="3">
+                                <input name="" type="text" style="width:155px"/>
+                                <button>选</button>
+                                <button>存</button>
+                            </td>
+                            <td>BCC:</td>
+                            <td><input name="" type="text" /></td>
+                        </tr>
+                        <tr>
+                            <td>Begin:</td>
+                            <td colspan="5">
+                                <textarea name=""></textarea>
+                                <button>选</button>
+                                <button>存</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Description:</td>
+                            <td colspan="5">
+                                <textarea name=""></textarea>
+                                <button>选</button>
+                                <button>存</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="price_right">
+                    <table style="text-align:left;">
+                        <tr>
+                            <td><input name="" type="checkbox" /></td>
+                            <td>已发邮件</td>
+                        </tr>
+                        <tr>
+                            <td><input name="" type="checkbox" /></td>
+                            <td>显示有效期</td>
+                        </tr>
+                        <tr>
+                            <td><input name="" type="checkbox" /></td>
+                            <td>合并费用（全包价）</td>
+                        </tr>
+                    </table>
+                    <fieldset>
+                        <legend>货物信息</legend>
+                        <table>
+                            <tr>
+                                <td>包装：</td>
+                                <td>
+                                    <select>
+                                        <option></option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>件数：</td>
+                                <td><input name="" type="text" /></td>
+                            </tr>
+                            <tr>
+                                <td>毛重：</td>
+                                <td><input name="" type="text" /></td>
+                            </tr>
+                            <tr>
+                                <td>体积：</td>
+                                <td><input name="" type="text" /></td>
+                            </tr>
+                            <tr>
+                                <td>体积重：</td>
+                                <td><input name="" type="text" /></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><button>重置</button></td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                </div>
+                <div class="price_down">
+                    <ul>
+                        <li><button>新增</button></li>
+                        <li><button>删除</button></li>
+                        <li><button>刷新</button></li>
+                    </ul>
+                    <div class="price_down_table">
+                        <table>
+                            <tr class="title">
+                                <td><input name="" type="checkbox" /></td>
+                                <td>费用代码</td>
+                                <td>费用名称</td>
+                                <td>起飞港</td>
+                                <td>目的港</td>
+                                <td>中转港1</td>
+                                <td>中转港2</td>
+                                <td>中转港3</td>
+                                <td>币制</td>
+                                <td>Min</td>
+                                <td>N</td>
+                                <td>+45k</td>
+                                <td>+100k</td>
+                                <td>+300k</td>
+                                <td>+500k</td>
+                                <td>+1000k</td>
+                                <td>计价单位</td>
+                                <td>航空公司</td>
+                                <td>航班</td>
+                                <td>航程/天</td>
+                                <td>生效日期</td>
+                                <td>失效日期</td>
+                                <td>备注</td>
+                            </tr>
+                            <tr>
+                                <td><input name="" type="checkbox" /></td>
+                                <td>KYYJ</td>
+                                <td>空运运价</td>
+                                <td>起飞港</td>
+                                <td>目的港</td>
+                                <td>中转港1</td>
+                                <td>中转港2</td>
+                                <td>中转港3</td>
+                                <td>币制</td>
+                                <td>Min</td>
+                                <td>N</td>
+                                <td>+45k</td>
+                                <td>+100k</td>
+                                <td>+300k</td>
+                            </tr>
+                            <tr style="text-align:left">
+                                <td colspan="5">本地费用合计：</td>
+                                <td colspan="5">总费用合计：</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <p>Remark:<input name="" type="text" style="width:500px;"/></p>
+                    <p style="margin-left:30px;">End:<textarea name="" style="width:500px;"></textarea><button>选</button><button>存</button></p>
+                </div>
+            </div>
+        <!--报价单结束-->
+        <!--运价管理开始-->
+            <div class="manage" style="display:none">
+            <!--目录开始-->
+                <ul class="work_nav add_nav">
+                    <li><button class="nav_save">保存</button></li>
+                    <li><button class="nav_refresh">刷新</button></li>
+                    <li><button class="nav_return" onclick="window.location.href='offer.html'">返回</button></li>
+                </ul>
+                <h5>空运查询&gt;&gt;空运</h5>
+            <!--目录结束-->
+                <table class="manage_top">
+                    <tr>
+                        <td>起飞港：</td>
+                        <td>
+                            <select>
+                                <option></option>
+                            </select>
+                        </td>
+                        <td>目的港：</td>
+                        <td>
+                            <select>
+                                <option></option>
+                            </select>
+                        </td>
+                        <td style="text-align:left"><input name="" type="checkbox" value="特价" />特价</td>
+                    </tr>
+                    <tr>
+                        <td>生效日期：</td>
+                        <td><input id="J-x3" name="" type="text" /></td>
+                        <td>失效日期：</td>
+                        <td><input id="J-x4" name="" type="text" /></td>
+                        <td><button>查询</button><button>重置</button></td>
+                    </tr>
+                </table>
+                <div class="manage_main">
+                    <table cellspacing="0" class="manage_table" style="width:2600px;">
+                        <tr class="table_th">
+                            <td style="width:30px"><input name="sel" type="checkbox" onclick="select1();" /></td>
+                            <td>起飞港</td>
+                            <td>目的港</td>
+                            <td>Routing</td>
+                            <td>航空公司</td>
+                            <td>费用币制</td>
+                            <td>计价单位</td>
+                            <td>空运费Mir</td>
+                            <td>N</td>
+                            <td>+45k</td>
+                            <td>+100k</td>
+                            <td>+300k</td>
+                            <td>+500k</td>
+                            <td>+1000k</td>
+                            <td>中转费Min</td>
+                            <td>+中转费</td>
+                            <td>MYC</td>
+                            <td>TC</td>
+                            <td>SCC</td>
+                            <td>CYG(Min)</td>
+                            <td>CTG</td>
+                            <td>HC</td>
+                            <td>CFS(Min)</td>
+                            <td>CFS</td>
+                            <td>X-RAY</td>
+                            <td>AWB</td>
+                            <td>CUSTOMS</td>
+                            <td>DOC</td>
+                            <td>GATE</td>
+                            <td>CCA</td>
+                            <td>特价</td>
+                            <td>附加费</td>
+                            <td>运输条款</td>
+                            <td>建议运价</td>
+                            <td>航程</td>
+                            <td>生效日期</td>
+                            <td>失效日期</td>
+                        </tr>
+                        <tr>
+                            <td><input name="check" type="checkbox" /></td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>航空公司</td>
+                            <td>费用币制</td>
+                            <td>计价单位</td>
+                            <td>空运费Mir</td>
+                            <td>N</td>
+                            <td>+45k</td>
+                            <td>+100k</td>
+                            <td>+300k</td>
+                            <td>+500k</td>
+                            <td>+1000k</td>
+                            <td>中转费Min</td>
+                            <td>+中转费</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="change_footer" style="border-top:1px solid #999;width:90%">
+                    <span id="spanFirst">&le;</span>
+                    <span id="spanPre">&lt;</span>
+                    <span id="spanNext">&gt;</span>
+                    <span id="spanLast">&ge;</span>
+                    第
+                    <span id="spanPageNum"></span>
+                    页/共
+                    <span id="spanTotalPage"></span>
+                    页
+                </div>
+            </div>
+        <!--运价管理结束-->
+        <!--报价历史开始-->
+            <div class="history" style="display:none">
+            <!--目录开始-->
+                <ul class="work_nav add_nav">
+                    <li><button class="nav_save">确定</button></li>
+                    <li><button class="nav_preview">预览</button></li>
+                    <li><button class="nav_del">删除</button></li>
+                    <li><button class="nav_refresh">刷新</button></li>
+                    <li><button class="nav_return" onclick="window.location.href='offer.html'">返回</button></li>
+                </ul>
+                <h5>报价历史&gt;&gt;空运</h5>
+            <!--目录结束-->
+                <table class="history_top">
+                    <tr>
+                        <td>客户代码：</td>
+                        <td>
+                            <select>
+                                <option></option>
+                            </select>
+                        </td>
+                        <td>报价日期：</td>
+                        <td><input id="J-x5" name="" type="text" /></td>
+                        <td><input id="J-x6" name="" type="text" /></td>
+                        <td>报价单号：</td>
+                        <td><input name="" type="text" /></td>
+                        <td>录入人：</td>
+                        <td>
+                            <select>
+                                <option></option>
+                            </select>
+                        </td>
+                        <td><button>查询</button><button>重置</button></td>
+                    </tr>
+                </table>
+                <div class="history_main">
+                    <table cellspacing="0" class="history_table">
+                        <tr class="table_th">
+                            <td style="width:30px"><input name="sel1" type="checkbox" onclick="select2();" /></td>
+                            <td>报价单号</td>
+                            <td>客户代码</td>
+                            <td>联系人</td>
+                            <td>销售代表</td>
+                            <td>报价日期</td>
+                            <td>包装</td>
+                            <td>件数</td>
+                            <td>毛重</td>
+                            <td>体积</td>
+                            <td>体积重</td>
+                            <td>已发邮件</td>
+                            <td>主题</td>
+                            <td>备注</td>
+                            <td>录入人</td>
+                            <td>录入时间</td>
+                        </tr>
+                        <tr>
+                            <td><input name="check1" type="checkbox" /></td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>航空公司</td>
+                            <td>费用币制</td>
+                            <td>计价单位</td>
+                            <td>空运费Mir</td>
+                            <td>N</td>
+                            <td>+45k</td>
+                            <td>+100k</td>
+                            <td>+300k</td>
+                            <td>+500k</td>
+                            <td>+1000k</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="change_footer" style="border-top:1px solid #999;width:90%">
+                    <span id="spanFirst">&le;</span>
+                    <span id="spanPre">&lt;</span>
+                    <span id="spanNext">&gt;</span>
+                    <span id="spanLast">&ge;</span>
+                    第
+                    <span id="spanPageNum"></span>
+                    页/共
+                    <span id="spanTotalPage"></span>
+                    页
+                </div>
+                <div class="history_main" style="height:270px;">
+                    <table class="history_down" cellspacing="0">
+                        <tr class="table_th">
+                            <td>费用代码</td>
+                            <td>费用名称</td>
+                            <td>起飞港</td>
+                            <td>目的港</td>
+                            <td>Routing</td>
+                            <td>币制</td>
+                            <td>Min</td>
+                            <td>N</td>
+                            <td>+45k</td>
+                            <td>+100k</td>
+                            <td>+300k</td>
+                            <td>+500k</td>
+                            <td>+1000k</td>
+                            <td>计价单位</td>
+                            <td>航空公司</td>
+                            <td>航班</td>
+                            <td>航程/天</td>
+                            <td>生效日期</td>
+                            <td>失效日期</td>
+                            <td>备注</td>
+                        </tr>
+                        <tr>
+                            <td>KYYJ</td>
+                            <td>空运运价</td>
+                            <td>HKG</td>
+                            <td>BEY</td>
+                            <td>Routing</td>
+                            <td>RMB</td>
+                            <td>Min</td>
+                            <td>N</td>
+                            <td>+45k</td>
+                            <td>+100k</td>
+                            <td>+300k</td>
+                            <td>+500k</td>
+                            <td>+1000k</td>
+                            <td>计价单位</td>
+                            <td>航空公司</td>
+                            <td>航班</td>
+                            <td>航程/天</td>
+                            <td>生效日期</td>
+                            <td>失效日期</td>
+                            <td>备注</td>
+                        </tr>
+                        <tr style="text-align:left">
+                            <td colspan="6">本地费用合计</td>
+                            <td colspan="6">总费用合计</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        <!--报价历史结束-->
+        <!--已发邮件开始-->
+            <div class="email" style="display:none">
+            <!--目录开始-->
+                <ul class="work_nav add_nav">
+                    <li><button class="nav_refresh" onclick="window.location.onload();">刷新</button></li>
+                    <li><button class="nav_return" onclick="window.location.href='offer.html'">返回</button></li>
+                </ul>
+                <h5></h5>
+            <!--目录结束-->
+                <table cellspacing="0">
+                    <tr class="table_th">
+                        <td style="width:30px"><input name="sel1" type="checkbox" onclick="select2();"/></td>
+                        <td>邮件主题</td>
+                        <td>发件邮箱</td>
+                        <td>收件邮箱</td>
+                        <td>抄送邮箱</td>
+                        <td>发送时间</td>
+                        <td>已发送</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    <!--已发邮件结束-->
+    </div>
+    <script src="../../js/table.js"></script>
+    <script type="text/javascript" src="../../js/laydate-master/laydate.dev.js"></script>
+    <script type="text/javascript">
+        laydate({
+            elem: '#J-xl'
+        });
+		laydate({
+            elem: '#J-x2'
+        });
+		laydate({
+            elem: '#J-x3'
+        });
+		laydate({
+            elem: '#J-x4'
+        });
+		laydate({
+            elem: '#J-x5'
+        });
+		laydate({
+            elem: '#J-x6'
+        });
+    </script>
+</body>
+</html>

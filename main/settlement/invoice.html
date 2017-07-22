@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>发票</title>
+<link rel="stylesheet" href="../../css/fare.css"/>
+<link rel="stylesheet" href="../../css/settlement.css"/>
+<script src="../../js/jquery-2.1.1.min.js"></script>
+<script>
+	$(document).ready(function() {
+        $(".p_nav >span").click(function(){
+			$(this).addClass("act").siblings().removeClass("act");
+		})
+    });
+</script>
+</head>
+
+<body>
+    <div class="container">
+    	<!--主页面开始-->
+        <div class="client">
+            <div class="top_button">
+            	<button type="button" class="button_add" onclick="window.location.href='invoice_add.html'" style="width:110px;">代开发票</button>
+                <button type="button" class="button_add" style="width:110px;">综合发票</button>
+            	<button type="button" class="button_change">修改</button>
+                <button type="button" class="button_change" style="width:110px;">批量修改</button>
+				<button type="button" class="button_delate">删除</button>
+                <button type="button" class="button_see">预览</button>
+                <button type="button" class="button_upload">导出</button>
+                <button type="button" class="button_refresh">刷新</button>
+            </div>
+            <div class="titles">
+                <p>结算管理-&gt;发票</p>
+            </div>
+            <p style="margin:5px 0;">
+            	<select>
+                	<option>工作号</option>
+                </select>
+                <input type="text" />
+                发票日期：
+                <input type="text" id="J-xl" />
+                <input type="text" id="J-x2" />
+                <button type="button">查询</button>
+                <button type="button">重置</button>
+            </p>
+            <p class="p_nav">
+            	<span class="act">全部</span>
+                <span>未开票</span>
+                <span>已开票</span>
+            </p>
+            <!--主体开始-->
+            <div class="requset">
+            	<div class="wrap" style="height:390px;">
+                    <table cellspacing="0" style="width:1800px;">
+                        <tr class="table_th">
+                        	<td><input type="checkbox" /></td>
+                            <td>工作号</td>
+                            <td>发票号</td>
+                            <td>订单号</td>
+                            <td>发票类型</td>
+                            <td>日期</td>
+                            <td>客户简称</td>
+                            <td>客户</td>
+                            <td>发票抬头</td>
+                            <td>折合币制</td>
+                            <td>折合金额</td>
+                            <td>业务员</td>
+                            <td>打印</td>
+                            <td>打印时间</td>
+                            <td>快递公司</td>
+                            <td>快递号</td>
+                            <td>寄单日期</td>
+                            <td>录入人</td>
+                            <td>录入时间</td>
+                            <td>修改人</td>
+                            <td>修改时间</td>
+                            <td>备注</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="change_footer" style="width:90%">
+                    <span id="spanFirst">&le;</span>
+                    <span id="spanPre">&lt;</span>
+                    <span id="spanNext">&gt;</span>
+                    <span id="spanLast">&ge;</span>
+                    第
+                    <span id="spanPageNum"></span>
+                    页/共
+                    <span id="spanTotalPage"></span>
+                    页
+                </div> 
+            </div>
+            <!--主体结束-->
+        </div>
+        <!--主页面结束-->
+    </div>
+    <script src="../../js/table.js"></script>
+    <script type="text/javascript" src="../../js/laydate-master/laydate.dev.js"></script>
+    <script type="text/javascript">
+        laydate({
+            elem: '#J-xl'
+        });
+		laydate({
+            elem: '#J-x2'
+        });
+    </script>
+</body>
+</html>

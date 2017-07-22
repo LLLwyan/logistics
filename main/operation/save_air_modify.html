@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>空运仓储-编辑</title>
+<link rel="stylesheet" href="../../css/fare.css"/>
+<link rel="stylesheet" href="../../css/operation.css"/>
+<script src="../../js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript"> 
+	$(function(){ 
+		/*新增行*/
+		$("#newBtn").bind("click",function(){
+			$("#myTable").append("<tr><td><input id=\"sd\" type=\"checkbox\" /></td><td><input type=\"text\" value='123'/></td><td><input type=\"text\" /></td><td><input type=\"text\" /></td><td><input type=\"text\" /></td><td><input type=\"text\" /></td><td><input type=\"text\" /></td><td><input type=\"text\" /></td><td><input type=\"text\" /></td><td><input type=\"text\" /></td><td><input type=\"text\" /></td><td><input type=\"text\" /></td><td><input type=\"text\" /></td><td><input type=\"text\" /></td><td><input type=\"text\" /></td><td><input type=\"text\" /></td><td><input type=\"text\" /></td><td><input type=\"text\" /></td><td><input type=\"text\" /></td><td><input type=\"text\" /></td><td><input type=\"text\" /></td><td><input type=\"text\" /></td><td><input type=\"text\" /></td><td><input type=\"text\" /></td><td><input type=\"text\" /></td><td><input type=\"text\" /></td></tr>");
+			/*点击变色*/
+			$("#myTable tr").first().nextAll().click(function(){
+				$(this).children().toggleClass("bgcolor");
+				if($(this).children().css("background-color") != $(document.body).css("background-color")){
+					$(this).children().first().children().prop("checked", true);
+					event.stopPropagation();
+				}else {
+					$(this).children().first().children().prop("checked", false);
+					event.stopPropagation();
+				}
+			});
+		});
+		/*删除行*/
+		$("#delBtn").bind("click",function(){
+			if($("#myTable tr:eq(0) input:checked").length>0){
+				alert("不能删除表头");
+			}else if($("#myTable input:checked").length>0){
+				$("#myTable input:checked").parent().parent().remove();
+			}else{
+				alert("请选择需要删除的行");
+			}
+		});
+	}); 
+
+</script>
+</head>
+
+<body>
+    <div class="container">
+    	<!--主页面开始-->
+        <div class="client">
+            <div class="top_button">
+            	<button type="button" class="save">保存</button>
+                <button type="button" class="button_add">新增</button>
+                <button type="button" class="button_delate">删除</button>
+                <button type="button" class="button_upload">导出</button>
+                <button type="button" class="button_see">预览</button>
+                <button type="button" class="button_refresh">刷新</button>
+                <button type="button" class="button_back">返回</button>
+            </div>
+            <div class="titles">
+                <p>空运仓储-&gt;编辑
+                	<span>入仓号：<select></select></span>
+                    <span>入仓次数：1</span>
+                </p>
+            </div>
+            <div class="air_main">
+            	<!--左侧开始-->
+                <div class="air_left">
+                	<!--委托信息开始-->
+                    <fieldset>
+                        <legend>委托信息</legend>
+                        <table>
+                            <tr>
+                                <td>订单号：</td>
+                                <td><input type="text" /></td>
+                                <td>工作号：</td>
+                                <td><input type="text" /></td>
+                                <td>客户简称：</td>
+                                <td><input type="text" /></td>
+                            </tr>
+                            <tr>
+                                <td>业务员：</td>
+                                <td><input type="text" /></td>
+                                <td>起飞港：</td>
+                                <td><input type="text" /></td>
+                                <td>目的港：</td>
+                                <td><input type="text" /></td>
+                            </tr>
+                            <tr>
+                                <td>目的地：</td>
+                                <td><input type="text" /></td>
+                                <td>航空公司：</td>
+                                <td><input type="text" /></td>
+                                <td>航班：</td>
+                                <td><input type="text" /></td>
+                            </tr>
+                            <tr>
+                                <td>ETD：</td>
+                                <td><input type="text" id="J-xl"/></td>
+                                <td>ETA：</td>
+                                <td><input type="text" id="J-x2"/></td>
+                                <td>截关日：</td>
+                                <td><input type="text" id="J-x3"/></td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                    <!--委托信息结束-->
+                    <!--仓库信息开始-->
+                    <fieldset>
+                        <legend>仓库信息</legend>
+                        <table>
+                            <tr>
+                                <td>仓库：</td>
+                                <td><select></select></td>
+                                <td>入仓号：</td>
+                                <td colspan="2"><select style="width:200px;"></select></td>
+                            </tr>
+                            <tr>
+                                <td>件数：</td>
+                                <td><input type="text" /></td>
+                                <td>包装：</td>
+                                <td><select></select></td>
+                                <td>入仓重量：</td>
+                                <td><input type="text" /></td>
+                            </tr>
+                            <tr>
+                                <td>体积（CBM）：</td>
+                                <td><input type="text" /></td>
+                                <td>体积重：</td>
+                                <td><input type="text" /></td>
+                                <td>入仓日期：</td>
+                                <td><input type="text" id="J-x4"/></td>
+                            </tr>
+                            <tr>
+                                <td>所在城市：</td>
+                                <td><select></select></td>
+                                <td>仓库电话：</td>
+                                <td><input type="text" /></td>
+                                <td>预览格式：</td>
+                                <td><select></select></td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                    <!--仓库信息结束-->
+                </div>
+                <!--左侧结束-->
+                <!--右侧开始-->
+                <div class="air_right">
+                
+                </div>
+                <!--右侧结束-->
+            </div>
+            <!--底部开始-->
+           	<div class="sea_bottom">
+            	<ul>
+                	<li><button type="button" id="newBtn">新增</button></li>
+                    <li><button type="button" id="delBtn">删除</button></li>
+                    <li><button type="button" onclick="window.location.reload();">刷新</button></li>
+                </ul>
+                <table cellpadding="0" cellspacing="0" style="width:2000px;" id="myTable">
+                	<tr class="table_th">
+                    	<td><input type="checkbox" /></td>
+                        <td>订舱号</td>
+                        <td>类别</td>
+                        <td>箱型</td>
+                        <td>箱号</td>
+                        <td>原始封号</td>
+                        <td>唛头</td>
+                        <td>货物名称</td>
+                        <td>件数</td>
+                        <td>包装</td>
+                        <td>毛重（KGS）</td>
+                        <td>体积（CBM）</td>
+                        <td>币制</td>
+                        <td>价值</td>
+                        <td>运费吨</td>
+                        <td>净重（KGS）</td>
+                        <td>海关</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+            <!--底部结束-->
+        </div>
+        <!--主页面结束-->
+    </div>
+    <script src="../../js/table.js"></script>
+    <script type="text/javascript" src="../../js/laydate-master/laydate.dev.js"></script>
+    <script type="text/javascript">
+        laydate({
+            elem: '#J-xl'
+        });
+		laydate({
+            elem: '#J-x2'
+        });
+		laydate({
+            elem: '#J-x3'
+        });
+		laydate({
+            elem: '#J-x4'
+        });
+		laydate({
+            elem: '#J-x5'
+        });
+    </script>
+</body>
+</html>

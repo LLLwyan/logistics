@@ -1,0 +1,833 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>新增订单</title>
+    <link rel="stylesheet" type="text/css" href="../../css/work.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/sale.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/jquery.combobox.css" />
+    <script src="../../js/jquery-2.1.1.min.js"></script>
+    <script src="../../js/jquery.validate-1.13.1.js"></script>
+    <script>
+		$(function() {
+			/*目录切换*/
+            $(".order_nav>li").click(function(){
+				$(this).addClass("active").siblings().removeClass("active");
+				var index=$(".order_nav>li").index(this);
+				$("#order_left_main>div").eq(index).show().siblings().hide();
+			});
+			/*货物尺寸显示隐藏*/
+			$(".goods_size").click(function(){
+				$("#goods").toggle();
+			});
+			$(".close").click(function(){
+				$("#goods").hide();
+			});
+			/*费用显示隐藏*/
+			$(".cost_btn").click(function(){
+				$(".cost").toggle();
+			});
+			$(".cost_close").click(function(){
+				$(".cost").hide();
+			});
+			/*成本显示隐藏*/
+			$(".pricec_btn").click(function(){
+				$(".pricec").toggle();
+			});
+			$(".pricec_close").click(function(){
+				$(".pricec").hide();
+			});
+			/*表单验证*/
+			$("#valid").validate();  
+			var cnmsg = {  
+			required: "请输入内容",   
+			email: "请输入正确格式的电子邮件",   
+			date: "请输入合法的日期",   
+			number: "请输入合法的数字",   
+			digits: "只能输入整数",     
+			equalTo: "请再次输入相同的值",   
+			};
+			jQuery.extend(jQuery.validator.messages, cnmsg);	
+			/*拖车及报关*/
+			$(".trailer_box").click(function(){
+				if($(".trailer_box").is(":checked")){
+					$(".declare").css("display","");
+				}else{
+					$(".declare").css("display","none");
+				}
+			});
+			$(".declare_box").click(function(){
+				if($(".declare_box").is(":checked")){
+					$(".baoguan").attr("disabled",false);
+				}else{
+					$(".baoguan").attr("disabled","disabled");
+				}
+			});
+			/*新增、删除AR*/
+			$("#addTable").click(function(){
+			   var tr="<tr><td><input type=\"checkbox\" name=\"check\"/>"+
+					  "</td><td><input type='text' value='AR'></td><td><input type='text' ></td><td><input type='text' ></td><td><input type='text' ></td><td><input type='text' ></td><td><input type='text' value='PP'></td><td><input type='text' ></td><td><input type='text' ></td><td><input type='text' ></td><td><input type='text' ></td><td><input type='text' ></td><td><input type='text' ></td><td><input type=\"checkbox\" name=\"check\"/></td><td><input type=\"checkbox\" name=\"check\"/></td><td><input type='text' ></td><td><input type='text' ></td><td><input type='text' ></td><td><input type='text' ></td><td><input type='text' ></td><td><input type='text' ></td><td><input type='text' ></td><td><input type='text' ></td><td><input type='text' ></td><td><input type='text' ></td><td><input type='text' ></td><td><input type='text' ></td></tr>";
+		　  		$("#table1").append(tr);　　
+			});
+			$("#addCost").click(function(){
+			   var tr="<tr><td><input type=\"checkbox\" name=\"check\"/>"+
+					  "</td><td><input type='text' value='AR'></td><td><input type='text' ></td><td><input type='text' ></td><td><input type='text' value='JYF'></td><td><input type='text' value='检验费'></td><td><input type='text' value='PP'></td><td><input type='text' ></td><td><input type='text' ></td><td><input type='text' ></td><td><input type='text' ></td><td><input type='text' ></td><td><input type='text' ></td><td><input type=\"checkbox\" name=\"check\"/></td><td><input type=\"checkbox\" name=\"check\"/></td><td><input type='text' ></td><td><input type='text' ></td><td><input type='text' ></td><td><input type='text' ></td><td><input type='text' ></td><td><input type='text' ></td><td><input type='text' ></td><td><input type='text' ></td><td><input type='text' ></td><td><input type='text' ></td><td><input type='text' ></td><td><input type='text' ></td></tr>";
+		　  		$("#table1").append(tr);　　
+			});
+			$("#deleteTable").click(function(){
+				var check = document.getElementsByName("check");
+				for(var i=0;i<check.length;i++){
+					if(check[i].checked){
+						 document.getElementById('table1').deleteRow(i+1);
+						 i--;
+					}
+				}
+			});
+			/*表格变色*/
+			$(".offer_up_table tr:gt(0)").hover(function(){
+				 $(this).attr("onclick","SelectTR(this)");
+			});
+			/*展会按钮样式*/
+			$(".serve").click(function(){
+				if($(".exhib").is(":checked")){
+					$(".exhib_name").css("display","");
+				}else{
+					$(".exhib_name").css("display","none");
+				}
+			});
+			/*业务类型样式切换*/
+			$(".service_type>input").click(function(){
+				if($(".fcl").is(":checked")){
+					$(".air").css("display","none");
+					$(".fcl_mian").css("display","");
+					$(".fcl_mian").find("input,select").attr("disabled",false);
+					$(".air_hid").css("display","none");
+				}else if($(".others").is(":checked")){
+					$(".air").css("display","none");
+					$(".fcl_mian").css("display","");
+					$(".fcl_mian").find("input,select").attr("disabled",false);
+					$(".air_hid").css("display","none");
+				}else if($(".lcl").is(":checked")){
+					$(".air").css("display","none");
+					$(".fcl_mian").css("display","");
+					$(".fcl_mian").find("input,select").attr("disabled","disabled");
+					$(".air_hid").css("display","none");
+				}else{
+					$(".air").css("display","");
+					$(".fcl_mian").css("display","none");
+					$(".air_hid").css("display","");
+				};
+			});
+			/*新增、删除货物尺寸*/
+			$(".good_add").click(function(){
+			   var tr="<tr><td><input type=\"checkbox\" name=\"check\"/>"+
+					  "</td><td><input type='text' ></td><td><input type='text' ></td><td><input type='text' ></td><td><input type='text' ></td><td><input type='text' ></td><td><input type='text' ></td><td><input type='text' ></td><td><input type='text' ></td><td><input type='text' ></td></tr>";
+		　  		$("#table_good").append(tr);　　
+			});
+			$(".good_del").click(function(){
+				var check = document.getElementsByName("check");
+				for(var i=0;i<check.length;i++){
+					if(check[i].checked){
+						 document.getElementById('table_good').deleteRow(i+1);
+						 i--;
+					}
+				}
+			});
+			/*新增装货地址*/
+			$(".add_btn").click(function(){
+				$(".trailer").append('<fieldset><legend>装货地址</legend><table><tr><td>装货地址：</td><td colspan="3"><input name="" type="text" style="width:100%"/></td></tr><tr><td>联系人：</td><td><input name="" type="text" style="width:160px;"/></td><td>电话：</td><td><input name="" type="text"/></td></tr><tr><td>装货日期：</td><td><input  name="" type="text" class="laydate-icon" onClick="laydate({istime: true, format: \'YYYY-MM-DD hh:mm:ss\'})"/></td><td>手机：</td><td><input name="" type="text" /></td></tr></table><button type="button" class="del">删除</button></fieldset>')
+			});
+			$(".trailer").on("click",".del",function(){
+				$(this).parent().remove();
+			})
+        });
+	</script>
+</head>
+
+<body>
+	<div class="container" >
+    	<form id="valid">
+    	<h4>销售管理&gt;&gt;我的订单&gt;&gt;新增订单</h4>
+    <!--目录开始-->
+        <ul id="nav" class="work_nav">
+        	<li><button class="nav_save" type="submit">保存</button></li>
+            <li><button class="nav_refresh" onclick="window.location.reload();">刷新</button></li>
+            <li><button class="nav_return" onclick="window.location.href='order.html'">返回</button></li>
+        </ul>
+    <!--目录结束-->
+    	<div class="order_left">
+    <!--主体上部分-->
+    		<div class="order_left_title">
+            	<table>
+                	<tr>
+                    	<td>客户：</td>
+                        <td><input type="text" class="selec"/></td>
+                        <td colspan="4">
+                            <input name="cus" type="text" style="width:250px;" class="required"/>
+                            <button>新增</button>
+                        </td>
+                        <td>订单号：</td>
+                        <td><input name="num" type="text" class="required"/></td>
+                    </tr>
+                    <tr>
+                    	<td>联系人：</td>
+                        <td><input name="person" type="text" class="required"/></td>
+                        <td>电话：</td>
+                        <td><input name="tel" type="text" class="required"/></td>
+                        <td>传真：</td>
+                        <td><input name="fax" type="text" class="required"/></td>
+                        <td>日期：</td>
+                        <td><input id="J-xl" name="date" type="text" /></td>
+                    </tr>
+                    <tr>
+                    	<td>业务员：</td>
+                        <td><input type="text" class="selec"/></td>
+                        <td>E-mail：</td>
+                        <td colspan="3"><input name="email" type="text" style="width:100%" class="email"/></td>
+                    </tr>
+                    <tr>
+                    	<td>业务经理：</td>
+                        <td><input type="text" class="selec"/></td>
+                        <td>揽货：</td>
+                        <td>
+                        	<select>
+                            	<option></option>
+                            </select>
+                        </td>
+                        <td>进出口：</td>
+                        <td>
+                        	<select>
+                            	<option>出口</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td>拿价人：</td>
+                        <td><input type="text" class="selec"/></td>
+                        <td>服务类型：</td>
+                        <td colspan="2" class="serve" style="text-align:left">
+                        	<input name="serve" type="radio" checked="checked" />普货
+                            <input name="serve" type="radio" class="exhib"/>展会
+                            <input name="serve" type="radio" />中转
+                        </td>
+                        <td class="exhib_name" style="display:none;">展会名称：</td>
+                        <td colspan="2" class="exhib_name" style="display:none;text-align:left">
+                        	<select style="width:100%;">
+                            	<option></option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td colspan="2" style="text-align:center"> 
+                            <input name="" type="checkbox" class="trailer_box"/>拖车
+                            <input name="" type="checkbox" class="declare_box"/>报关
+                        </td>
+                        <td>业务类型：</td>
+                        <td class="service_type" colspan="5" style="text-align:left">
+                        	<input name="busi" type="radio" checked="checked" />空运
+                            <input name="busi" type="radio" />快递
+                            <input name="busi" type="radio" class="fcl"/>海运（FCL）
+                            <input name="busi" type="radio" class="lcl"/>海运（LCL）
+                            <input name="busi" type="radio" class="others"/>其他
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        <!--主体下部分开始-->
+                <div class="order_left_main">
+                    <ul class="order_nav">
+                        <li class="active">基本信息</li>
+                        <li class="air_hid">交货仓库</li>
+                        <li class="air_hid">随机文件</li>
+                    </ul>
+                    <a href="#" class="goods_size">货物尺寸</a>
+                    <div id="order_left_main">
+                    <!--基本信息开始-->
+                        <div class="base">
+                            <table>
+                            	<tr>
+                                    <td>航空公司：</td>
+                                    <td><input name="" type="text" class="selec"/></td>
+                                    <td><input name="" type="text" /></td>
+                                    <td>运输条款：</td>
+                                    <td><select></select></td>
+                                    <td class="air">AR计重方式：</td>
+                                    <td class="air">
+                                        <select>
+                                            <option>1/5000</option>
+                                            <option>1/6000</option>
+                                            <option>1/7000</option>
+                                        </select>
+                                    </td>
+                                    <td class="fcl_mian" style="display:none;text-align:center">箱量</td>
+                                    <td class="fcl_mian" style="display:none;text-align:left">箱型</td>
+                                </tr>
+                                <tr>
+                                    <td>起飞港：</td>
+                                    <td><input name="" type="text" /></td>
+                                    <td><input name="" type="text" /></td>
+                                    <td>收款方式：</td>
+                                    <td>
+                                        <select>
+                                            <option></option>
+                                        </select>
+                                    </td>
+                                    <td class="air">AP计重方式：</td>
+                                    <td class="air">
+                                        <select>
+                                            <option>1/5000</option>
+                                            <option>1/6000</option>
+                                            <option>1/7000</option>
+                                        </select>
+                                    </td>
+                                    <td class="fcl_mian" style="display:none">
+                                    	<input name="" type="text" style="width:50px" />x
+                                    </td>
+                                    <td class="fcl_mian" style="display:none;text-align:left">
+                                    	<select style="width:70px">
+                                            <option>20'GP</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>目的港：</td>
+                                    <td><input name="" type="text" class="selec"/></td>
+                                    <td><input name="" type="text" /></td>
+                                    <td>HAWB付款方式：</td>
+                                    <td><select></select></td>
+                                    <td class="air">AR分泡方式：</td>
+                                    <td class="air">
+                                        <select>
+                                            <option>0</option>
+                                            <option>1/2</option>
+                                            <option>1/3</option>
+                                            <option>2/3</option>
+                                            <option>3/10</option>
+                                            <option>4/10</option>
+                                            <option>6/10</option>
+                                            <option>7/10</option>
+                                            <option>8/10</option>
+                                        </select>
+                                    </td>
+                                    <td class="fcl_mian" style="display:none">
+                                    	<input name="" type="text" style="width:50px" />x
+                                    </td>
+                                    <td class="fcl_mian" style="display:none;text-align:left">
+                                    	<select style="width:70px">
+                                            <option>40'GP</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                	<td>目的港代理：</td>
+                                    <td><input name="" type="text" class="selec"/></td>
+                                    <td><input name="" type="text" /></td>
+                                    <td>MAWB付款方式：</td>
+                                    <td><select></select></td>
+                                    <td class="air">AP分泡方式：</td>
+                                    <td class="air">
+                                        <select>
+                                            <option>0</option>
+                                            <option>1/2</option>
+                                            <option>1/3</option>
+                                            <option>2/3</option>
+                                            <option>3/10</option>
+                                            <option>4/10</option>
+                                            <option>6/10</option>
+                                            <option>7/10</option>
+                                            <option>8/10</option>
+                                        </select>
+                                    </td>
+                                    <td class="fcl_mian" style="display:none;text-align:left">
+                                    	<input name="" type="text" style="width:50px" />x
+                                    </td>
+                                    <td class="fcl_mian" style="display:none;text-align:left">
+                                    	<select style="width:70px">
+                                            <option>40'HQ</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td >毛重：</td>
+                                    <td><input type="text"></td>
+                                    <td>件数：<input type="text" style="width:60px;"/></td>
+                                    <td>体积：</td>
+                                    <td><input type="text" /></td>
+                                    <td>交货时间：</td>
+                                    <td><input id="J-x2" name="" type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td>品名：</td>
+                                    <td colspan="2"><input name="" type="text" style="width:100%" /></td>
+                                    <td>包装：</td>
+                                    <td><select></select></td>
+                                    <td></td>
+                                    <td><input type="checkbox" />信用证提单</td>
+                                </tr>
+                                <tr>
+                                    <td>注意事项：</td>
+                                    <td colspan="6"><textarea name="" ></textarea></td> 
+                                </tr>
+                                <tr style="height:30px;">
+                                	<td>报关模式：</td>
+                                    <td><input type="checkbox" class="baoguan" disabled="disabled"/>快递下港</td>
+                                </tr>
+                                <tr style="height:30px;">
+                                	<td></td>
+                                    <td><input type="checkbox" class="baoguan" disabled="disabled"/>我司代报</td>
+                                </tr>
+                                <tr style="height:30px;">
+                                	<td></td>
+                                    <td><input type="checkbox" class="baoguan" disabled="disabled"/>客户自报</td>
+                                </tr>
+                                <tr style="height:30px;">
+                                	<td></td>
+                                    <td colspan="2"><input name="" type="checkbox" class="baoguan" disabled="disabled"/>代Shipper报香港进出关</td>
+                                </tr>
+                            </table>
+                            <div class="declare" style="display:none;">
+                                <div class="trailer">
+                                    <fieldset>
+                                        <legend>装货地址</legend>
+                                        <table>
+                                            <tr>
+                                                <td>装货地址：</td>
+                                                <td colspan="3"><input name="" type="text" style="width:100%"/></td> 
+                                            </tr>
+                                            <tr>
+                                                <td>联系人：</td>
+                                                <td><input name="" type="text" style="width:160px;"/></td>
+                                                <td>电话：</td>
+                                                <td><input name="" type="text" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td>装货日期：</td>
+                                                <td><input  name="" type="text" class="laydate-icon" onClick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})"/></td>
+                                                <td>手机：</td>
+                                                <td><input name="" type="text" /></td>
+                                            </tr>
+                                        </table>
+                                    </fieldset>     
+                                </div>
+                                <button type="button" class="add_btn">新增装货地址</button>
+                            </div>
+                        </div>
+                    <!--基本信息结束-->
+                    <!--交货仓库开始-->
+                        <div class="house" style="display:none">
+                            <table>
+                                <tr>
+                                    <td>仓库：</td>
+                                    <td>
+                                        <select>
+                                            <option></option>
+                                        </select>
+                                    </td>
+                                    <td><input name="" type="text" /></td>
+                                    <td>入仓号：</td>
+                                    <td><input name="" type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td>联系人：</td>
+                                    <td><input name="" type="text" /></td>
+                                    <td>电话：<input name="" type="text" /></td>
+                                    <td>所在城市：</td>
+                                    <td>
+                                        <select>
+                                            <option></option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>仓库地址：</td>
+                                    <td colspan="4"><textarea name=""></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td>备注：</td>
+                                    <td colspan="4"><textarea name=""></textarea></td>
+                                </tr>
+                            </table>
+                        </div>
+                    <!--交货仓库结束-->
+                    <!--随机文件开始-->
+                        <div class="random" style="display:none">
+                        	<table>
+                                <tr>
+                                    <td><input name="" type="checkbox" /></td>
+                                    <td>装箱单</td>
+                                    <td>
+                                        <select>
+                                            <option></option>
+                                        </select>
+                                    </td>
+                                    <td><input name="" type="checkbox" /></td>
+                                    <td>备注</td>
+                                    <td><input name="" type="text" style="width:300px;"/></td>
+                                </tr>
+                                <tr>
+                                    <td><input name="" type="checkbox" /></td>
+                                    <td>发票</td>
+                                    <td>
+                                        <select>
+                                            <option></option>
+                                        </select>
+                                    </td>
+                                    <td><input name="" type="checkbox" /></td>
+                                    <td>备注</td>
+                                    <td><input name="" type="text" style="width:300px;"/></td>
+                                </tr>
+                                <tr>
+                                    <td><input name="" type="checkbox" /></td>
+                                    <td>产地证</td>
+                                    <td>
+                                        <select>
+                                            <option></option>
+                                        </select>
+                                    </td>
+                                    <td><input name="" type="checkbox" /></td>
+                                    <td>备注</td>
+                                    <td><input name="" type="text" style="width:300px;"/></td>
+                                </tr>
+                                <tr>
+                                    <td><input name="" type="checkbox" /></td>
+                                    <td>报关资料</td>
+                                    <td>
+                                        <select>
+                                            <option></option>
+                                        </select>
+                                    </td>
+                                    <td><input name="" type="checkbox" /></td>
+                                    <td>备注</td>
+                                    <td><input name="" type="text" style="width:300px;"/></td>
+                                </tr>
+                                <tr>
+                                	<td><input name="" type="checkbox" /></td>
+                                    <td>其他</td>
+                                    <td colspan="4"><textarea style="width:100%;"></textarea></td>
+                                </tr>
+                            </table>
+                        </div>
+                    <!--随机文件结束-->
+                    </div>
+                </div>
+        <!--主体下部分结束-->
+        </div>
+        <!--右侧开始-->
+            <div class="order_right">
+                <table>
+                    <tr>
+                        <td>客服</td>
+                        <td>
+                            <select>
+                                <option></option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input name="" type="checkbox" />提交</td>
+                        <td><input name="" type="text" /></td>
+                    </tr>
+                     <tr>
+                        <td>提交人</td>
+                        <td><input name="" type="text" /></td>
+                    </tr>
+                     <tr>
+                        <td><input name="" type="checkbox" />签单</td>
+                        <td><input name="" type="text" /></td>
+                    </tr>
+                     <tr>
+                        <td>签单人</td>
+                        <td><input name="" type="text" /></td>
+                    </tr>
+                     <tr>
+                        <td><input name="" type="checkbox" />加签</td>
+                        <td><input name="" type="text" /></td>
+                    </tr>
+                     <tr>
+                        <td>加签人</td>
+                        <td><input name="" type="text" /></td>
+                    </tr>
+                     <tr>
+                        <td><input name="" type="checkbox" /></td>
+                        <td>含税利润</td>
+                    </tr>
+                     <tr>
+                        <td>折合币制</td>
+                        <td>
+                            <select>
+                                <option>RMB</option>
+                                <option>HKD</option>
+                                <option>USD</option>
+                                <option>EUR</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <p>应收：</p>
+                <p>应付：</p>
+                <p>本单位原币利润：</p>
+                <p>本单折合利润：</p>
+            </div>
+        <!--右侧结束-->
+        <!--底部开始-->
+            <div class="order_bottom">
+                <ul>
+                    <li><button type="button" id="addTable">新增AR</button></li>
+                    <li><button type="button" id="addCost">检验费</button></li>
+                    <li><button type="button" id="deleteTable">删除</button></li>
+                    <li><button type="button" class="cost_btn">费用</button></li>
+                    <li><button type="button" onclick="window.location.reload();">刷新</button></li>
+                    <li><button type="button" class="pricec_btn">成本</button></li>
+                </ul>
+                <table class="offer_up_table" cellspacing="0" id="table1" style="width:2900px;">
+                    <tr class="table_th">
+                        <td ><input name="sel" type="checkbox" style="width:30px"/></td>
+                        <td>类别</td>
+                        <td>结算客户</td>
+                        <td>客户简称</td>
+                        <td>费用代码</td>
+                        <td>费用名称</td>
+                        <td>方式</td>
+                        <td>币制</td>
+                        <td class="air">计价单位</td>
+                        <td class="fcl_mian" style="display:none">箱型</td>
+                        <td>单价</td>
+                        <td>数量</td>
+                        <td>金额</td>
+                        <td>金额含税</td>
+                        <td>开发票</td>
+                        <td>税率（%）</td>
+                        <td>税金</td>
+                        <td>未含税金额</td>
+                        <td>核算金额</td>
+                        <td>折算符</td>
+                        <td>兑换率</td>
+                        <td>未含折合税金额</td>
+                        <td>税金折合金额</td>
+                        <td>折算总额</td>
+                        <td>备注</td>
+                        <td>录入人</td>
+                        <td>录入时间</td>
+                        <td>修改人</td>
+                    </tr>
+                </table>      
+            </div>
+        <!--货物尺寸开始-->
+            <div id="goods" class="order_bottom goods" style="display:none">
+                <p>货物明细</p>
+                <img class="close" src="../../images/btn_close.png" />
+                <ul style="top:25px;">
+                    <li><button type="button" class="good_add">新增</button></li>
+                    <li><button type="button" class="good_del">删除</button></li>
+                    <li><button type="button">刷新</button></li>
+                </ul>
+                <table class="offer_up_table" cellspacing="0" id="table_good">
+                    <tr class="table_th">
+                        <td style="width:30px"><input name="" type="checkbox" /></td>
+                        <td>包装</td>
+                        <td>长（CM)</td>
+                        <td>宽（CM）</td>
+                        <td>高（CM）</td>
+                        <td>件数</td>
+                        <td>体积（CBM）</td>
+                        <td>货物名称</td>
+                        <td>标记与号码</td>
+                        <td>备注</td>
+                    </tr>
+                    <tr>
+                        <td><input name="" type="checkbox" /></td>
+                        <td>CARTON(S)</td>
+                        <td>.000</td>
+                        <td>.000</td>
+                        <td>.000</td>
+                        <td>120</td>
+                        <td>16.4400</td>
+                        <td>back</td>
+                        <td>电话</td>
+                        <td>传真</td>
+                    </tr>
+                </table> 
+            </div>
+        <!--货物尺寸结束-->
+        <!--费用开始-->
+        	<div class="cost" style="display:none;">
+            	<h3>历史订单费用</h3>
+                <img class="cost_close" src="../../images/btn_close.png" />
+                <div class="cost_main">
+                    <table cellspacing="0">
+                        <tr class="table_th">
+                            <td>类别</td>
+                            <td>结算客户</td>
+                            <td>客户简称</td>
+                            <td>费用代码</td>
+                            <td>费用名称</td>
+                            <td>方式</td>
+                            <td>币制</td>
+                            <td>箱型</td>
+                            <td>单价</td>
+                            <td>数量</td>
+                            <td>金额</td>
+                            <td>金额含税</td>
+                            <td>开发票</td>
+                            <td>税率（%）</td>
+                            <td>税金</td>
+                            <td>未含税金额</td>
+                            <td>核算金额</td>
+                            <td>折算符</td>
+                            <td>兑换率</td>
+                            <td>未含税折合金额</td>
+                            <td>折合总额</td>
+                            <td>备注</td>
+                            <td>录入人</td>
+                            <td>录入时间</td>
+                            <td>修改人</td>
+                            <td>修改时间</td>
+                        </tr>
+                        <tr>
+                            <td>AP</td>
+                            <td></td>
+                            <td></td>
+                            <td>CLEF</td>
+                            <td>报关费</td>
+                            <td>PP</td>
+                            <td>RMB</td>
+                            <td></td>
+                            <td>600</td>
+                            <td>1</td>
+                            <td>600</td>
+                            <td><input name="" type="checkbox" /></td>
+                            <td><input name="" type="checkbox" /></td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>600</td>
+                            <td>600</td>
+                            <td>乘</td>
+                            <td>1</td>
+                            <td>600</td>
+                            <td>折合总额</td>
+                            <td>备注</td>
+                            <td>录入人</td>
+                            <td>录入时间</td>
+                            <td>修改人</td>
+                            <td>修改时修改时</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        <!--费用结束-->
+        <!--成本开始-->
+        	<div class="pricec" style="display:none;">
+            	<h3>成本</h3>
+                <img class="pricec_close" src="../../images/btn_close.png" />
+                <p>成本->空运</p>
+                <table style="width:600px;">
+                	<tr>
+                    	<td>航空公司：</td>
+                        <td>
+                        	<select>
+                            	<option></option>
+                            </select>
+                        </td>
+                        <td>起飞港：</td>
+                        <td>
+                        	<select>
+                            	<option></option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td>航空代理：</td>
+                        <td>
+                        	<select>
+                            	<option></option>
+                            </select>
+                        </td>
+                        <td>目的港：</td>
+                        <td>
+                        	<select>
+                            	<option></option>
+                            </select>
+                        </td>
+                        <td>
+                        	<button type="button">查询</button>
+                            <button type="button">重置</button>
+                            <button type="button">确定</button>
+                            <button type="button" class="pricec_close">关闭</button>
+                        </td>
+                    </tr>
+                </table>
+                <div class="pricec_main">
+                    <table cellspacing="0" style="width:2900px;">
+                        <tr class="table_th">
+                        	<td><input name="" type="checkbox" /></td>
+                            <td>区域</td>
+                            <td>起飞港</td>
+                            <td>目的港</td>
+                            <td>Routing</td>
+                            <td>航空公司</td>
+                            <td>费用币制</td>
+                            <td>计价单位</td>
+                            <td>空运费Min</td>
+                            <td>N</td>
+                            <td>+45k</td>
+                            <td>+100k</td>
+                            <td>+300k</td>
+                            <td>+500k</td>
+                            <td>+1000k</td>
+                            <td>MYC</td>
+                            <td>TC</td>
+                            <td>SCC</td>
+                            <td>CTG(Min)</td>
+                            <td>CTG</td>
+                            <td>CFS(Min)</td>
+                            <td>CFS</td>
+                            <td>X-RAY</td>
+                            <td>AWB</td>
+                            <td>CUSTOMS</td>
+                            <td>DOC</td>
+                            <td>GATE</td>
+                            <td>CCA</td>
+                            <td>特价</td>
+                            <td>附加费</td>
+                            <td>国家</td>
+                            <td>公司</td>
+                            <td>有效</td>
+                            <td>合约号</td>
+                            <td>生效时间</td>
+                            <td>失效时间</td>
+                            <td>运输条款</td>
+                            <td>建议运价</td>
+                            <td>航程（天）</td>
+                            <td>服务说明</td>
+                            <td>运价说明</td>
+                            <td>拿价人</td>
+                            <td>航空代理</td>
+                            <td>发布</td>
+                            <td>录入人</td>
+                            <td>录入时间</td>
+                            <td>修改人</td>
+                            <td>修改时间</td>
+                            <td>备注1</td>
+                            <td>备注2</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        <!--成本结束-->
+            </form>
+        </div>
+    <!--底部结束-->
+    </div>
+    <script src="../../js/table.js"></script>
+    <script type="text/javascript" src="../../js/laydate-master/laydate.dev.js"></script>
+    <script type="text/javascript">
+        laydate({
+            elem: '#J-xl'
+        });
+		laydate({
+            elem: '#J-x2'
+        });
+    </script>
+    <script type="text/javascript" src="../../js/timer/laydate.js"></script>
+</body>
+</html>

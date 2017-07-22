@@ -1,0 +1,453 @@
+/* CSS Document */
+*{
+	margin:0;
+	padding:0;
+}
+a{
+	color:#000;
+	text-decoration:none;
+}
+table{
+	font-size:12px;
+
+}
+input[type='text'],select,textarea{
+	border:1px solid #999;
+	width:100px;
+}
+.container{
+	width:94%;
+	height:630px;
+	margin:10px;
+	padding:10px;
+	border:2px solid #375a78;
+	-moz-box-shadow:3px 3px 5px #375a78 inset;
+	-webkit-box-shadow:3px 3px 5px #375a78 inset;
+	box-shadow:3px 3px 5px #375a78 inset;
+	overflow:auto;
+	position:relative;
+}
+.top_button button{/*空运页开始*/
+	width:90px;
+	height:30px;
+	background-color:#FFF;
+	margin:0px 5px 0px 5px;
+	border:1px solid #ccc;
+	border-radius:5px;
+}
+.button_add,.button_change,.button_delate,.button_load,.button_upload,.button_publish,.button_noefficacy,.button_save,.button_refresh,.button_return,.button_finish{
+	text-align:center;
+	padding-left:20px;
+}
+.button_add{
+	background:url(../images/add.png) 15px no-repeat;
+}
+.button_change{
+	background:url(../images/change.png) 15px no-repeat;
+}
+.button_delate{
+	background:url(../images/btn_close.png) 15px no-repeat;
+}
+.button_load{
+	background:url(../images/upload.png) 15px no-repeat;
+}
+.button_upload{
+	background:url(../images/load.png) 15px no-repeat;
+}
+.button_publish{
+	background:url(../images/publish.png) 15px no-repeat;
+}
+.button_noefficacy{
+	background:url(../images/noefficacy.png) 15px no-repeat;
+}
+.button_save{
+	background:url(../images/baicuntubiao.png) 15px no-repeat;
+}
+.button_refresh{
+	background:url(../images/refresh.png) 15px no-repeat;
+}
+.button_return{
+	background:url(../main/work/images/return.png) 15px no-repeat;
+}
+.button_finish{
+	background:url(../main/work/images/finish.png) 15px no-repeat;
+}
+.top_button button img{
+	margin-left:5px;}
+
+.titles{
+	margin:10px 0;
+}
+.table_one{
+	width:800px;
+	margin-left:10px;
+	margin-top:10px;
+	text-align:right;
+}
+.table_one tr{
+	height:30px;
+}
+.table_one button,.full_bottom button{
+	width:70px;
+	border:1px solid #98c0e2;
+}
+.table_one button:hover,.full_bottom button:hover{
+	background-color:#98c0e2;
+	color:#fff;
+}
+.table_one td select,.table_one td input[type="text"]{
+	width:120px;
+	height:22px;
+}
+.client{
+	width:1100px;
+	overflow:auto;
+}
+.table_two{
+	border:1px solid #ccc;
+	width:1600px;
+}
+.table_two td{
+	text-align:center;
+}
+.client_main{
+	padding:10px;
+	width:1000px;
+	height:300px;
+	overflow:scroll;
+	border:1px solid #ccc;
+}
+.table_th{
+	background-color:#98c0e2;
+	color:#333;
+}
+.table_th td{
+	border-right:1px solid #fff;
+}
+.foot{
+	width:1000px;
+	height:20px;
+	margin:10px 0;
+}
+.foot input[type="text"],.foot select{
+	width:35px;
+}
+.foot font{
+	margin-left:200px;}
+.table_two td:nth-child(1){
+	width:20px;
+}/*空运页结束*/
+
+
+.index{
+	width: 260px;
+	border: 1px solid #ccc;
+	list-style: none;
+	text-indent: 20px;
+	float:left;
+}
+.index img{
+	margin-left:70px;
+}
+.titles font{
+	margin-left:10px;
+}
+.table_set select{
+	width:120px;
+	height:25px;
+}
+.table_set td:nth-child(3){
+	width:60px;
+	text-align:right;
+}
+.table_main tr:nth-child(1){
+	background-color:#89c0e3;
+}
+.table_main table{
+	font-size:14px;
+	width:120%;}
+.table_main{
+	width:100%;
+	height:400px;
+	overflow:scroll;
+	border:1px solid #ccc;
+	text-align:center;
+}
+.button_see{
+	background:url(../images/see.png) 15px;
+	background-repeat:no-repeat;
+	text-align:center;
+	padding-left:25px;}
+.load_data,.release_data{/*导入Excel文件开始*/
+	width:480px;
+	height:300px;
+	margin:130px 300px;
+	border:3px solid #375a89;
+}
+
+.top_loadfile button{
+	position:relative;
+	top:5px;
+	left:340px;
+	border-style:none;
+	background:#FFF;
+}
+
+.choose_button button{
+	width:90px;
+	height:30px;
+	float:left;
+	background-color:#FFF;
+	margin:0px 5px 0px 5px;
+	border:1px solid #ccc;
+	border-radius:5px;
+	float:left;
+}
+.tips font{
+	color:#F00;
+}
+.choose_file{
+	height:30px;
+	display:inline-block;
+	padding-left:10px;
+}
+.choose_file select{
+	width:100px;
+}
+.choose_file input[type=file]{
+	width:73px;
+}
+.rule{
+	margin-bottom:5px;
+}
+.tips{
+	line-height:35px;
+	padding-left:10px;
+}/*导入Excel文件结束*/
+.export{
+	width:70%;
+	height:400px;
+	border:5px solid #375a89;
+	margin:100px 200px;
+	padding:10px;
+}
+.top_export button{
+	border-style:none;
+	position:relative;
+	left:660px;
+	top:5px;
+}
+
+.choose_line button{
+	width:90px;
+	height:30px;
+	background-color:#FFF;
+	margin:0px 5px 0px 5px;
+	border:1px solid #ccc;
+	border-radius:5px;
+	}
+.button_company{
+	background:url(../images/book.png) 15px;
+	background-repeat:no-repeat;
+	text-align:center;
+	padding-left:25px;
+}
+.button_ensure{
+	background:url(../images/ensure.png) 15px;
+	background-repeat:no-repeat;
+	text-align:center;
+	padding-left:25px;
+}
+.button_ensure{
+	position:absolute;
+	right:300px;
+}
+.fixed{
+	position:absolute;
+	right:200px;
+}
+
+.choose_line select{
+	width:80px;
+}
+.left{
+	width:374px;
+	position:relative;
+	top:5px;
+	border:1px solid #ccc;
+	float:left;
+}
+.right{
+	width:374px;
+	position:relative;
+	top:5px;
+	border:1px solid #ccc;
+	float:left;
+}
+.choose_company{
+	border:1px solid #ccc;
+	width:370px;
+	text-align:center;
+	font-size:12px;
+}
+.choose_company font{
+	color:#F00;
+}
+.choose_company tr:nth-child(1){
+	background:#89c0e3;
+}
+.choose_company td:nth-child(1){
+	width:20px;}
+.file_left{
+	width:230px;;
+	float:left;
+}
+.file_right{
+	width:75%;
+	float:left;
+}
+/*新增空运开始*/
+.client_add{
+	width:800px;
+	padding:5px;
+}
+.client_add table{
+	text-align:right;
+}
+.client_add input[type="text"],.client_add select{
+	width:120px;
+	color:#666;
+}
+.client_add fieldset{
+	border:1px solid #98c0e2;
+	padding:5px;
+}
+.field_base{
+	padding:5px;
+	margin-bottom:10px;
+	width:740px;
+}
+.fa{
+	clear:both;
+	border:1px solid #ccc;
+	margin:2px;
+	padding:3px;
+}
+.add_left,.add_right{
+	width:220px;
+	float:left;
+}
+.add_mid{
+	width:300px;
+	float:left;
+	margin:0 7px;
+}
+.add_mid fieldset input[type='text'],.add_mid fieldset select{
+	width:60px;
+	height:21px;
+}
+.add_down td textarea{
+	width:550px;
+}
+.add_down td button{
+	width:50px;
+	border:1px solid #98c0e2;
+	position:absolute;
+}
+.add_down td button:hover{
+	background-color:#98c0e2;
+	color:#fff;
+}
+.add_down td:nth-child(3){
+	position:relative;
+	width:50px;
+	padding-left:3px;
+}
+.btn1{
+	top:2px;
+	right:2px;
+}
+.btn2{
+	top:28px;
+	right:2px;
+}
+/*新增空运结束*
+
+/*整箱开始*/
+.tab button{
+	border:0;
+}
+.tab .select{
+	background-color:#98c0e2;
+	border:1px solid #ccc;
+	border-bottom:0;
+	color:red;
+}
+.full_top{
+	height:400px;
+	overflow:auto;
+	border-bottom:1px solid #999;
+	margin-bottom:4px;
+}
+.full_bottom{
+	width:1000px;
+	height:150px;
+	position:relative;
+}
+.full_bottom ul{
+	list-style:none;
+	position:absolute;
+}
+.full_bottom ul li{
+	height:27px;
+}
+.full_bottom_table{
+	position:absolute;
+	left:70px;
+	width:1000px;
+	overflow:auto;
+}
+.full_bottom_table td{
+	text-align:center;
+}
+
+/*整箱结束*/
+
+.change_footer{
+	display:block;
+	padding:15px;
+	position:relative;
+	left:20px;
+	bottom:0;
+	font-size:14px;
+}
+.change_footer span{
+	border:1px solid #666;
+	display:inline-block;
+	min-width:30px;
+	font-size:12px;
+	text-align:center;
+	cursor:pointer;
+}
+.change_footer span:hover{
+	background-color:#98c0e2;
+	color:#fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/

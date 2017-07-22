@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>柏阳</title>
+    <link rel="stylesheet" href="css/index.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/tendina.min.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+</head>
+<body>
+    <!--顶部-->
+    <div class="top">
+            <div style="float: left">
+            	<h1 style="font-size: 16px;line-height: 45px;padding-left: 20px;color: #fff">Proair 柏阳</h1>
+            </div>
+        <!--<marquee>...</marquee>； 说明：在标记之间添加要进行滚动的内容。-->
+            <marquee direction="left" scrollamount="2" width="400px">管理员：<b>RainMan</b> 您好，感谢登陆使用！</marquee>
+            <div class="top_r">
+                <ul>
+                	<li><a href="javascript:void(0)"><img style="border:none" src="images/new.png" /><span>New</span></a></li>
+                    <li><a href="javascript:void(0)"><img style="border:none" src="images/admin.png" title="管理员" /></a></li>
+                    <li><a href="javascript:void(0)"><img style="border:none" src="images/horn.png" title="公告"/></a></li>
+                    <li><a href="javascript:void(0)"><img style="border:none" src="images/mess.png" title="消息"/></a></li>
+                    <li><a href="javascript:void(0)"><img style="border:none" src="images/index.png" title="主页" /></a></li>
+                    <li><a href="javascript:void(0)"><img style="border:none" src="images/esc.png" onclick="logout();" title="退出" /></a></li>
+                </ul>
+            </div>
+    </div>
+    <!--顶部结束-->
+    <!--菜单-->
+    <div class="left-menu">
+    	<h2>操作目录</h2>
+        <ul id="menu">
+            <li class="menu-list">
+               <a class="firsta"><i  class="glyph-icon xlcd"></i>工作台<s class="sz"></s></a>
+                <ul>
+                    <li><a href="main/work/note.html" target="menuFrame"><i class="glyph-icon icon-chevron-right1"></i>行事历</a></li>
+                    <li><a href="main/work/workbench.html" target="menuFrame"><i class="glyph-icon icon-chevron-right2"></i>工作台</a></li>
+                </ul>
+            </li>
+            <li class="menu-list">
+               <a class="firsta"><i  class="glyph-icon xlcd"></i>运价管理<s class="sz"></s></a>
+                <ul>
+                    <li><a href="main/fare/client.html" target="menuFrame"><i class="glyph-icon icon-chevron-right1"></i>空运</a></li>
+                    <li><a href="main/fare/full.html" target="menuFrame"><i class="glyph-icon icon-chevron-right2"></i>整箱</a></li>
+                    <li><a href="main/fare/bulk.html" target="menuFrame"><i class="glyph-icon icon-chevron-right3"></i>散货</a></li>
+                    <li><a href="main/fare/filemanage.html" target="menuFrame"><i class="glyph-icon icon-chevron-right3"></i>文件管理</a></li>
+                </ul>
+            </li>
+            <li class="menu-list">
+               <a class="firsta"><i  class="glyph-icon xlcd"></i>销售管理<s class="sz"></s></a>
+                <ul>
+                    <li><a href="main/sale/customer.html" target="menuFrame"><i class="glyph-icon icon-chevron-right1"></i>我的客户</a></li>
+                    <li><a href="main/sale/customer_visit.html" target="menuFrame"><i class="glyph-icon icon-chevron-right1"></i>客户拜访</a></li>
+                    <li><a href="main/sale/offer.html" target="menuFrame"><i class="glyph-icon icon-chevron-right2"></i>我的报价</a></li>
+                    <li><a href="main/sale/order.html" target="menuFrame"><i class="glyph-icon icon-chevron-right3"></i>我的订单</a></li>
+                    <li><a href="main/sale/signbill.html" target="menuFrame"><i class="glyph-icon icon-chevron-right3"></i>签单</a></li>
+                </ul>
+            </li>
+            <li class="menu-list">
+               <a class="firsta"><i  class="glyph-icon xlcd"></i>操作管理<s class="sz"></s></a>
+                <ul>
+                    <li><a href="main/operation/plan.html" target="menuFrame"><i class="glyph-icon icon-chevron-right1"></i>工作计划</a></li>
+                    <li>
+                    	<a href="main/operation/booking_sea.html" target="menuFrame"><i class="glyph-icon icon-chevron-right2"></i>海运订舱</a>
+                    </li>
+                    <li>
+                    	<a href="main/operation/booking_air.html" target="menuFrame"><i class="glyph-icon icon-chevron-right2"></i>空运订舱</a>
+                    </li>
+                    <li>
+                    	<a href="main/operation/save_air.html" target="menuFrame"><i class="glyph-icon icon-chevron-right2"></i>空运仓储</a>
+                    </li>
+                    <li>
+                    	<a href="main/operation/booking_scattered.html" target="menuFrame"><i class="glyph-icon icon-chevron-right2"></i>散货订仓</a>
+                    </li>
+                    <li>
+                    	<a href="main/operation/trailer.html" target="menuFrame"><i class="glyph-icon icon-chevron-right2"></i>拖车</a>
+                    </li>
+                    <li>
+                    	<a href="main/operation/declare.html" target="menuFrame"><i class="glyph-icon icon-chevron-right2"></i>报关</a>
+                    </li>
+                    <li><a href="main/operation/workorder.html" target="menuFrame"><i class="glyph-icon icon-chevron-right3"></i>工作单</a></li>
+                </ul>
+            </li>
+            <li class="menu-list">
+               <a class="firsta"><i  class="glyph-icon xlcd"></i>结算管理<s class="sz"></s></a>
+                <ul>
+                    <li><a href="main/settlement/payment.html" target="menuFrame"><i class="glyph-icon icon-chevron-right1"></i>收付款</a></li>
+                    <li><a href="main/settlement/request.html" target="menuFrame"><i class="glyph-icon icon-chevron-right2"></i>付款申请</a></li>
+                    <li><a href="main/settlement/invoice.html" target="menuFrame"><i class="glyph-icon icon-chevron-right3"></i>发票</a></li>
+                    <li><a href="main/settlement/confirm.html" target="menuFrame"><i class="glyph-icon icon-chevron-right3"></i>费用确认</a></li>
+                    <li><a href="main/settlement/payquery.html" target="menuFrame"><i class="glyph-icon icon-chevron-right3"></i>收付款查询</a></li>
+                     <li><a href="main/settlement/receivable.html" target="menuFrame"><i class="glyph-icon icon-chevron-right3"></i>应收应付查询</a></li>
+                </ul>
+            </li>
+            <li class="menu-list">
+               <a class="firsta"><i  class="glyph-icon xlcd"></i>权限管理<s class="sz"></s></a>
+                <ul>
+                    <li><a href="main/purview/user.html" target="menuFrame"><i class="glyph-icon icon-chevron-right1"></i>用户管理</a></li>
+                    <li><a href="main/purview/group.html" target="menuFrame"><i class="glyph-icon icon-chevron-right2"></i>组管理</a></li>
+                    <li><a href="main/purview/jurisdiction.html" target="menuFrame"><i class="glyph-icon icon-chevron-right3"></i>权限查询</a></li>
+                    <li><a href="main/purview/department.html" target="menuFrame"><i class="glyph-icon icon-chevron-right3"></i>部门管理</a></li>
+                    <li><a href="main/purview/company.html" target="menuFrame"><i class="glyph-icon icon-chevron-right3"></i>公司管理</a></li>
+                </ul>
+            </li>
+            <li class="menu-list">
+               <a class="firsta"><i  class="glyph-icon xlcd"></i>系统管理<s class="sz"></s></a>
+                <ul>
+                    <li><a href="main/system/person.html" target="menuFrame"><i class="glyph-icon icon-chevron-right1"></i>个人设置</a></li>
+                    <li><a href="main/system/changepassword.html" target="menuFrame"><i class="glyph-icon icon-chevron-right2"></i>修改密码</a></li>
+                    <li><a href="main/system/manage.html" target="menuFrame"><i class="glyph-icon icon-chevron-right3"></i>提醒管理</a></li>
+                    <li><a href="main/system/expressions.html" target="menuFrame"><i class="glyph-icon icon-chevron-right3"></i>常用语</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    
+    <!--菜单右边的iframe页面-->
+    <div id="right-content" class="right-content">
+        <div class="content">
+            <div id="page_content">
+                <!--iframe 元素会创建包含另外一个文档的内联框架（即行内框架）-->
+                <!--scrolling:规定是否在 iframe 中显示滚动条。-->
+                <iframe id="menuFrame" name="menuFrame" src="main.html" 
+                        scrolling="yes" frameborder="no" width="100%" height="100%">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

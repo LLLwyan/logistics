@@ -1,0 +1,381 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>收付款-新增</title>
+<link rel="stylesheet" href="../../css/fare.css"/>
+<link rel="stylesheet" href="../../css/settlement.css"/>
+<script src="../../js/jquery-2.1.1.min.js"></script>
+<script>
+	$(document).ready(function() {
+		/*刷新*/
+		$(".refresh").click(function(e){
+			e.stopPropagation();
+			$(".refresh ul").show();
+		})
+		$(".pay_down").click(function(){
+			$(".refresh ul").hide();
+		})
+		/*置数*/
+		$(".set").click(function(e){
+			e.stopPropagation();
+			$(".set ul").show();
+		})
+		$(".pay_down").click(function(){
+			$(".set ul").hide();
+		})
+        /*查询*/
+		$(".query").click(function(){
+			$(".model").show();
+		})
+		$(".close").click(function(){
+			$(".model").hide();
+		});
+		$(".nav >li").click(function(){
+			$(this).addClass("nav_act").siblings().removeClass("nav_act");
+			var index=$(".nav>li").index(this);
+			$(".wrap3>div").eq(index).show().siblings().hide();
+		});
+		/*兑换率*/
+		$(".ex_btn").click(function(){
+			$(".exchange").show();
+		});
+		$(".close1").click(function(){
+			$(".exchange").hide();
+		});
+		/*凭证*/
+		$(".voucher").click(function(){
+			$(".model2").show();
+		});
+		$(".close2").click(function(){
+			$(".model2").hide();
+		});
+    });
+</script>
+</head>
+
+<body>
+    <div class="container">
+    	<!--主页面开始-->
+        <div class="client">
+            <div class="top_button">
+            	<button type="button" class="button_save" onclick="window.location.href=''">保存</button>
+            	<button type="button" class="button_add" onclick="window.location.href=''">新增</button>
+                <button type="button" class="button_refresh">刷新</button>
+                <button type="button" class="button_return">返回</button>
+            </div>
+            <div class="titles">
+                <p>收付款-&gt;修改</p>
+            </div>
+            <!--主体上部分开始-->
+            <div class="pay_top">
+            	<table class="top_l">
+                	<tr>
+                		<td colspan="2">中威达物流有限公司</td>
+                    </tr>
+                    <tr>
+                    	<td>编号</td>
+                        <td><input type="text" /></td>
+                    </tr>
+                    <tr>
+                    	<td>制单日期</td>
+                        <td><input type="text" id="J-xl"/></td>
+                    </tr>
+                    <tr>
+                    	<td>收付日期</td>
+                        <td><input type="checkbox" /><input type="text" id="J-x2" style="width:110px;margin-left:7px;"/></td>
+                    </tr>
+                    <tr>
+                    	<td>凭证摘要</td>
+                        <td><input type="text" /></td>
+                    </tr>
+                    <tr>
+                    	<td>票据类型</td>
+                        <td>
+                        	<select style="width:90px;">
+                            	<option>现金</option>
+                                <option>押金</option>
+                                <option>备用金</option>
+                                <option>水单</option>
+                                <option>代收款</option>
+                                <option>冲账</option>
+                            	<option>银行存款</option>
+                                <option>保函</option>
+                                <option>其他</option>
+                            </select>
+                            <input type="checkbox" />锁定
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td>备注信息</td>
+                        <td><input type="text"/></td>
+                    </tr>
+                </table>
+                <div class="top_r"> 
+                    <table cellspacing="0" style="width:500px;">
+                        <tr class="table_th">
+                            <td>R/P</td>
+                            <td>币制</td>
+                            <td>实际收付金额</td>
+                            <td>可销账金额</td>
+                            <td>银行</td>
+                            <td>支票号</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <!--主体上部分结束-->
+            <!--主体下部分开始-->
+            <div class="pay_down">
+            	<ul>
+                	<li class="refresh">
+                    	<button type="button">刷新</button>
+                        <ul style="display:none">
+                            <li>全部</li>
+                            <li>正常销账</li>
+                            <li>差价销账</li>
+                            <li>应收</li>
+                            <li>应付</li>
+                            <li>应收应付</li>
+                        </ul>
+                    </li>
+                    <li class="set">
+                    	<button type="button">置数</button>
+                        <!--置数开始-->
+                        <ul style="display:none">
+                            <li>置数</li>
+                            <li>置数（收款）</li>
+                            <li>置数（付款）</li>
+                            <li>置零</li>
+                        </ul>
+                        <!--置数结束-->
+                    </li>
+                    <li><button type="button" class="ex_btn">兑换率</button></li>
+                    <li><button type="button" class="query">查询</button></li>
+                    <li><button type="button" class="voucher">凭证</button></li>
+                </ul>
+                <table cellspacing="0" style="width:3000px;">
+                    <tr class="table_th">
+                        <td>R/P</td>
+                        <td>业务员</td>
+                        <td>工作号</td>
+                        <td>发票号</td>
+                        <td>费用</td>
+                        <td>币制</td>
+                        <td>应收应付</td>
+                        <td>销账金额</td>
+                        <td>收付金额</td>
+                        <td>收付币制</td>
+                        <td>完成</td>
+                        <td>费用审核</td>
+                        <td>增减费用</td>
+                        <td>公司</td>
+                        <td>备注</td>
+                        <td>订舱号</td>
+                        <td>提单号</td>
+                        <td>航民航次</td>
+                        <td>收据号</td>
+                        <td>请款号</td>
+                        <td>参考号</td>
+                        <td>申请号</td>
+                        <td>工作单日期</td>
+                        <td>离岗日期</td>
+                        <td>结算单位</td>
+                        <td>委托人</td>
+                        <td>收据参考号</td>
+                        <td>MBL</td>
+                        <td>费用确认日期</td>
+                        <td>增减费用确认日期</td>
+                        <td>到港日期</td>
+                        <td>收货人</td>
+                        <td>收据日期</td>
+                        <td>订单号</td>
+                        <td>操作人</td>
+                        <td>箱量箱型</td>
+                    </tr>
+                </table>
+            </div>
+            <!--主体下部分结束-->
+            <!--查询开始-->
+            <div class="model" style="display:none;">
+                <div class="cover"></div>
+                <div class="import">
+                    <h4>查询<img src="../../images/close.png" class="close" /></h4>
+                    <div class="wrap2">
+                        <ul class="nav">
+                            <li class="nav_act">按日期查询</li>
+                            <li>按号码查询</li>
+                            <button type="button">确认</button>
+                            <button type="button">取消</button>
+                        </ul>
+                        <div class="wrap3">
+                            <!--按日期查询开始-->
+                            <div class="day">
+                                <ul class="model_nav">
+                                    <li><input type="radio" />工作单日期</li>
+                                    <li><input type="radio" />Invoice Date</li>
+                                    <li><input type="radio" />订舱日期</li>
+                                    <li><input type="radio" />离港日期</li>
+                                    <li><input type="radio" />到港日期</li>
+                                    <li><input type="radio" />截关日期</li>
+                                    <li><input type="radio" />发票日期</li>
+                                    <li><input type="radio" />计费日期</li>
+                                    <li><input type="radio" />航名航次</li>
+                                </ul>
+                                <div class="day_right">
+                                    <p><input type="radio" />YM<input type="text" id="J-x3" style="margin-left:11px;"/></p>
+                                    <p><input type="radio" />YMD<input type="text" id="J-x4"/><input type="text" id="J-x5" style="margin-left:4px;"/></p>
+                                    <table cellspacing="0" style="width:300px;margin:10px;">
+                                        <tr class="table_th">
+                                            <td><input type="checkbox" /></td>
+                                            <td>费用类别</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <!--按日期查询结束-->
+                            <!--按号码查询开始-->
+                            <div class="num" style="display:none">
+                                <ul class="model_nav">
+                                    <li><input type="radio" />订单号</li>
+                                    <li><input type="radio" />工作号</li>
+                                    <li><input type="radio" />Invoice No</li>
+                                    <li><input type="radio" />HBL/HAWB</li>
+                                    <li><input type="radio" />MBL/MAWB</li>
+                                    <li><input type="radio" />订舱号</li>
+                                    <li><input type="radio" />发票号</li>
+                                    <li><input type="radio" />箱号</li>
+                                    <li><input type="radio" />申请号</li>
+                                </ul>
+                                <div class="day_right">
+                                    <p><input type="text" style="margin-right:11px;"/><button type="button">刷新</button></p>
+                                    <table cellspacing="0" style="width:300px;margin:10px;">
+                                        <tr class="table_th">
+                                            <td><input type="checkbox" /></td>
+                                            <td>类别</td>
+                                            <td>订单号</td>
+                                            <td>工作号</td>
+                                        </tr>
+                                    </table>
+                                    <div class="change_footer" style="width:90%;position:relative;top:180px;left:0px;">
+                                        <span id="spanFirst">&le;</span>
+                                        <span id="spanPre">&lt;</span>
+                                        <span id="spanNext">&gt;</span>
+                                        <span id="spanLast">&ge;</span>
+                                        第
+                                        <span id="spanPageNum"></span>
+                                        页/共
+                                        <span id="spanTotalPage"></span>
+                                        页
+                                    </div>
+                                </div>
+                            </div>
+                            <!--按号码查询结束-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--查询结束-->
+            <!--兑换率开始-->
+            <div class="exchange" id="box" style="display:none">
+            	<h4>兑换率<img src="../../images/close.png" class="close1" /></h4>
+                <table cellspacing="0" style="width:700px;">
+                	<tr class="table_th">
+                    	<td>币制</td>
+                        <td>应收金额</td>
+                        <td>应付金额</td>
+                        <td>应收销账金额</td>
+                        <td>应付销账金额</td>
+                        <td>实际销账金额</td>
+                        <td>兑换率</td>
+                        <td>币制</td>
+                    </tr>
+                </table>
+            </div>
+            <!--兑换率结束-->
+            <!--凭证开始-->
+            <div class="model2" style="display:none;">
+                <div class="cover"></div>
+                <div class="import" style="height:280px;">
+                    <h4>凭证<img src="../../images/close.png" class="close2" /></h4>
+                    <div class="wrap2">
+						<table cellspacing="0" style="width:100%;margin-top:5px;">
+                        	<tr class="table_th">
+                            	<td>账套</td>
+                                <td>年度</td>
+                                <td>期间</td>
+                                <td>凭证字</td>
+                                <td>凭证号</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!--凭证结束-->
+        </div>
+        <!--主页面结束-->
+    </div>
+    <script src="../../js/table.js"></script>
+    <script type="text/javascript" src="../../js/laydate-master/laydate.dev.js"></script>
+    <script type="text/javascript">
+        laydate({
+            elem: '#J-xl'
+        });
+		laydate({
+            elem: '#J-x2'
+        });
+		laydate({
+            elem: '#J-x3'
+        });
+		laydate({
+            elem: '#J-x4'
+        });
+		laydate({
+            elem: '#J-x5'
+        });
+    </script>
+    <script>
+		/*拖拽*/
+		var box=document.getElementById("box");
+		box.onmousedown=function(e){
+			var diffX=e.clientX-box.offsetLeft;
+			var diffY=e.clientY-box.offsetTop;
+			document.onmousemove=function(e){
+				var left=e.clientX-diffX;
+				var top=e.clientY-diffY;
+				if(left<0){
+					left=0
+				}else if(left>document.documentElement.clientWidth-box.offsetWidth){
+					left=document.documentElement.clientWidth-box.offsetWidth;
+				}
+				if(top<0){
+					top=0;
+				}else if(top>document.documentElement.clientHeight-box.offsetHeight){
+					top=document.documentElement.clientHeight-box.offsetHeight;
+				}
+				box.style.left=left+"px";
+				box.style.top=top+"px";
+			}
+			document.onmouseup=function(){
+				this.onmousemove=null;
+				this.onmouseup=null;
+			}
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>工作计划</title>
+<link rel="stylesheet" href="../../css/fare.css"/>
+<link rel="stylesheet" href="../../css/operation.css"/>
+<script src="../../js/jquery-2.1.1.min.js"></script>
+<script>
+	$(document).ready(function() {
+        $(".tuobtn").click(function(){
+			if($(".tuobtn").is(":checked")){
+				$(".tuoche").css("display","");
+			}else{
+				$(".tuoche").css("display","none");
+			}
+		});
+		$(".baobtn").click(function(){
+			if($(".baobtn").is(":checked")){
+				$(".baoguan").css("display","");
+			}else{
+				$(".baoguan").css("display","none");
+			}
+		});
+    });
+</script>
+</head>
+
+<body>
+    <div class="container">
+    	<!--主页面开始-->
+        <div class="client">
+            <div class="top_button">
+            	<button type="button" class="button_save">保存</button>
+                <button type="button" class="button_finish">归档</button>
+                <button type="button" class="button_noefficacy">反接收</button>
+				<button type="button" class="button_cancel">取消</button>
+                <button type="button" class="button_recovery">恢复</button>
+                <button type="button" class="button_back">退回</button>
+                <button type="button" class="button_see">预览</button>
+                <button type="button" class="button_refresh">刷新</button>
+            </div>
+            <div class="titles">
+                <p>操作管理-&gt;工作计划</p>
+            </div>
+            <table class="table_one plan_table" cellspacing="0">
+                <tr>
+                    <td>
+                        <select>
+                            <option>订单号</option>
+                        </select>
+                    </td>
+                    <td></td>
+					<td colspan="4" class="tab plan_tab" style="text-align:left">
+                    	<button type="button">新单</button>
+                        <button type="button">已接收</button>
+                        <button type="button">取消</button>
+                        <button type="button">退回</button>
+                        <button class="select" type="button">全部</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    	<select>
+                            <option>业务员</option>
+                        </select>
+                       </td>
+                    <td><select></select></td>
+                    <td>订单日期：</td>
+                    <td>
+                        <input id="J-xl" type="text">
+                    </td>
+                    <td>
+                        <input id="J-x2" type="text">
+                    </td>
+                    <td>
+                        <button type="button">查询</button>
+                        <button type="reset">重置</button>
+                    </td>
+                </tr>
+            </table>
+            <!--表格开始-->
+            <div class="paln_main">
+                <table cellspacing="0" style="width:3500px;">
+                    <tr class="table_th">
+                        <td></td>
+                        <td><input type="checkbox"></td>
+                        <td>订单号</td>
+                        <td>订单日期</td>
+                        <td>订单审核时间</td>
+                        <td>工作号</td>
+                        <td>参考号</td>
+                        <td>业务员</td>
+                        <td>业务类型</td>
+                        <td>客户代码</td>
+                        <td>客户简称</td>
+                        <td>起运港</td>
+                        <td>目的港</td>
+                        <td>承运人</td>
+                        <td>订舱代理</td>
+                        <td>箱型箱量</td>
+                        <td>柜号</td>
+                        <td>截关日</td>
+                        <td>订舱号</td>
+                        <td>配载号</td>
+                        <td>客服人员</td>
+                        <td>接收订单</td>
+                        <td>受理人员</td>
+                        <td>受理时间</td>
+                        <td>散货订舱</td>
+                        <td>订仓状态</td>
+                        <td>仓储人员</td>
+                        <td>仓储状态</td>
+                        <td>订舱人员</td>
+                        <td>订舱状态</td>
+                        <td>拖车人员</td>
+                        <td>拖车状态</td>
+                        <td>报关人员</td>
+                        <td>报关状态</td>
+                        <td>文件人员</td>
+                        <td>文件状态</td>
+                        <td>异常</td>
+                        <td>备注</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><input type="checkbox"></td>
+                        <td>WEURO</td>
+                        <td>HKG</td>
+                        <td>MAN</td>
+                        <td>HKG-Sin-MAN</td>
+                        <td>SQ</td>
+                        <td>EU</td>
+                        <td>HKD</td>
+                        <td>KG</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>14.50</td>
+                        <td>14.50</td>
+                        <td>14.50</td>
+                        <td>14.50</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>2.000</td>
+                        <td>2.000</td>
+                    </tr>
+                </table>
+            </div>
+            <!--表格结束-->
+            <div class="change_footer" style="width:90%">
+                <span id="spanFirst">&le;</span>
+                <span id="spanPre">&lt;</span>
+                <span id="spanNext">&gt;</span>
+                <span id="spanLast">&ge;</span>
+                第
+                <span id="spanPageNum"></span>
+                页/共
+                <span id="spanTotalPage"></span>
+                页
+            </div> 
+            <!--底部开始-->
+            <div class="plan_bottom">
+            	<table style="position:relative">
+                	<tr>
+                    	<td>客服人员：</td>
+                        <td><select></select></td>
+                        <td>文件人员：</td>
+                        <td><select></select></td>
+                        <td>订舱人员：</td>
+                        <td><select></select></td>
+                    </tr>
+                    <tr>
+                    	<td>接收订单：</td>
+                        <td><span class="receive"><input name="" type="checkbox" /></span></td>
+                        <td>文件状态：</td>
+                        <td><input name="" type="text" /></td>
+                        <td>订舱状态：</td>
+                        <td><input name="" type="text" /></td>
+                    </tr>
+                    <tr>
+                    	<td>受理人员：</td>
+                        <td><input name="" type="text" /></td>
+                        <td>指派时间：</td>
+                        <td><input name="" type="text" /></td>
+                        <td>指派时间：</td>
+                        <td><input name="" type="text" /></td>
+                    </tr>
+                    <tr>
+                    	<td>受理时间：</td>
+                        <td><input name="" type="text" /></td>
+                        <td>受理时间：</td>
+                        <td><input name="" type="text" /></td>
+                        <td>受理时间：</td>
+                        <td><input name="" type="text" /></td>
+                    </tr>
+                    <tr>
+                    	<td></td>
+                        <td></td>
+                        <td style="text-align:right">拖车：</td>
+                        <td style="text-align:left"><input name="" type="checkbox" class="tuobtn"/></td>
+                        <td style="text-align:right">报关：</td>
+                        <td style="text-align:left"><input name="" type="checkbox" class="baobtn"/></td>
+                    </tr>
+                    <tr>
+                    	<td>仓储人员：</td>
+                        <td><select></select></td>
+                        <td class="tuoche" style="display:none">拖车人员：</td>
+                        <td class="tuoche" style="display:none"><select></select></td>
+                        <td class="baoguan baoguan1" style="display:none">报关人员：</td>
+                        <td class="baoguan baoguan2" style="display:none"><select></select></td>
+                    </tr>
+                    <tr>
+                    	<td>仓储状态：</td>
+                        <td><input name="" type="text" /></td>
+                        <td class="tuoche" style="display:none">拖车状态：</td>
+                        <td class="tuoche" style="display:none"><input name="" type="text" /></td>
+                        <td class="baoguan baoguan1" style="display:none">报关状态：</td>
+                        <td class="baoguan baoguan2" style="display:none"><input name="" type="text" /></td>
+                    </tr>
+                    <tr>
+                    	<td>指派时间：</td>
+                        <td><input name="" type="text" /></td>
+                        <td class="tuoche" style="display:none">指派时间：</td>
+                        <td class="tuoche" style="display:none"><input name="" type="text" /></td>
+                        <td class="baoguan baoguan1" style="display:none">指派时间：</td>
+                        <td class="baoguan baoguan2" style="display:none"><input name="" type="text" /></td>
+                    </tr>
+                    <tr>
+                    	<td>受理时间：</td>
+                        <td><input name="" type="text" /></td>
+                        <td class="tuoche" style="display:none">受理时间：</td>
+                        <td class="tuoche" style="display:none"><input name="" type="text" /></td>
+                        <td class="baoguan baoguan1" style="display:none">受理时间：</td>
+                        <td class="baoguan baoguan2" style="display:none"><input name="" type="text" /></td>
+                    </tr>
+                </table>
+            </div>
+            <!--底部结束-->
+        </div>
+        <!--主页面结束-->
+    </div>
+    <script src="../../js/table.js"></script>
+    <script type="text/javascript" src="../../js/laydate-master/laydate.dev.js"></script>
+    <script type="text/javascript">
+        laydate({
+            elem: '#J-xl'
+        });
+		laydate({
+            elem: '#J-x2'
+        });
+    </script>
+</body>
+</html>

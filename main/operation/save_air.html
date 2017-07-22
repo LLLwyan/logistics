@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>订舱</title>
+<link rel="stylesheet" href="../../css/fare.css"/>
+<link rel="stylesheet" href="../../css/operation.css"/>
+
+</head>
+
+<body>
+    <div class="container">
+    	<!--主页面开始-->
+        <div class="client">
+            <div class="top_button">
+            	<button type="button" class="button_change" onclick="window.location.href='save_air_modify.html'">修改</button>
+                <button type="button" class="button_see">预览</button>
+                <button type="button" class="button_upload">导出</button>
+                <button type="button" class="button_refresh">刷新</button>
+            </div>
+            <div class="titles">
+                <p>操作管理-&gt;空运仓储</p>
+            </div>
+            <table class="table_one book_table " cellspacing="0">
+                <tr>
+                    <td><select><option>工作号</option></select></td>
+                    <td><input type="text"></td>
+                    <td><button type="button">查询</button></td>
+                    <td><button type="reset">重置</button></td>
+                	<td colspan="3" class="tab plan_tab" style="text-align:left">
+                    	<button class="select" type="button">新单</button>
+                        <button type="button">进行中</button>
+                        <button type="button">已完成</button>
+                        <button type="button">全部</button>
+                    </td>
+                </tr>
+            </table>
+            <!--表格开始-->
+            <div class="paln_main" style="height:450px;">
+                <table cellspacing="0" style="width:3000px;">
+                    <tr class="table_th">
+                        <td></td>
+                        <td><input type="checkbox"></td>
+                        <td>订单号</td>
+                        <td>工作号</td>
+                        <td>入仓号</td>
+                        <td>参考号</td>
+                        <td>入仓日期</td>
+                        <td>入仓件数</td>
+                        <td>入仓重量</td>
+                        <td>客户简称</td>
+                        <td>业务员</td>
+                        <td>货物名称</td>
+                        <td>截关日</td>
+                        <td>ETD</td>
+                        <td>ETA</td>
+                        <td>航空公司</td>
+                        <td>航班</td>
+                        <td>起飞港</td>
+                        <td>目的港</td>
+                        <td>目的地</td>
+                        <td>异常</td>
+                        <td>备注</td>
+                        <td>仓储状态</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><input type="checkbox"></td>
+                        <td>WEURO</td>
+                        <td>HKG</td>
+                        <td>MAN</td>
+                        <td>HKG-Sin-MAN</td>
+                        <td>SQ</td>
+                        <td>EU</td>
+                        <td>HKD</td>
+                        <td>KG</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>14.50</td>
+                        <td>14.50</td>
+                        <td>14.50</td>
+                        <td>14.50</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>2.000</td>
+                        <td>2.000</td>
+                    </tr>
+                </table>
+            </div>
+            <!--表格结束-->
+            <div class="change_footer" style="width:90%">
+                <span id="spanFirst">&le;</span>
+                <span id="spanPre">&lt;</span>
+                <span id="spanNext">&gt;</span>
+                <span id="spanLast">&ge;</span>
+                第
+                <span id="spanPageNum"></span>
+                页/共
+                <span id="spanTotalPage"></span>
+                页
+            </div> 
+        </div>
+        <!--主页面结束-->
+    </div>
+    <script src="../../js/table.js"></script>
+    <script type="text/javascript" src="../../js/laydate-master/laydate.dev.js"></script>
+    <script type="text/javascript">
+        laydate({
+            elem: '#J-xl'
+        });
+		laydate({
+            elem: '#J-x2'
+        });
+    </script>
+</body>
+</html>

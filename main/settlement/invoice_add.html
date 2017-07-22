@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>普通发票-新增</title>
+<link rel="stylesheet" href="../../css/fare.css"/>
+<link rel="stylesheet" href="../../css/settlement.css"/>
+<script src="../../js/jquery-1.8.3.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+    	<!--主页面开始-->
+        <div class="client">
+            <div class="top_button">
+            	<button type="button" class="button_save">保存</button>
+                <button type="button" class="button_see">预览</button>
+                <button type="button" class="button_return">返回</button>
+                <button type="button" class="button_refresh">刷新</button>
+            </div>
+            <div class="titles">
+                <p>普通发票-&gt;新增</p>
+            </div>
+            <!--主体上部分开始-->
+            <div class="requset_top">
+            	<table>
+                	<tr>
+                    	<td>结算公司：</td>
+                        <td><select></select></td>
+                        <td>已打印：</td>
+                        <td style="text-align:center"><input type="checkbox" /></td>
+                        <td>发票号：</td>
+                        <td><input type="text" /></td>
+                    </tr>
+                    <tr>
+                    	<td>发票抬头：</td>
+                        <td><input type="text" /></td>
+                    	<td>提单号：</td>
+                        <td><select></select></td>
+                        <td>打印格式：</td>
+                        <td><select></select></td>
+                    </tr>
+                    <tr>
+                        <td>航名航次：</td>
+                        <td><input type="text" style="width:40px;margin-right:3px;"/><input type="text" style="width:55px;"/></td>
+                        <td>日期：</td>
+                        <td><input type="text"  id="J-xl"/></td>
+                        <td>账号：</td>
+                        <td><select></select></td>
+                    </tr>
+                    <tr>
+                    	<td>装港：</td>
+                        <td><select style="width:42px;margin-right:3px;"></select><input type="text" style="width:55px;"/></td>
+                        <td>离港日期：</td>
+                        <td><input type="text" id="J-x2"/></td>
+                        <td colspan="2"><input type="text" style="width:100%" /></td>
+                    </tr>
+                    <tr>
+                    	<td>卸港：</td>
+                        <td><select style="width:42px;margin-right:3px;"></select><input type="text" style="width:55px;"/></td>
+                        <td>目的地：</td>
+                        <td><input type="text"/></td>
+                        <td colspan="2"><input type="text" style="width:100%" /></td>
+                    </tr>
+                    <tr>
+                    	<td>快递公司：</td>
+                        <td><select style="width:42px;margin-right:3px;"></select><input type="text" style="width:55px;"/></td>
+                        <td>寄单日期：</td>
+                        <td><input type="text" id="J-x3"/></td>
+                        <td>快递号：</td>
+                        <td><input type="text" /></td>
+                    </tr>
+                </table>
+                <table class="invtab">
+                	<tr>
+                    	<td>描述</td>
+                        <td>费用明细</td>
+                        <td>数量</td>
+                        <td>费率</td>
+                        <td>金额</td>
+                        <td>备注</td>
+                    </tr>
+                    <tr>
+                    	<td><textarea></textarea></td>
+                        <td><textarea></textarea></td>
+                        <td><textarea></textarea></td>
+                        <td><textarea></textarea></td>
+                        <td><textarea></textarea></td>
+                        <td><textarea></textarea></td>
+                    </tr>
+                    <tr>
+                    	<td colspan="4">大写折合金额（中文）：<textarea style="width:200px;
+                        height:30px;"></textarea></td>
+                        <td><select style="width:80px;"><option>RMB</option></select></td>
+                        <td><input type="text" style="width:80px;"/></td>
+                    </tr>
+                </table>
+            </div>
+            <!--主体上部分结束-->
+            <!--主体下部分开始-->
+            <div class="requset_down">
+            	<ul class="nav_fixed">
+                	<li><button type="button">刷新</button></li>
+                    <li><button type="button">兑换率</button></li>
+                </ul>
+            	<div class="wraptab">
+                    <table cellspacing="0" style="width:1800px;">
+                        <tr class="table_th">
+                        	<td><input type="checkbox" /></td>
+                            <td>日期</td>
+                            <td>费用代码</td>
+                            <td>费用名称</td>
+                            <td>单价</td>
+                            <td>数量</td>
+                            <td>方式</td>
+                            <td>币制</td>
+                            <td>金额</td>
+                            <td>销账金额</td>
+                            <td>折算符</td>
+                            <td>兑换率</td>
+                            <td>折合币制</td>
+                            <td>折合金额</td>
+                            <td>备注</td>
+                            <td>销账金额</td>
+                            <td>收付金额</td>
+                            <td>收付币制</td>
+                            <td>完成</td>
+                            <td>费用审核</td>
+                            <td>备注</td>
+                            <td>发票号</td>
+                            <td>订舱号</td>
+                            <td>H.B/L</td>
+                            <td>M.B/L</td>
+                            <td>航名航次</td>
+                            <td>收据号</td>
+                            <td>参考号</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <!--主体下部分结束-->
+        </div>
+        <!--主页面结束-->
+    </div>
+     <script src="../../js/table.js"></script>
+    <script type="text/javascript" src="../../js/laydate-master/laydate.dev.js"></script>
+    <script type="text/javascript">
+        laydate({
+            elem: '#J-xl'
+        });
+		laydate({
+            elem: '#J-x2'
+        });
+    </script>
+</body>
+</html>

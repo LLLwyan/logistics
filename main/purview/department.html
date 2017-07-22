@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>部门管理</title>
+    <link rel="stylesheet" href="../../css/purview.css" />
+    <link rel="stylesheet" href="tree/zTreeStyle/zTreeStyle.css" />
+    <script src="../../js/jquery-2.1.1.min.js"></script>
+    <script src="tree/jquery.ztree.core.min.js"></script>
+    <script src="tree/jquery.ztree.excheck.min.js"></script>
+    <script src="tree/tree.js"></script>
+    <script>
+		$(document).ready(function() {
+		/*树形目录*/
+            var zTreeDemo = $.fn.zTree.init($("#tree1"),setting, depart);
+		/*选项卡切换*/
+			$(".nav_add").click(function(){
+				$(".depar_add").show().siblings().hide();
+			});
+			$(".nav_modify").click(function(){
+				$(".depar_modify").show().siblings().hide();
+			});
+        });
+	</script>
+</head>
+
+<body>
+	<div class="container">
+    <!--部门管理左侧开始-->
+    	<div class="depar_left">
+        	<div id="tree1" class="ztree"></div>
+        </div>
+    <!--部门管理左侧结束-->
+    <!--部门管理右侧开始-->
+        <div class="depar_right">
+            <div class="depar_main" style="display:">
+            <!--目录开始-->
+                <ul class="pur_nav">
+                    <li><button class="nav_add" style="width:120px;">新增下级部门</button></li>
+                    <li><button class="nav_modify">修改</button></li>
+                    <li><button class="nav_del">删除</button></li>
+                    <li><button class="nav_save">保存</button></li>
+                    <li><button class="nav_refresh" onclick="window.location.reload();">刷新</button></li>
+                </ul>
+            <!--目录结束-->
+                <h4>权限&gt;&gt;部门管理</h4>
+            <!--筛选开始-->
+                <form name="">
+                    <p>
+                        <select><option>部门名称</option></select>
+                        <input name="" type="text" />
+                        <button type="button">查询</button>&nbsp;&nbsp;&nbsp;
+                        <button type="reset">重置</button>
+                    </p>
+                </form>
+            <!--筛选结束-->
+            <!--主体开始-->
+                <div class="pur_main">
+                    <table cellspacing="0" style="width:1000px;">
+                        <tr class="table_th">
+                            <td><input name="" type="checkbox" /></td>
+                            <td>代码</td>
+                            <td>部门名称</td>
+                            <td>上级</td>
+                            <td>公司</td>
+                            <td>排序</td>
+                            <td>录入人</td>
+                            <td>录入时间</td>
+                            <td>修改时间</td>
+                        </tr>
+                        <tr>
+                            <td><input name="" type="checkbox" /></td>
+                            <td>数据</td>
+                            <td>数据</td>
+                            <td>数据</td>
+                            <td>数据</td>
+                            <td>数据</td>
+                            <td>数据</td>
+                            <td>数据</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="change_footer" style="width:90%">
+                    <span id="spanFirst">&le;</span>
+                    <span id="spanPre">&lt;</span>
+                    <span id="spanNext">&gt;</span>
+                    <span id="spanLast">&ge;</span>
+                    第
+                    <span id="spanPageNum"></span>
+                    页/共
+                    <span id="spanTotalPage"></span>
+                    页
+                </div> 
+            </div>
+        	<!--部门管理新增开始-->
+        	<div class="depar_add" style="display:none">
+            	<form>
+                    <ul class="pur_nav">
+                        <li><button class="nav_save">保存</button></li>
+                        <li><button class="nav_refresh" onclick="window.location.reload();">刷新</button></li>
+                        <li><button class="nav_return" onclick="window.location.reload();">返回</button></li>
+                    </ul>
+                    <h4>部门管理&gt;&gt;新增</h4>
+                    <table>
+                        <tr>
+                            <td>部门代码：</td>
+                            <td colspan="2"><input name="" type="text" style="width:90px;"/><input name="" type="text" value="-SZX" style="width:40px;margin-left:5px;"/></td>
+                        </tr>
+                        <tr>
+                            <td>部门名称：</td>
+                            <td colspan="2"><input name="" type="text" /></td>
+                        </tr>
+                        <tr>
+                            <td>上级：</td>
+                            <td colspan="2"><select><option>柏阳深圳</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>公司：</td>
+                            <td colspan="2"><input name="" type="text" /></td>
+                        </tr>
+                        <tr>
+                            <td>排序：</td>
+                            <td><input name="" type="text" /></td>
+                            <td><button type="button" style="width:110px;">添加到其他公司</button></td>
+                        </tr>
+                        <tr>
+                            <td>备注：</td>
+                            <td colspan="2"><textarea style="width:100%"></textarea></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        	<!--部门管理新增结束-->
+            <!--部门管理修改开始-->
+        	<div class="depar_modify" style="display:none">
+            	<form>
+                    <ul class="pur_nav">
+                        <li><button class="nav_save">保存</button></li>
+                        <li><button class="nav_refresh" onclick="window.location.reload();">刷新</button></li>
+                        <li><button class="nav_return" onclick="window.location.reload();">返回</button></li>
+                    </ul>
+                    <h4>部门管理&gt;&gt;修改</h4>
+                    <table>
+                        <tr>
+                            <td>部门代码：</td>
+                            <td colspan="2"><input name="" type="text" style="width:90px;"/><input name="" type="text" value="-SZX" style="width:40px;margin-left:5px;"/></td>
+                        </tr>
+                        <tr>
+                            <td>部门名称：</td>
+                            <td colspan="2"><input name="" type="text" /></td>
+                        </tr>
+                        <tr>
+                            <td>上级：</td>
+                            <td colspan="2"><select><option>柏阳深圳</option></select></td>
+                        </tr>
+                        <tr>
+                            <td>公司：</td>
+                            <td colspan="2"><input name="" type="text" /></td>
+                        </tr>
+                        <tr>
+                            <td>排序：</td>
+                            <td colspan="2"><input name="" type="text" /></td>
+                        </tr>
+                        <tr>
+                            <td>备注：</td>
+                            <td colspan="2"><textarea style="width:100%"></textarea></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        	<!--部门管理修改结束-->
+        </div>
+        <!--部门管理右侧结束-->
+    </div>
+</body>
+</html>

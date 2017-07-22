@@ -1,0 +1,296 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	font-size:14px;
+}
+ul li{
+	list-style:none;
+}
+button{
+	width:60px;
+	text-align:center;
+	border:1px solid #98c0e2;
+}
+button:hover{
+	background-color:#98c0e2;
+}
+table{
+	text-align:center;
+}
+.table_th{
+	background-color:#98c0e2;
+	color:#333;
+}
+.table_th td{
+	border-right:1px solid #fff;
+}
+/*收付款开始*/
+.pay_nav li{
+	width:70px;
+	text-align:center;
+	float:left;
+	margin:5px 10px 5px 0;
+	cursor:pointer;
+}
+.active{
+	color:red;
+	background-color:#98c0e2;
+	border:1px solid #ccc;
+}
+.pay_left,.pay_right{
+	width:400px;
+	height:500px;
+	margin:5px 0;
+	float:left;
+}
+.pay_left{
+	margin-right:15px;
+}
+.wrap{
+	width:100%;
+	height:400px;
+	border:1px solid #98c0e2;
+	overflow:auto;
+}
+.pay_top{
+	width:800px;
+	height:200px;
+}
+.top_l{
+	text-align:left;
+	border:1px solid #98c0e2;
+	padding:5px;
+	float:left;
+}
+.top_l tr{
+	height:25px;
+}
+.top_l td input[type="text"]{
+	width:130px;
+}
+.top_r{
+	float:left;
+	width:500px;
+	height:200px;
+	overflow:auto;
+	margin-left:10px;
+	border:1px solid #98c0e2;
+}
+.pay_down{
+	clear:both;
+	margin-top:10px;
+	width:1000px;
+	height:300px;
+	overflow:auto;
+}
+.pay_down ul{
+	position:fixed;
+}
+.pay_down table{
+	margin-left:70px;
+}
+.model,.model2{
+	position:absolute;
+	top:0;
+	left:0;
+}
+.cover{
+	width:1200px;
+	height:650px;
+	background-color:#999;
+	opacity:0.6;
+}
+.import{
+	width:500px;
+	height:370px;
+	position:absolute;
+	top:120px;
+	left:240px;
+	background-color:#fff;
+	z-index:2;
+}
+.import h4{
+	border-bottom:1px solid #98c0e2;
+	padding:5px;
+}
+.import h4 img{
+	float:right;
+	margin-right:10px;
+}
+.nav{
+	display:inline-block;
+	font-size:14px;
+	margin:5px;
+}
+.nav li{
+	float:left;
+	margin-left:10px;
+	padding-left:25px;
+	border:1px solid #98c0e2;
+	width:80px;
+	background:url(../images/book.png) no-repeat 5px 2px;
+	cursor:pointer;
+}
+.nav_act{
+	border-bottom:none !important;
+	color:red;
+}
+.nav button{
+	position:relative;
+	left:100px;
+	margin-right:10px;
+}
+.model_nav{
+	width:100px;
+	float:left;
+	padding:10px;
+	margin:0 10px;
+	border:1px solid #98c0e2;
+}
+.model_nav li{
+	height:30px;
+}
+.day_right{
+	padding:10px;
+}
+.set,.refresh{
+	position:relative;
+}
+.set ul,.refresh ul{
+	width:100px;
+	padding:10px;
+	border:1px solid #999;
+	background-color:#fff;
+	position:absolute;
+	top:0;
+	left:60px;
+	cursor:pointer;
+}
+.set ul li:hover,.refresh ul li:hover{
+	background-color:#98c0e2;
+	color:#fff;
+}
+.exchange{
+	width:700px;
+	height:150px;
+	border:1px solid #98c0e2;
+	background-color:#fff;
+	position:absolute;
+	bottom:50px;
+	left:10px;
+}
+.exchange h4{
+	border-bottom:1px solid #98c0e2;
+	padding:5px;
+	cursor:move;
+}
+.close1{
+	float:right;
+	cursor:pointer
+}
+
+
+/*收付款结束*/
+/*付款申请开始*/
+textarea{
+	width:100%;
+}
+select{
+	width:102px;
+}
+.requset{
+	width:1000px;
+}
+.requset .wrap{
+	height:480px;
+}
+.requset_top table{
+	text-align:right;
+}
+.laydate-icon{
+	width:130px !important;
+	height:18px !important;
+}
+.wraptab{
+	width:1000px;
+	height:200px;
+	border:1px solid #98c0e2;
+	overflow:auto;
+}
+.nav_fixed{
+	position:fixed;
+}
+.requset_down table{
+	margin-left:60px;
+}
+
+/*付款申请结束*/
+/*发票开始*/
+.p_nav span{
+	display:inline-block;
+	width:70px;
+	height:25px;
+	text-align:center;
+	margin:5px 0;
+	cursor:pointer;
+}
+.act{
+	color:red;
+	background-color:#98c0e2;
+}
+.invtab td{
+	text-align:center;
+}
+.invtab textarea{
+	width:80px;
+	height:120px;
+}
+
+/*发票结束*/
+/*费用确认开始*/
+.bgcolor{
+	background-color:#ffff00;
+}
+.right_three{
+	background:url(../images/right_three.png) no-repeat right 2px;
+}
+.nav2{
+	border:1px solid #ccc;
+	width:100px;
+	padding-left:5px;
+	position:absolute;
+	left:100px;
+	top:78px;
+	z-index:3;
+}
+.nav3{
+	border:1px solid #ccc;
+	width:100px;
+	padding-left:5px;
+	position:absolute;
+	left:100px;
+	top:98px;
+	z-index:3;
+}
+.set{
+	text-align:left;
+	width:380px;
+	float:left;
+}
+
+
+
+/*费用确认结束*/
+
+
+
+
+
+
+
+
+
+
+
+
+
